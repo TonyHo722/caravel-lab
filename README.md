@@ -13,6 +13,8 @@ The Efabless Caravel chip is a ready-to-use test harness for creating designs wi
 * Icarus Verilog Windows [version 12.0](https://bleyer.org/icarus/) bundled with GTKWave
 * Caravel user project [sources with tag mpw-8c](https://github.com/efabless/caravel_user_project/tree/mpw-8c)
 * Download and unzip [caravel lab data](https://github.com/bol-edu/caravel-lab/archive/refs/heads/main.zip)
+* sudo apt install yosys
+* reference [Toolchain Prerequisites in caravel-soc](https://github.com/bol-edu/caravel-soc)
 
 ## 1. Custom RTL Design
 A GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source). 
