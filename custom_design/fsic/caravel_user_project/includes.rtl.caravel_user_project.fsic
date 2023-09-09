@@ -1,0 +1,23 @@
+# Caravel user project includes
+-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
+-v $(USER_PROJECT_VERILOG)/rtl/user_proj_example.v
+-v $(USER_PROJECT_VERILOG)/rtl/axi_ctrl_logic.sv
+-v $(USER_PROJECT_VERILOG)/rtl/axil_axis.sv
+-v $(USER_PROJECT_VERILOG)/rtl/axilite_master.sv
+-v $(USER_PROJECT_VERILOG)/rtl/axilite_slave.sv
+-v $(USER_PROJECT_VERILOG)/rtl/axis_master.sv
+-v $(USER_PROJECT_VERILOG)/rtl/axis_slave.sv
+-v $(USER_PROJECT_VERILOG)/rtl/config_ctrl.v
+-v $(USER_PROJECT_VERILOG)/rtl/defines.v
+-v $(USER_PROJECT_VERILOG)/rtl/fsic_clkrst.v
+-v $(USER_PROJECT_VERILOG)/rtl/fsic_coreclk_phase_cnt.v
+-v $(USER_PROJECT_VERILOG)/rtl/fsic_io_serdes_rx.v
+-v $(USER_PROJECT_VERILOG)/rtl/fsic.vo
+-v $(USER_PROJECT_VERILOG)/rtl/io_serdes.v
+-v $(USER_PROJECT_VERILOG)/rtl/mprj_io.sv
+-v $(USER_PROJECT_VERILOG)/rtl/sw_caravel.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_subsys.all.v
+-v $(USER_PROJECT_VERILOG)/rtl/logic_anlz.dummy_io.vd
+
+
+ 
