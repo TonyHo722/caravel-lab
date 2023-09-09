@@ -32,7 +32,7 @@ fi
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
 [ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone https://github.com/TonyHo722/caravel-lab
-[ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
+[ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c https://github.com/efabless/caravel_user_project
 
 #cd $FFF
 #git log -1 2>&1 | tee $LF/mpw-8c-FFF-git-log.log
@@ -42,6 +42,7 @@ cd $CFL
 git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
 cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
+
 mkdir dependencies
 export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
@@ -77,6 +78,7 @@ make -d verify-la_test1-gl 2>&1 | tee $LF/mpw-8c-verify-la_test1-gl.log
 make -d setup-timing-scripts 2>&1 | tee $LF/mpw-8c-setup-timing-scripts.log
 make -d extract-parasitics 2>&1 | tee $LF/mpw-8c-extract-parasitics.log
 make -d create-spef-mapping 2>&1 | tee $LF/mpw-8c-create-spef-mapping.log
+cp $CLF/patch/timing_top.tcl $CUPF/deps/timing-scripts/scripts/openroad/timing_top.tcl
 make -d caravel-sta 2>&1 | tee $LF/mpw-8c-caravel-sta.log
 
 # Run MPW precheck
