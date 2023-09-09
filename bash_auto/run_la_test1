@@ -34,10 +34,12 @@ fi
 [ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b $MPW_TAG https://github.com/efabless/caravel_user_project
 
-cd $FFF
-git log -1 2>&1 | tee $LF/mpw-8c-FFF-git-log.log
-cd $FAF
-git log -1 2>&1 | tee $LF/mpw-8c-FAF-git-log.log
+#cd $FFF
+#git log -1 2>&1 | tee $LF/mpw-8c-FFF-git-log.log
+#cd $FAF
+#git log -1 2>&1 | tee $LF/mpw-8c-FAF-git-log.log
+cd $CFL
+git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
 cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
 mkdir dependencies
