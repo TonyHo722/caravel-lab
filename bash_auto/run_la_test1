@@ -47,7 +47,7 @@ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
 
-#make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
 
 # Run RTL simulation
 cp $CUPF/verilog/rtl/user_project_wrapper.v.la_test1 $CUPF/verilog/rtl/user_project_wrapper.v
