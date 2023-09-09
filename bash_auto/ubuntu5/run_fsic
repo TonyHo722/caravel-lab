@@ -34,11 +34,11 @@ fi
 [ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c https://github.com/efabless/caravel_user_project
 
-cd $FFF
-git log -1 2>&1 | tee $LF/mpw-8c-FFF-git-log.log
-cd $FAF
-git log -1 2>&1 | tee $LF/mpw-8c-FAF-git-log.log
-cd $CFL
+#cd $FFF
+#git log -1 2>&1 | tee $LF/mpw-8c-FFF-git-log.log
+#cd $FAF
+#git log -1 2>&1 | tee $LF/mpw-8c-FAF-git-log.log
+cd $CLF
 git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
 cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
@@ -70,6 +70,7 @@ cp $CLF/custom_design/fsic/verify-fsic-rtl/user_subsys.all.v $CUPF/verilog/rtl/u
 cp $CLF/custom_design/fsic/verify-fsic-rtl/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd  
 
 
+mkdir $CUPF/verilog/dv/system_test111
 cp $CLF/custom_design/fsic/verify-fsic-rtl/system_test111/Makefile $CUPF/verilog/dv/system_test111/Makefile
 cp $CLF/custom_design/fsic/verify-fsic-rtl/system_test111/system_test111.c $CUPF/verilog/dv/system_test111/system_test111.c
 cp $CLF/custom_design/fsic/verify-fsic-rtl/system_test111/system_test111_tb.v.patch $CUPF/verilog/dv/system_test111/system_test111_tb.v
@@ -86,11 +87,15 @@ cp $CLF/custom_design/fsic/verify-fsic-rtl/system_test111/project_define.svh $CU
 #cp $CLF/custom_design/fsic/verify-la_test1_debug-rtl/Makefile $CUPF/verilog/dv/system_test114/Makefile
 #cp $FAF/verif/vsim/tests/system_test114/system_test114.c $CUPF/verilog/dv/system_test114/system_test114.c
 #cp $FAF/verif/vsim/tests/system_test114/top_bench.sv $CUPF/verilog/dv/system_test114/system_test114_tb.sv
-mkdir $CUPF/verilog/dv/system_test111
+## copy source file for caravel_user_project
+cp $CLF/custom_design/fsic/caravel_user_project/includes.rtl.caravel_user_project.fsic $CUPF/verilog/includes/includes.rtl.caravel_user_project
+
+## copy sim.makefile for debugging
+cp $CLF/custom_design/fsic/caravel_user_project/sim.makefile.fsic $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
-exit 1
+#exit 1
 
 # Run Openlane to generate RTL netlist
 cp $CLF/custom_design/fsic/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
