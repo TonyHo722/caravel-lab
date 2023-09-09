@@ -48,7 +48,7 @@ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
 
-make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+#make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
 
 # Run RTL simulation
 cp $CLF/custom_design/fsic/verify-fsic-rtl/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
@@ -87,6 +87,11 @@ cp $CLF/custom_design/fsic/verify-fsic-rtl/system_test111/project_define.svh $CU
 #cp $CLF/custom_design/fsic/verify-la_test1_debug-rtl/Makefile $CUPF/verilog/dv/system_test114/Makefile
 #cp $FAF/verif/vsim/tests/system_test114/system_test114.c $CUPF/verilog/dv/system_test114/system_test114.c
 #cp $FAF/verif/vsim/tests/system_test114/top_bench.sv $CUPF/verilog/dv/system_test114/system_test114_tb.sv
+## copy source file for caravel_user_project
+cp $CLF/custom_design/fsic/caravel_user_project/includes.rtl.caravel_user_project.fsic $CUPF/verilog/includes/includes.rtl.caravel_user_project
+
+## copy sim.makefile for debugging
+cp $CLF/custom_design/fsic/caravel_user_project/sim.makefile.fsic $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
