@@ -38,7 +38,7 @@ fi
 #git log -1 2>&1 | tee $LF/mpw-8c-FFF-git-log.log
 #cd $FAF
 #git log -1 2>&1 | tee $LF/mpw-8c-FAF-git-log.log
-cd $CFL
+cd $CLF
 git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
 cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
@@ -51,11 +51,9 @@ export PDK=sky130A
 make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
 
 # Run RTL simulation
-cp $CUPF/verilog/rtl/user_project_wrapper.v.la_test1 $CUPF/verilog/rtl/user_project_wrapper.v
 cp $CLF/custom_design/gcd/user_proj_example/user_proj_example.v $CUPF/verilog/rtl/user_proj_example.v
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1.c $CUPF/verilog/dv/la_test1/la_test1.c
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v $CUPF/verilog/dv/la_test1/la_test1_tb.v
-make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 
 ## copy source file for caravel_user_project
 cp $CLF/custom_design/gcd/caravel_user_project/includes.rtl.caravel_user_project.la_test1 $CUPF/verilog/includes/includes.rtl.caravel_user_project
@@ -64,6 +62,7 @@ cp $CLF/custom_design/gcd/caravel_user_project/user_project_wrapper.v.la_test1 $
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/gcd/caravel_user_project/sim.makefile.la_test1 $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
+make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 make -d verify-la_test1-rtl 2>&1 | tee $LF/mpw-8c-verify-la_test1-rtl.log
 
 # Run Openlane to generate RTL netlist
