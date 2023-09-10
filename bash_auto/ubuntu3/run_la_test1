@@ -3,7 +3,7 @@
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/SSD2T/debug/la_test1
+export MF=/SSD2T/debug/la_test1_2
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -20,7 +20,7 @@ export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
 export CUPF=$MF/caravel_user_project
 # setup MPW_TAG
-export MPW_TAG=mpw-8c
+#export MPW_TAG=mpw-8c
 
 cd $MF
 if [ ! -d "$MF" ] ;
@@ -56,11 +56,11 @@ cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1.c $CUPF/verilog/dv/la_tes
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v $CUPF/verilog/dv/la_test1/la_test1_tb.v
 
 ## copy source file for caravel_user_project
-cp $CLF/custom_design/gcd/caravel_user_project/includes.rtl.caravel_user_project.la_test1 $CUPF/verilog/includes/includes.rtl.caravel_user_project
+#cp $CLF/custom_design/gcd/caravel_user_project/includes.rtl.caravel_user_project.la_test1 $CUPF/verilog/includes/includes.rtl.caravel_user_project
 cp $CLF/custom_design/gcd/caravel_user_project/user_project_wrapper.v.la_test1 $CUPF/verilog/rtl/user_project_wrapper.v
 
 ## copy sim.makefile for debugging
-cp $CLF/custom_design/gcd/caravel_user_project/sim.makefile.la_test1 $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
+#cp $CLF/custom_design/gcd/caravel_user_project/sim.makefile.la_test1 $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 make -d verify-la_test1-rtl 2>&1 | tee $LF/mpw-8c-verify-la_test1-rtl.log
