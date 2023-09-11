@@ -24,17 +24,11 @@ Cloning into 'caravel-lab'...
 + cd /SSD1T/debug/fsic/caravel-lab
 + git log -1
 + tee /SSD1T/debug/fsic/log-0911/mpw-8c-CLF-git-log.log
-commit aa1a1a071a7af06f41f5882a73e39f6164213b2d
+commit d2a27d74cafd135fddf8fc7dd7374f9b75109e73
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Mon Sep 11 17:35:20 2023 +0800
+Date:   Mon Sep 11 18:18:31 2023 +0800
 
-    found config.json issue, update in below
-        - remove make -d setup
-        - modify to make -d FSIC 2>&1 | tee $LF/mpw-8c-FSIC.log
-        - update config.json
-        - copy module files into $CUPF/verilog/rtl/fsic.v
-        - remove "timescale" in $CLF/custom_design/fsic/verify-fsic-rtl/ *.v, *.sv and *.vd
-        - git clone -b 0911debug_fsic https://github.com/TonyHo722/caravel-lab
+    update config.json to add a file list.
 + cd /SSD1T/debug/fsic/caravel_user_project
 + git log -1
 + tee /SSD1T/debug/fsic/log-0911/mpw-8c-CUPF-git-log.log
@@ -54,22 +48,22 @@ mkdir: cannot create directory ‘dependencies’: File exists
 + export PDK=sky130A
 + PDK=sky130A
 + cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/user_project_wrapper.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/user_project_wrapper.v
-+ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic.vo /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/fsic.v
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axilite_master.sv
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axilite_slave.sv
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axis_master.sv
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axis_slave.sv
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axi_ctrl_logic.sv.patch
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axil_axis.sv
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/sw_caravel.v
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/config_ctrl.v
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic_clkrst.v
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/io_serdes.v
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic_coreclk_phase_cnt.v
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic_io_serdes_rx.v
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/mprj_io.sv
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/user_subsys.all.v
-+ cat /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/logic_anlz.dummy_io.vd
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic.vo /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/fsic.vo
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axilite_master.sv /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/axilite_master.sv
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axilite_slave.sv /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/axilite_slave.sv
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axis_master.sv /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/axis_master.sv
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axis_slave.sv /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/axis_slave.sv
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axi_ctrl_logic.sv.patch /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axil_axis.sv /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/axil_axis.sv
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/sw_caravel.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/sw_caravel.v
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/config_ctrl.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/config_ctrl.v
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic_clkrst.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/fsic_clkrst.v
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/io_serdes.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/io_serdes.v
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic_coreclk_phase_cnt.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/fsic_coreclk_phase_cnt.v
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic_io_serdes_rx.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/fsic_io_serdes_rx.v
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/mprj_io.sv /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/mprj_io.sv
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/user_subsys.all.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/user_subsys.all.v
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/logic_anlz.dummy_io.vd /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/logic_anlz.dummy_io.vd
 + mkdir /SSD1T/debug/fsic/caravel_user_project/verilog/dv/system_test111
 mkdir: cannot create directory ‘/SSD1T/debug/fsic/caravel_user_project/verilog/dv/system_test111’: File exists
 + cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/system_test111/Makefile /SSD1T/debug/fsic/caravel_user_project/verilog/dv/system_test111/Makefile
@@ -107,14 +101,14 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x55b8978c04b0 (simenv) PID 1648090 on the chain.
-Live child 0x55b8978c04b0 (simenv) PID 1648090 
+Putting child 0x5640bdf4d4b0 (simenv) PID 1679881 on the chain.
+Live child 0x5640bdf4d4b0 (simenv) PID 1679881 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x55b8978c04b0 PID 1648090 
-Removing child 0x55b8978c04b0 PID 1648090 from chain.
+Reaping winning child 0x5640bdf4d4b0 PID 1679881 
+Removing child 0x5640bdf4d4b0 PID 1679881 from chain.
 Successfully remade target file 'simenv'.
 + mkdir /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/
 mkdir: cannot create directory ‘/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/’: File exists
@@ -143,8 +137,8 @@ Considering target file 'FSIC'.
  Finished prerequisites of target file 'FSIC'.
 Must remake target 'FSIC'.
 make -C openlane FSIC
-Putting child 0x5557048c04a0 (FSIC) PID 1648159 on the chain.
-Live child 0x5557048c04a0 (FSIC) PID 1648159 
+Putting child 0x55e3444e74a0 (FSIC) PID 1679957 on the chain.
+Live child 0x55e3444e74a0 (FSIC) PID 1679957 
 GNU Make 4.2.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -981,21 +975,21 @@ Considering target file 'FSIC'.
  Finished prerequisites of target file 'FSIC'.
 Must remake target 'FSIC'.
 # FSIC
-Putting child 0x560f36a85450 (FSIC) PID 1648171 on the chain.
-Live child 0x560f36a85450 (FSIC) PID 1648171 
-Reaping winning child 0x560f36a85450 PID 1648171 
-mkdir -p ./FSIC/runs/23_09_11_17_46 
-Live child 0x560f36a85450 (FSIC) PID 1648172 
-Reaping winning child 0x560f36a85450 PID 1648172 
+Putting child 0x55d686f3b470 (FSIC) PID 1679969 on the chain.
+Live child 0x55d686f3b470 (FSIC) PID 1679969 
+Reaping winning child 0x55d686f3b470 PID 1679969 
+mkdir -p ./FSIC/runs/23_09_11_18_30 
+Live child 0x55d686f3b470 (FSIC) PID 1679970 
+Reaping winning child 0x55d686f3b470 PID 1679970 
 rm -rf ./FSIC/runs/FSIC
-Live child 0x560f36a85450 (FSIC) PID 1648173 
-Reaping winning child 0x560f36a85450 PID 1648173 
-ln -s $(realpath ./FSIC/runs/23_09_11_17_46) ./FSIC/runs/FSIC
-Live child 0x560f36a85450 (FSIC) PID 1648174 
-Reaping winning child 0x560f36a85450 PID 1648174 
-docker run -it -v $(realpath /SSD1T/debug/fsic/caravel_user_project/..):$(realpath /SSD1T/debug/fsic/caravel_user_project/..) -v /SSD1T/debug/fsic/caravel_user_project/dependencies/pdks:/SSD1T/debug/fsic/caravel_user_project/dependencies/pdks -v /SSD1T/debug/fsic/caravel_user_project/caravel:/SSD1T/debug/fsic/caravel_user_project/caravel -v /SSD1T/debug/fsic/caravel_user_project/dependencies/openlane_src:/openlane -v /SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper:/SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper -e PDK_ROOT=/SSD1T/debug/fsic/caravel_user_project/dependencies/pdks -e PDK=sky130A -e MISMATCHES_OK=1 -e CARAVEL_ROOT=/SSD1T/debug/fsic/caravel_user_project/caravel -e OPENLANE_RUN_TAG=23_09_11_17_46 -e MCW_ROOT=/SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper -u 1000:1000 \
-	efabless/openlane:2022.11.19 sh -c "flow.tcl -design $(realpath ./FSIC) -save_path $(realpath ..) -save -tag 23_09_11_17_46 -overwrite -ignore_mismatches"
-Live child 0x560f36a85450 (FSIC) PID 1648176 
+Live child 0x55d686f3b470 (FSIC) PID 1679971 
+Reaping winning child 0x55d686f3b470 PID 1679971 
+ln -s $(realpath ./FSIC/runs/23_09_11_18_30) ./FSIC/runs/FSIC
+Live child 0x55d686f3b470 (FSIC) PID 1679972 
+Reaping winning child 0x55d686f3b470 PID 1679972 
+docker run -it -v $(realpath /SSD1T/debug/fsic/caravel_user_project/..):$(realpath /SSD1T/debug/fsic/caravel_user_project/..) -v /SSD1T/debug/fsic/caravel_user_project/dependencies/pdks:/SSD1T/debug/fsic/caravel_user_project/dependencies/pdks -v /SSD1T/debug/fsic/caravel_user_project/caravel:/SSD1T/debug/fsic/caravel_user_project/caravel -v /SSD1T/debug/fsic/caravel_user_project/dependencies/openlane_src:/openlane -v /SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper:/SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper -e PDK_ROOT=/SSD1T/debug/fsic/caravel_user_project/dependencies/pdks -e PDK=sky130A -e MISMATCHES_OK=1 -e CARAVEL_ROOT=/SSD1T/debug/fsic/caravel_user_project/caravel -e OPENLANE_RUN_TAG=23_09_11_18_30 -e MCW_ROOT=/SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper -u 1000:1000 \
+	efabless/openlane:2022.11.19 sh -c "flow.tcl -design $(realpath ./FSIC) -save_path $(realpath ..) -save -tag 23_09_11_18_30 -overwrite -ignore_mismatches"
+Live child 0x55d686f3b470 (FSIC) PID 1679974 
 OpenLane cb59d1f84deb5cedbb5b0a3e3f3b4129a967c988
 All rights reserved. (c) 2020-2022 Efabless Corporation and contributors.
 Available under the Apache License, version 2.0. See the LICENSE file for more details.
@@ -1007,24 +1001,24 @@ This may introduce some issues. You may want to re-install the PDK by invoking `
 [36m[INFO]: Process Design Kit: sky130A[39m
 [36m[INFO]: Standard Cell Library: sky130_fd_sc_hd[39m
 [36m[INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd[39m
-[36m[INFO]: Run Directory: /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_17_46[39m
+[36m[INFO]: Run Directory: /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_18_30[39m
 [36m[INFO]: Preparing LEF files for the nom corner...[39m
 [36m[INFO]: Preparing LEF files for the min corner...[39m
 [36m[INFO]: Preparing LEF files for the max corner...[39m
 [STEP 1]
-[36m[INFO]: Running Synthesis (log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_17_46/logs/synthesis/1-synthesis.log)...[39m
+[36m[INFO]: Running Synthesis (log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_18_30/logs/synthesis/1-synthesis.log)...[39m
 [31m[ERROR]: during executing yosys script /openlane/scripts/yosys/synth.tcl[39m
-[31m[ERROR]: Log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_17_46/logs/synthesis/1-synthesis.log[39m
+[31m[ERROR]: Log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_18_30/logs/synthesis/1-synthesis.log[39m
 [31m[ERROR]: Last 10 lines:
-Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\shift_grant' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:2872$1149': $auto$proc_dlatch.cc:427:proc_dlatch$10868
-Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\shift_hi_grant' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:2872$1149': $auto$proc_dlatch.cc:427:proc_dlatch$10871
-Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\shift_req' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:2853$1146': $auto$proc_dlatch.cc:427:proc_dlatch$10898
-Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\shift_hi_req' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:2853$1146': $auto$proc_dlatch.cc:427:proc_dlatch$10921
-No latch inferred for signal `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.\empty' from process `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:0$1695'.
-No latch inferred for signal `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.\full' from process `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:0$1695'.
-No latch inferred for signal `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.\near_full' from process `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:0$1695'.
-No latch inferred for signal `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.\out_wr_rdy' from process `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:0$1673'.
-No latch inferred for signal `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.\rd_vld' from process `$paramod\axi_fifo\WIDTH=8'00100010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_projecERROR: Latch inferred for signal `\axi_ctrl_logic.\wr_mb' from always_comb process `\axi_ctrl_logic.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/fsic.v:0$240'.
+No latch inferred for signal `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$mem2reg_rd$\fifo$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axis_master.sv:71$1055_DATA' from process `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axis_master.sv:0$1095'.
+No latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$mem2reg_rd$\mem$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:173$1556_DATA' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:0$1670'.
+No latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$mem2reg_rd$\mem$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:172$1555_DATA' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:0$1667'.
+Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\grant_next' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:258$1586': $auto$proc_dlatch.cc:427:proc_dlatch$10766
+Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\frame_start_next' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:258$1586': $auto$proc_dlatch.cc:427:proc_dlatch$10789
+Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\shift_grant' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:243$1583': $auto$proc_dlatch.cc:427:proc_dlatch$10800
+Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\shift_hi_grant' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:243$1583': $auto$proc_dlatch.cc:427:proc_dlatch$10803
+Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\shift_req' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caravel.v:224$1580': $auto$proc_dlatch.cc:427:proc_dlatch$10830
+Latch inferred for signal `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.\shift_hi_req' from process `$paramod$dce6b6a5da2812dbe1b9cc3a0671da84ccd9b415\AXIS_SW.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/sw_caraveERROR: Latch inferred for signal `\axi_ctrl_logic.\wr_mb' from always_comb process `\axi_ctrl_logic.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axi_ctrl_logic.sv:0$240'.
 child process exited abnormally
 [39m
 [31m[ERROR]: Creating issue reproducible...[39m
@@ -1040,20 +1034,20 @@ BY USING THIS SCRIPT, YOU ACKNOWLEDGE THAT YOU FULLY UNDERSTAND THIS DISCLAIMER
 AND ALL IT ENTAILS.
 
 Parsing config file(s)…
-Setting up /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_17_46/issue_reproducible…
+Setting up /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_18_30/issue_reproducible…
 Done.
-[36m[INFO]: Reproducible packaged: Please tarball and upload '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_17_46/issue_reproducible' if you're going to submit an issue.[39m
-[36m[INFO]: Saving current set of views in '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_17_46/results/final'...[39m
+[36m[INFO]: Reproducible packaged: Please tarball and upload '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_18_30/issue_reproducible' if you're going to submit an issue.[39m
+[36m[INFO]: Saving current set of views in '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_18_30/results/final'...[39m
 [36m[INFO]: Generating final set of reports...[39m
-[36m[INFO]: Created manufacturability report at '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_17_46/reports/manufacturability.rpt'.[39m
-[36m[INFO]: Created metrics report at '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_17_46/reports/metrics.csv'.[39m
+[36m[INFO]: Created manufacturability report at '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_18_30/reports/manufacturability.rpt'.[39m
+[36m[INFO]: Created metrics report at '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_18_30/reports/metrics.csv'.[39m
 [36m[INFO]: Saving runtime environment...[39m
 [31m[ERROR]: Flow failed.[39m
-Reaping losing child 0x560f36a85450 PID 1648176 
+Reaping losing child 0x55d686f3b470 PID 1679974 
 make[1]: *** [Makefile:73: FSIC] Error 255
-Removing child 0x560f36a85450 PID 1648176 from chain.
+Removing child 0x55d686f3b470 PID 1679974 from chain.
 make[1]: Leaving directory '/SSD1T/debug/fsic/caravel_user_project/openlane'
-Reaping losing child 0x5557048c04a0 PID 1648159 
+Reaping losing child 0x55e3444e74a0 PID 1679957 
 make: *** [Makefile:107: FSIC] Error 2
-Removing child 0x5557048c04a0 PID 1648159 from chain.
+Removing child 0x55e3444e74a0 PID 1679957 from chain.
 + exit 1
