@@ -53,22 +53,22 @@ export PDK=sky130A
 # Run RTL simulation
 cp $CLF/custom_design/fsic/verify-fsic-rtl/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
 
-cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic.vo $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/axilite_master.sv >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/axilite_slave.sv >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/axis_master.sv >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/axis_slave.sv >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/axi_ctrl_logic.sv.patch >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/axil_axis.sv >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/sw_caravel.v >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/config_ctrl.v >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/fsic_clkrst.v >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/io_serdes.v >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/fsic_coreclk_phase_cnt.v >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/fsic_io_serdes_rx.v >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/mprj_io.sv >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/user_subsys.all.v >> $CUPF/verilog/rtl/fsic.v
-cat $CLF/custom_design/fsic/verify-fsic-rtl/logic_anlz.dummy_io.vd >> $CUPF/verilog/rtl/fsic.v
+cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic.vo $CUPF/verilog/rtl/fsic.vo
+cp $CLF/custom_design/fsic/verify-fsic-rtl/axilite_master.sv $CUPF/verilog/rtl/axilite_master.sv
+cp $CLF/custom_design/fsic/verify-fsic-rtl/axilite_slave.sv $CUPF/verilog/rtl/axilite_slave.sv
+cp $CLF/custom_design/fsic/verify-fsic-rtl/axis_master.sv $CUPF/verilog/rtl/axis_master.sv
+cp $CLF/custom_design/fsic/verify-fsic-rtl/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
+cp $CLF/custom_design/fsic/verify-fsic-rtl/axi_ctrl_logic.sv.patch $CUPF/verilog/rtl/axi_ctrl_logic.sv
+cp $CLF/custom_design/fsic/verify-fsic-rtl/axil_axis.sv $CUPF/verilog/rtl/axil_axis.sv
+cp $CLF/custom_design/fsic/verify-fsic-rtl/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
+cp $CLF/custom_design/fsic/verify-fsic-rtl/config_ctrl.v $CUPF/verilog/rtl/config_ctrl.v
+cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic_clkrst.v $CUPF/verilog/rtl/fsic_clkrst.v
+cp $CLF/custom_design/fsic/verify-fsic-rtl/io_serdes.v $CUPF/verilog/rtl/io_serdes.v                             
+cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic_coreclk_phase_cnt.v $CUPF/verilog/rtl/fsic_coreclk_phase_cnt.v   
+cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic_io_serdes_rx.v $CUPF/verilog/rtl/fsic_io_serdes_rx.v             
+cp $CLF/custom_design/fsic/verify-fsic-rtl/mprj_io.sv $CUPF/verilog/rtl/mprj_io.sv
+cp $CLF/custom_design/fsic/verify-fsic-rtl/user_subsys.all.v $CUPF/verilog/rtl/user_subsys.all.v               
+cp $CLF/custom_design/fsic/verify-fsic-rtl/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd 
 
 
 mkdir $CUPF/verilog/dv/system_test111
