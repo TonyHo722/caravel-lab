@@ -14,7 +14,7 @@ export MF=/SSD1T/debug/la_test1
 # setup your PRECHECK_ROOT 
 export PRECHECK_ROOT=$MF/mpw_precheck
 # setup your log folder(LF)
-export LF=$MF/log-0909
+export LF=$MF/log-0911
 # setup your caravel-lab folder(CLF)
 export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
@@ -47,7 +47,7 @@ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
 
-make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+#make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
 
 # Run RTL simulation
 cp $CUPF/verilog/rtl/user_project_wrapper.v.la_test1 $CUPF/verilog/rtl/user_project_wrapper.v
@@ -64,6 +64,7 @@ cp $CLF/custom_design/gcd/caravel_user_project/user_project_wrapper.v.la_test1 $
 cp $CLF/custom_design/gcd/caravel_user_project/sim.makefile.la_test1 $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
 make -d verify-la_test1-rtl 2>&1 | tee $LF/mpw-8c-verify-la_test1-rtl.log
+exit 1
 
 # Run Openlane to generate RTL netlist
 cp $CLF/custom_design/gcd/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
