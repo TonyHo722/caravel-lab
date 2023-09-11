@@ -222,6 +222,8 @@ assign as_up_tready = grant_reg[0] && is_as_tready;
 assign as_aa_tready = grant_reg[1] && is_as_tready;
 assign as_la_tready = grant_reg[2] && is_as_tready;    
 always @* begin
+    shift_req = 0;
+    shift_hi_req = 0;
     if(frame_start_reg == 1'b0) begin 
         if(hi_req) begin
             case (base_ptr)
@@ -241,6 +243,8 @@ always @* begin
     end       
 end
 always @* begin
+    shift_grant[2:0] = 3'b000;
+    shift_hi_grant[2:0] = 3'b000;    
     if(frame_start_reg == 1'b0) begin 
         shift_hi_grant[2:0] = 3'b000;    
         shift_grant[2:0] = 3'b000;
@@ -256,6 +260,8 @@ always @* begin
     end    
 end            
 always @* begin
+    grant_next = 0;
+    frame_start_next = 1'b0;
     if(frame_start_reg == 1'b0) begin
         if(hi_req) begin
             case (base_ptr)
