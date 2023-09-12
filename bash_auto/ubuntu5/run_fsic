@@ -61,6 +61,7 @@ cp $CLF/custom_design/fsic/verify-fsic-rtl/axis_slave.sv $CUPF/verilog/rtl/axis_
 cp $CLF/custom_design/fsic/verify-fsic-rtl/axi_ctrl_logic.sv.patch $CUPF/verilog/rtl/axi_ctrl_logic.sv
 cp $CLF/custom_design/fsic/verify-fsic-rtl/axil_axis.sv $CUPF/verilog/rtl/axil_axis.sv
 cp $CLF/custom_design/fsic/verify-fsic-rtl/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
+cp $CLF/custom_design/fsic/verify-fsic-rtl/sw_caravel.v.patch $CUPF/verilog/rtl/sw_caravel.v.patch
 cp $CLF/custom_design/fsic/verify-fsic-rtl/config_ctrl.v $CUPF/verilog/rtl/config_ctrl.v
 cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic_clkrst.v $CUPF/verilog/rtl/fsic_clkrst.v
 cp $CLF/custom_design/fsic/verify-fsic-rtl/io_serdes.v $CUPF/verilog/rtl/io_serdes.v                             
