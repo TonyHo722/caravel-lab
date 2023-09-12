@@ -56,169 +56,25 @@ module AXIL_AXIS #( parameter pADDR_WIDTH   = 12,
   input  wire          axis_rst_n
 );
 
-    logic bk_lm_wstart, bk_lm_wdone, bk_lm_rstart, bk_lm_rdone, bk_ls_wstart, bk_ls_wdone, bk_ls_rstart, bk_ls_rdone, bk_sm_start, bk_sm_nordy, bk_sm_done, bk_ss_tlast, bk_ss_ready, bk_ss_valid;
-    logic [1:0] bk_sm_user, bk_ss_user;
-    logic [3:0] bk_lm_wstrb, bk_ls_wstrb, bk_sm_tstrb, bk_sm_tkeep, bk_ss_tstrb, bk_ss_tkeep;
-    logic [14:0] bk_ls_waddr, bk_ls_raddr;
-    logic [31:0] bk_lm_waddr, bk_lm_wdata, bk_lm_raddr, bk_lm_rdata, bk_ls_wdata, bk_ls_rdata, bk_sm_data, bk_ss_data;
-
-    axilite_master lm(
-        .axi_aclk(axi_clk),
-        .axi_aresetn(axi_reset_n),
-
-        // frontend - axilite master
-        .axi_awvalid(m_awvalid),
-        .axi_awaddr(m_awaddr),
-        .axi_wvalid(m_wvalid),
-        .axi_wdata(m_wdata),
-        .axi_wstrb(m_wstrb),
-        .axi_arvalid(m_arvalid),
-        .axi_araddr(m_araddr),
-        .axi_rready(m_rready),
-        .axi_rdata(m_rdata),
-        .axi_awready(m_awready),
-        .axi_wready(m_wready),
-        .axi_arready(m_arready),
-        .axi_rvalid(m_rvalid),
-
-        // backend source to trigger the axilite master transaction
-        .bk_wstart(bk_lm_wstart),
-        .bk_waddr(bk_lm_waddr),
-        .bk_wdata(bk_lm_wdata),
-        .bk_wstrb(bk_lm_wstrb),
-        .bk_wdone(bk_lm_wdone),
-        .bk_rstart(bk_lm_rstart),
-        .bk_raddr(bk_lm_raddr),
-        .bk_rdata(bk_lm_rdata),
-        .bk_rdone(bk_lm_rdone)
-    );
-
-    axilite_slave ls(
-        .axi_aclk(axi_clk),
-        .axi_aresetn(axi_reset_n),
-
-        // frontend - axilite slave
-        .axi_awready(s_awready),
-        .axi_wready(s_wready),
-        .axi_arready(s_arready),
-        .axi_rvalid(s_rvalid),
-        .axi_rdata(s_rdata),
-        .axi_awvalid(s_awvalid),
-        .axi_awaddr(s_awaddr),
-        .axi_wvalid(s_wvalid),
-        .axi_wdata(s_wdata),
-        .axi_wstrb(s_wstrb),
-        .axi_arvalid(s_arvalid),
-        .axi_araddr(s_araddr),
-        .axi_rready(s_rready),
-
-        // backend source to receive the axilite slave transaction
-        .bk_wstart(bk_ls_wstart),
-        .bk_waddr(bk_ls_waddr),
-        .bk_wdata(bk_ls_wdata),
-        .bk_wstrb(bk_ls_wstrb),
-        .bk_rstart(bk_ls_rstart),
-        .bk_raddr(bk_ls_raddr),
-        .bk_rdata(bk_ls_rdata),
-        .bk_rdone(bk_ls_rdone),
-
-        .cc_aa_enable(cc_aa_enable)
-    );
-
-    axis_master sm(
-        .axi_aclk(axis_clk),
-        .axi_aresetn(axis_rst_n),
-
-        // frontend - axis master
-        .axis_tvalid(aa_as_tvalid),
-        .axis_tdata(aa_as_tdata),
-        .axis_tstrb(aa_as_tstrb),
-        .axis_tkeep(aa_as_tkeep),
-        .axis_tlast(aa_as_tlast),
-        //.axis_tid(),
-        .axis_tuser(aa_as_tuser),
-        .axis_tready(as_aa_tready),
-
-        // backend source to trigger the axis master transaction
-        .bk_start(bk_sm_start),
-        .bk_data(bk_sm_data),
-        .bk_tstrb(bk_sm_tstrb),
-        .bk_tkeep(bk_sm_tkeep),
-        //.bk_tid(bk_sm_tid),
-        .bk_user(bk_sm_user),
-        .bk_nordy(bk_sm_nordy),
-        .bk_done(bk_sm_done)
-    );
-
-    axis_slave ss(
-        .axi_aclk(axis_clk),
-        .axi_aresetn(axis_rst_n),
-        
-        // frontend - axis slave
-        .axis_tvalid(as_aa_tvalid),
-        .axis_tdata(as_aa_tdata),
-        .axis_tstrb(as_aa_tstrb),
-        .axis_tkeep(as_aa_tkeep),
-        .axis_tlast(as_aa_tlast),
-        //.axis_tid(),
-        .axis_tuser(as_aa_tuser),
-        .axis_tready(aa_as_tready),
-
-        // backend source to receive the axis slave transaction
-        .bk_data(bk_ss_data),
-        .bk_tstrb(bk_ss_tstrb),
-        .bk_tkeep(bk_ss_tkeep),
-        //.bk_tid(bk_ss_tid),
-        .bk_user(bk_ss_user),
-        .bk_tlast(bk_ss_tlast),
-        .bk_ready(bk_ss_ready),
-        .bk_valid(bk_ss_valid)
-    );
-
-    axi_ctrl_logic axi_ctrl_logic(
-        .axi_aclk(axi_clk),
-        .axi_aresetn(axi_reset_n),
-        .axi_interrupt(mb_irq),
-
-        // backend interface, axilite_master (LM)
-        .bk_lm_wstart(bk_lm_wstart),
-        .bk_lm_waddr(bk_lm_waddr),
-        .bk_lm_wdata(bk_lm_wdata),
-        .bk_lm_wstrb(bk_lm_wstrb),
-        .bk_lm_wdone(bk_lm_wdone),
-        .bk_lm_rstart(bk_lm_rstart),
-        .bk_lm_raddr(bk_lm_raddr),
-        .bk_lm_rdata(bk_lm_rdata),
-        .bk_lm_rdone(bk_lm_rdone),
-
-        // backend interface, axilite_slave (LS)
-        .bk_ls_wstart(bk_ls_wstart),
-        .bk_ls_waddr(bk_ls_waddr),
-        .bk_ls_wdata(bk_ls_wdata),
-        .bk_ls_wstrb(bk_ls_wstrb),
-        .bk_ls_rstart(bk_ls_rstart),
-        .bk_ls_raddr(bk_ls_raddr),
-        .bk_ls_rdata(bk_ls_rdata),
-        .bk_ls_rdone(bk_ls_rdone),
-
-        // backend interface, axis_master (SM)
-        .bk_sm_start(bk_sm_start),
-        .bk_sm_data(bk_sm_data),
-        .bk_sm_tstrb(bk_sm_tstrb),
-        .bk_sm_tkeep(bk_sm_tkeep),
-        //.bk_sm_tid(bk_sm_tid),
-        .bk_sm_user(bk_sm_user),
-        .bk_sm_nordy(bk_sm_nordy),
-        .bk_sm_done(bk_sm_done),
-
-        // backend interface, axis_slave (SS)
-        .bk_ss_data(bk_ss_data),
-        .bk_ss_tstrb(bk_ss_tstrb),
-        .bk_ss_tkeep(bk_ss_tkeep),
-        //.bk_ss_tid(bk_ss_tid),
-        .bk_ss_user(bk_ss_user),
-        .bk_ss_tlast(bk_ss_tlast),
-        .bk_ss_ready(bk_ss_ready),
-        .bk_ss_valid(bk_ss_valid)
-    );
+  reg m_awvalid=0;
+  reg  [31: 0] m_awaddr=0;
+  reg          m_wvalid=0;
+  reg  [31: 0] m_wdata=0;
+  reg   [3: 0] m_wstrb=0;
+  reg          m_arvalid=0;
+  reg  [31: 0] m_araddr=0;
+  reg          m_rready=0;
+  reg  [31: 0] s_rdata=0;
+  reg          s_rvalid=0;
+  reg          s_awready=0;
+  reg          s_wready=0;
+  reg          s_arready=0;
+  reg aa_as_tready=0;
+  reg  [31: 0] aa_as_tdata=0;
+  reg   [3: 0] aa_as_tstrb=0;
+  reg   [3: 0] aa_as_tkeep=0;
+  reg          aa_as_tlast=0;
+  reg          aa_as_tvalid=0;
+  reg   [1: 0] aa_as_tuser=0;
+  reg          mb_irq=0;
 endmodule // AXIL_AXIS
