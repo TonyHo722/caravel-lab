@@ -24,18 +24,18 @@ Cloning into 'caravel-lab'...
 + cd /SSD1T/debug/fsic/caravel-lab
 + git log -1
 + tee /SSD1T/debug/fsic/log-0911/mpw-8c-CLF-git-log.log
-commit 3fa04042b3330b6ff509ac109c6550c204233eed
+commit 9d995bc30beb7ecd3dfa48c7df1553f514dc958c
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Mon Sep 11 21:35:09 2023 +0800
+Date:   Tue Sep 12 17:10:53 2023 +0800
 
-    run_fsic error log in below
-    (base) tonyho@ubuntu5:~/workspace/fsic/caravel-lab/bash_auto/ubuntu5$ grep -i "ERR" run_fsic.log
-        hack for latch inferred issue
-    [ERROR]: during executing yosys script /openlane/scripts/yosys/synth.tcl
-    [ERROR]: Log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_11_21_32/logs/synthesis/1-synthesis.log
+    update run_fsic.log - after remove AA and AS module code then synthesys pass, but still fail
+    in 4-place_io.log
+    
+    (base) tonyho@ubuntu5:~/workspace/fsic/caravel-lab/bash_auto/ubuntu5$ grep -i "ERROR" run_fsic.log
+    [ERROR]: during executing: "openroad -exit -no_init -python /openlane/scripts/odbpy/io_place.py --config /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/pin_order.cfg --hor-layer met3 --ver-layer met2 --ver-width-mult 2 --hor-width-mult 2 --hor-extension -1 --ver-extension -1 --length 4 --unmatched-error --input-lef /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_10/tmp/merged.nom.lef --output-def /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_10/tmp/floorplan/4-io.def --output /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_10/tmp/floorplan/4-io.odb /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_10/tmp/floorplan/3-initial_fp.odb |& tee /dev/null /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_10/logs/floorplan/4-place_io.log"
+    [ERROR]: Exit code: 1
     [ERROR]: Last 10 lines:
-    Creating register for signal `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$mem2reg_wr$\fifo$/SSD1T/debug/fsic/caraERROR: Multiple edge sensitive events found for this signal!
-    [ERROR]: Creating issue reproducible...
+    Treating unmatched pins as errors. Exiting..
     [ERROR]: Flow failed.
     make[1]: *** [Makefile:73: FSIC] Error 255
     make: *** [Makefile:107: FSIC] Error 2
@@ -66,6 +66,8 @@ mkdir: cannot create directory ‘dependencies’: File exists
 + cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axi_ctrl_logic.sv.patch /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv
 + cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/axil_axis.sv /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/axil_axis.sv
 + cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/sw_caravel.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/sw_caravel.v
++ cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/sw_caravel.v.patch /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/sw_caravel.v.patch
+cp: cannot stat '/SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/sw_caravel.v.patch': No such file or directory
 + cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/config_ctrl.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/config_ctrl.v
 + cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/fsic_clkrst.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/fsic_clkrst.v
 + cp /SSD1T/debug/fsic/caravel-lab/custom_design/fsic/verify-fsic-rtl/io_serdes.v /SSD1T/debug/fsic/caravel_user_project/verilog/rtl/io_serdes.v
@@ -111,14 +113,14 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x558cb17c9d10 (simenv) PID 2642637 on the chain.
-Live child 0x558cb17c9d10 (simenv) PID 2642637 
+Putting child 0x55ae7c78ad10 (simenv) PID 2663690 on the chain.
+Live child 0x55ae7c78ad10 (simenv) PID 2663690 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x558cb17c9d10 PID 2642637 
-Removing child 0x558cb17c9d10 PID 2642637 from chain.
+Reaping winning child 0x55ae7c78ad10 PID 2663690 
+Removing child 0x55ae7c78ad10 PID 2663690 from chain.
 Successfully remade target file 'simenv'.
 + mkdir /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/
 mkdir: cannot create directory ‘/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/’: File exists
@@ -147,8 +149,8 @@ Considering target file 'FSIC'.
  Finished prerequisites of target file 'FSIC'.
 Must remake target 'FSIC'.
 make -C openlane FSIC
-Putting child 0x55aa56ca1d00 (FSIC) PID 2642707 on the chain.
-Live child 0x55aa56ca1d00 (FSIC) PID 2642707 
+Putting child 0x55bf0811fd00 (FSIC) PID 2663764 on the chain.
+Live child 0x55bf0811fd00 (FSIC) PID 2663764 
 GNU Make 4.2.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -985,21 +987,21 @@ Considering target file 'FSIC'.
  Finished prerequisites of target file 'FSIC'.
 Must remake target 'FSIC'.
 # FSIC
-Putting child 0x55f599d2b8c0 (FSIC) PID 2642719 on the chain.
-Live child 0x55f599d2b8c0 (FSIC) PID 2642719 
-Reaping winning child 0x55f599d2b8c0 PID 2642719 
-mkdir -p ./FSIC/runs/23_09_12_17_03 
-Live child 0x55f599d2b8c0 (FSIC) PID 2642720 
-Reaping winning child 0x55f599d2b8c0 PID 2642720 
+Putting child 0x55d0edcaa8c0 (FSIC) PID 2663777 on the chain.
+Live child 0x55d0edcaa8c0 (FSIC) PID 2663777 
+Reaping winning child 0x55d0edcaa8c0 PID 2663777 
+mkdir -p ./FSIC/runs/23_09_12_17_31 
+Live child 0x55d0edcaa8c0 (FSIC) PID 2663778 
+Reaping winning child 0x55d0edcaa8c0 PID 2663778 
 rm -rf ./FSIC/runs/FSIC
-Live child 0x55f599d2b8c0 (FSIC) PID 2642721 
-Reaping winning child 0x55f599d2b8c0 PID 2642721 
-ln -s $(realpath ./FSIC/runs/23_09_12_17_03) ./FSIC/runs/FSIC
-Live child 0x55f599d2b8c0 (FSIC) PID 2642722 
-Reaping winning child 0x55f599d2b8c0 PID 2642722 
-docker run -it -v $(realpath /SSD1T/debug/fsic/caravel_user_project/..):$(realpath /SSD1T/debug/fsic/caravel_user_project/..) -v /SSD1T/debug/fsic/caravel_user_project/dependencies/pdks:/SSD1T/debug/fsic/caravel_user_project/dependencies/pdks -v /SSD1T/debug/fsic/caravel_user_project/caravel:/SSD1T/debug/fsic/caravel_user_project/caravel -v /SSD1T/debug/fsic/caravel_user_project/dependencies/openlane_src:/openlane -v /SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper:/SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper -e PDK_ROOT=/SSD1T/debug/fsic/caravel_user_project/dependencies/pdks -e PDK=sky130A -e MISMATCHES_OK=1 -e CARAVEL_ROOT=/SSD1T/debug/fsic/caravel_user_project/caravel -e OPENLANE_RUN_TAG=23_09_12_17_03 -e MCW_ROOT=/SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper -u 1000:1000 \
-	efabless/openlane:2022.11.19 sh -c "flow.tcl -design $(realpath ./FSIC) -save_path $(realpath ..) -save -tag 23_09_12_17_03 -overwrite -ignore_mismatches"
-Live child 0x55f599d2b8c0 (FSIC) PID 2642724 
+Live child 0x55d0edcaa8c0 (FSIC) PID 2663779 
+Reaping winning child 0x55d0edcaa8c0 PID 2663779 
+ln -s $(realpath ./FSIC/runs/23_09_12_17_31) ./FSIC/runs/FSIC
+Live child 0x55d0edcaa8c0 (FSIC) PID 2663780 
+Reaping winning child 0x55d0edcaa8c0 PID 2663780 
+docker run -it -v $(realpath /SSD1T/debug/fsic/caravel_user_project/..):$(realpath /SSD1T/debug/fsic/caravel_user_project/..) -v /SSD1T/debug/fsic/caravel_user_project/dependencies/pdks:/SSD1T/debug/fsic/caravel_user_project/dependencies/pdks -v /SSD1T/debug/fsic/caravel_user_project/caravel:/SSD1T/debug/fsic/caravel_user_project/caravel -v /SSD1T/debug/fsic/caravel_user_project/dependencies/openlane_src:/openlane -v /SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper:/SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper -e PDK_ROOT=/SSD1T/debug/fsic/caravel_user_project/dependencies/pdks -e PDK=sky130A -e MISMATCHES_OK=1 -e CARAVEL_ROOT=/SSD1T/debug/fsic/caravel_user_project/caravel -e OPENLANE_RUN_TAG=23_09_12_17_31 -e MCW_ROOT=/SSD1T/debug/fsic/caravel_user_project/mgmt_core_wrapper -u 1000:1000 \
+	efabless/openlane:2022.11.19 sh -c "flow.tcl -design $(realpath ./FSIC) -save_path $(realpath ..) -save -tag 23_09_12_17_31 -overwrite -ignore_mismatches"
+Live child 0x55d0edcaa8c0 (FSIC) PID 2663782 
 OpenLane cb59d1f84deb5cedbb5b0a3e3f3b4129a967c988
 All rights reserved. (c) 2020-2022 Efabless Corporation and contributors.
 Available under the Apache License, version 2.0. See the LICENSE file for more details.
@@ -1011,53 +1013,42 @@ This may introduce some issues. You may want to re-install the PDK by invoking `
 [36m[INFO]: Process Design Kit: sky130A[39m
 [36m[INFO]: Standard Cell Library: sky130_fd_sc_hd[39m
 [36m[INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd[39m
-[36m[INFO]: Run Directory: /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_03[39m
+[36m[INFO]: Run Directory: /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31[39m
 [36m[INFO]: Preparing LEF files for the nom corner...[39m
 [36m[INFO]: Preparing LEF files for the min corner...[39m
 [36m[INFO]: Preparing LEF files for the max corner...[39m
 [STEP 1]
-[36m[INFO]: Running Synthesis (log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_03/logs/synthesis/1-synthesis.log)...[39m
-[31m[ERROR]: during executing yosys script /openlane/scripts/yosys/synth.tcl[39m
-[31m[ERROR]: Log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_03/logs/synthesis/1-synthesis.log[39m
+[36m[INFO]: Running Synthesis (log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/logs/synthesis/1-synthesis.log)...[39m
+[STEP 2]
+[36m[INFO]: Running Single-Corner Static Timing Analysis (log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/logs/synthesis/2-sta.log)...[39m
+[STEP 3]
+[36m[INFO]: Running Initial Floorplanning (log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/logs/floorplan/3-initial_fp.log)...[39m
+[36m[INFO]: Floorplanned with width 888.72 and height 576.64.[39m
+[STEP 4]
+[36m[INFO]: Running IO Placement (log: ../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/logs/floorplan/4-place_io.log)...[39m
+[31m[ERROR]: during executing: "openroad -exit -no_init -python /openlane/scripts/odbpy/io_place.py --config /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/pin_order.cfg --hor-layer met3 --ver-layer met2 --ver-width-mult 2 --hor-width-mult 2 --hor-extension -1 --ver-extension -1 --length 4 --unmatched-error --input-lef /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/tmp/merged.nom.lef --output-def /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/tmp/floorplan/4-io.def --output /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/tmp/floorplan/4-io.odb /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/tmp/floorplan/3-initial_fp.odb |& tee /dev/null /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/logs/floorplan/4-place_io.log"[39m
+[31m[ERROR]: Exit code: 1[39m
 [31m[ERROR]: Last 10 lines:
-Creating register for signal `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.\fifo[6]' using process `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axis_master.sv:29$1056'.
-  created $dff cell `$procdff$10798' with positive edge clock.
-Creating register for signal `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.\fifo[7]' using process `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axis_master.sv:29$1056'.
-  created $dff cell `$procdff$10801' with positive edge clock.
-Creating register for signal `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$mem2reg_wr$\fifo$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axis_master.sv:48$1053_ADDR' using process `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axis_master.sv:29$1056'.
-  created $adff cell `$procdff$10802' with positive edge clock and negative level reset.
-Creating register for signal `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$mem2reg_wr$\fifo$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axis_master.sv:48$1053_DATA' using process `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$proc$/SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/../../verilog/rtl/axis_master.sv:29$1056'.
-  created $adff cell `$procdff$10803' with positive edge clock and negative level reset.
-Creating register for signal `$paramod\axi_fifo\WIDTH=8'00101010\DEPTH=8'00001000.$mem2reg_wr$\fifo$/SSD1T/debug/fsic/caraERROR: Multiple edge sensitive events found for this signal!
+OpenROAD 7f00621cb612fd94e15b35790afe744c89d433a7 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Top-level design name: FSIC
+Warning: Some pins weren't matched by the config file
+Those are: ['user_clock2', 'vccd1', 'vccd2', 'vssd1', 'vssd2', 'user_irq[0]', 'user_irq[1]', 'user_irq[2]']
+Treating unmatched pins as errors. Exiting..
 child process exited abnormally
 [39m
-[31m[ERROR]: Creating issue reproducible...[39m
-[36m[INFO]: Saving runtime environment...[39m
-OpenLane TCL Issue Packager
-
-EFABLESS CORPORATION AND ALL AUTHORS OF THE OPENLANE PROJECT SHALL NOT BE HELD
-LIABLE FOR ANY LEAKS THAT MAY OCCUR TO ANY PROPRIETARY DATA AS A RESULT OF USING
-THIS SCRIPT. THIS SCRIPT IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND.
-
-BY USING THIS SCRIPT, YOU ACKNOWLEDGE THAT YOU FULLY UNDERSTAND THIS DISCLAIMER
-AND ALL IT ENTAILS.
-
-Parsing config file(s)…
-Setting up /SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_03/issue_reproducible…
-Done.
-[36m[INFO]: Reproducible packaged: Please tarball and upload '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_03/issue_reproducible' if you're going to submit an issue.[39m
-[36m[INFO]: Saving current set of views in '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_03/results/final'...[39m
+[36m[INFO]: Saving current set of views in '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/results/final'...[39m
 [36m[INFO]: Generating final set of reports...[39m
-[36m[INFO]: Created manufacturability report at '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_03/reports/manufacturability.rpt'.[39m
-[36m[INFO]: Created metrics report at '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_03/reports/metrics.csv'.[39m
+[36m[INFO]: Created manufacturability report at '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/reports/manufacturability.rpt'.[39m
+[36m[INFO]: Created metrics report at '../SSD1T/debug/fsic/caravel_user_project/openlane/FSIC/runs/23_09_12_17_31/reports/metrics.csv'.[39m
 [36m[INFO]: Saving runtime environment...[39m
 [31m[ERROR]: Flow failed.[39m
-Reaping losing child 0x55f599d2b8c0 PID 2642724 
+Reaping losing child 0x55d0edcaa8c0 PID 2663782 
 make[1]: *** [Makefile:73: FSIC] Error 255
-Removing child 0x55f599d2b8c0 PID 2642724 from chain.
+Removing child 0x55d0edcaa8c0 PID 2663782 from chain.
 make[1]: Leaving directory '/SSD1T/debug/fsic/caravel_user_project/openlane'
-Reaping losing child 0x55aa56ca1d00 PID 2642707 
+Reaping losing child 0x55bf0811fd00 PID 2663764 
 make: *** [Makefile:107: FSIC] Error 2
-Removing child 0x55aa56ca1d00 PID 2642707 from chain.
+Removing child 0x55bf0811fd00 PID 2663764 from chain.
 + exit 1
