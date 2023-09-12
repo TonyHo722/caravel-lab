@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Author : Tony Ho
 //
@@ -247,7 +248,14 @@ module IO_SERDES #(
 		pre_as_is_tlast_tvalid_tready_buf[1] <= as_is_tvalid;
 		pre_as_is_tlast_tvalid_tready_buf[0] <= as_is_tready;
 
-		if ( !axis_rst_n || ~txen) begin
+		if ( !axis_rst_n ) begin
+			pre_as_is_tdata_buf <= 0;
+			pre_as_is_tstrb_buf <= 0;
+			pre_as_is_tkeep_buf <= 0;
+			pre_as_is_tid_tuser_buf <= 0;
+			pre_as_is_tlast_tvalid_tready_buf <= 0;
+		end 
+        else if ( ~txen) begin
 			pre_as_is_tdata_buf <= 0;
 			pre_as_is_tstrb_buf <= 0;
 			pre_as_is_tkeep_buf <= 0;
@@ -444,8 +452,11 @@ module IO_SERDES #(
 	assign is_as_tready = is_as_tready_out;
 
 	always @(posedge coreclk or negedge axis_rst_n)  begin
-		if ( !axis_rst_n || !txen ) begin
-			is_as_tready_out <= 0;				//set is_as_tready_out=0 when txen == 0
+		if ( !axis_rst_n ) begin
+			is_as_tready_out <= 0;				//set is_as_tready_out=0
+		end
+		else if ( !txen ) begin
+			is_as_tready_out <= 0;				//set is_as_tready_out=0
 		end
 		else begin
 			if (rx_received_data == 0) is_as_tready_out <= 1;		// when txen==1 and still not recevies data from remote side then set is_as_tready_out=1 to avoid dead lock issue.
