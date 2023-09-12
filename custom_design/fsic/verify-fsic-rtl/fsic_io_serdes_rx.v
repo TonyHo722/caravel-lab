@@ -1,4 +1,5 @@
-/////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
 // Author : Tony Ho
 //
 //
@@ -45,7 +46,10 @@ module fsic_io_serdes_rx#(
 	assign w_ptr_graycode_bit0 = w_ptr[1] ^  w_ptr[0];
 
 	always @(negedge rxclk or negedge axis_rst_n)  begin
-		if ( !axis_rst_n || !rxen ) begin
+		if ( !axis_rst_n ) begin
+			w_ptr <= 0;
+		end
+		else if ( !rxen ) begin
 			w_ptr <= 0;
 		end
 		else begin
@@ -61,7 +65,10 @@ module fsic_io_serdes_rx#(
 
 
 	always @(negedge rxclk or negedge axis_rst_n) begin
-		if ( !axis_rst_n || !rxen ) begin
+		if ( !axis_rst_n ) begin
+			RxFifo <= 0;
+		end
+		else if ( !rxen ) begin
 			RxFifo <= 0;
 		end
 		else begin
