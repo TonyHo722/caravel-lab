@@ -5,6 +5,9 @@ set -x # echo on for debug
 # setup your main folder(MF)
 export MF=/SSD1T/debug/fsic
 
+# setup your source CLF folder(SCLF)
+export SCLF=/home/tonyho/workspace/fsic/caravel-lab/
+
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
 
@@ -14,7 +17,7 @@ export MF=/SSD1T/debug/fsic
 # setup your PRECHECK_ROOT 
 export PRECHECK_ROOT=$MF/mpw_precheck
 # setup your log folder(LF)
-export LF=$MF/log-0911
+export LF=$MF/log-0912
 # setup your caravel-lab folder(CLF)
 export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
@@ -30,8 +33,9 @@ then
 fi    
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
-[ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0911debug_fsic https://github.com/TonyHo722/caravel-lab
+#[ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
+#[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0911debug_fsic https://github.com/TonyHo722/caravel-lab
+cp -rf $SCLF $MF
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -40,6 +44,7 @@ fi
 #git log -1 2>&1 | tee $LF/mpw-8c-FAF-git-log.log
 cd $CLF
 git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
+git branch 2>&1 | tee $LF/mpw-8c-CLF-git-branch.log
 cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
 
