@@ -70,6 +70,8 @@ cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic_io_serdes_rx.v $CUPF/verilog/rtl
 cp $CLF/custom_design/fsic/verify-fsic-rtl/mprj_io.sv $CUPF/verilog/rtl/mprj_io.sv
 cp $CLF/custom_design/fsic/verify-fsic-rtl/user_subsys.all.v $CUPF/verilog/rtl/user_subsys.all.v               
 cp $CLF/custom_design/fsic/verify-fsic-rtl/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd 
+cp $CLF/custom_design/fsic/verify-fsic-rtl/uprj_netlists.v $CUPF/verilog/rtl/uprj_netlists.v
+rm -f $CUPF/verilog/rtl/user_proj_example.v
 
 
 mkdir $CUPF/verilog/dv/system_test111
@@ -102,7 +104,8 @@ cp $CLF/custom_design/fsic/caravel_user_project/sim.makefile.fsic $CUPF/mgmt_cor
 mkdir $CUPF/openlane/FSIC/
 cp $CLF/custom_design/fsic/FSIC/config.json $CUPF/openlane/FSIC/config.json
 cp $CLF/custom_design/fsic/FSIC/pin_order.cfg $CUPF/openlane/FSIC/pin_order.cfg
-#make -d FSIC 2>&1 | tee $LF/mpw-8c-FSIC.log
+cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
+make -d FSIC 2>&1 | tee $LF/mpw-8c-FSIC.log
 
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
 exit 1
