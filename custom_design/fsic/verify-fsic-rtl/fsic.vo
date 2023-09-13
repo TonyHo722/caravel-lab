@@ -18,10 +18,12 @@ module FSIC #( parameter BITS=32
   input  wire  [127: 0] la_data_in,
   input  wire  [127: 0] la_oenb,
   input  wire   [37: 0] io_in,
+`ifdef USE_POWER_PINS
   input  wire           vccd1,
   input  wire           vccd2,
   input  wire           vssd1,
   input  wire           vssd2,
+`endif //USE_POWER_PINS  
   output wire           wbs_ack,
   output wire   [31: 0] wbs_rdata,
   output wire  [127: 0] la_data_out,
