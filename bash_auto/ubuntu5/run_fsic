@@ -3,7 +3,7 @@
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/SSD1T/debug/fsic
+export MF=/SSD1T/debug/fsic_0913debug_fsic_onefile
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -14,7 +14,7 @@ export MF=/SSD1T/debug/fsic
 # setup your PRECHECK_ROOT 
 export PRECHECK_ROOT=$MF/mpw_precheck
 # setup your log folder(LF)
-export LF=$MF/log-0913
+export LF=$MF/log-0914
 # setup your caravel-lab folder(CLF)
 export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
@@ -48,7 +48,7 @@ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
 
-#make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
 
 # Run RTL simulation
 cp $CLF/custom_design/fsic/verify-fsic-rtl/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
@@ -97,7 +97,7 @@ cp $CLF/custom_design/fsic/caravel_user_project/includes.rtl.caravel_user_projec
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/fsic/caravel_user_project/sim.makefile.fsic $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
-#make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
+make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 #make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
 
 # Run Openlane to generate RTL netlist
