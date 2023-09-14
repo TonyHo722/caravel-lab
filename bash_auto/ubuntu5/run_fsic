@@ -3,7 +3,7 @@
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/SSD1T/debug/fsic
+export MF=/SSD1T/debug/fsic_gl
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -14,7 +14,7 @@ export MF=/SSD1T/debug/fsic
 # setup your PRECHECK_ROOT 
 export PRECHECK_ROOT=$MF/mpw_precheck
 # setup your log folder(LF)
-export LF=$MF/log-0913
+export LF=$MF/log-0914
 # setup your caravel-lab folder(CLF)
 export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
@@ -31,8 +31,11 @@ fi
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0913debug_fsic_onefile https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0914debug_check_gl https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
+
+rm -f $CUPF/verilog/gl/user_proj_example.v
+ls -l $CUPF/verilog/gl/user_proj_example.v
 
 #cd $FFF
 #git log -1 2>&1 | tee $LF/mpw-8c-FFF-git-log.log
@@ -44,11 +47,13 @@ cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
 
 mkdir dependencies
+ls -l $CUPF/verilog/gl/user_proj_example.v
 export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
 
-#make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+ls -l $CUPF/verilog/gl/user_proj_example.v
 
 # Run RTL simulation
 cp $CLF/custom_design/fsic/verify-fsic-rtl/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
@@ -97,8 +102,10 @@ cp $CLF/custom_design/fsic/caravel_user_project/includes.rtl.caravel_user_projec
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/fsic/caravel_user_project/sim.makefile.fsic $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
-#make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
-#make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
+ls -l $CUPF/verilog/gl/user_proj_example.v
+make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+ls -l $CUPF/verilog/gl/user_proj_example.v
 
 # Run Openlane to generate RTL netlist
 # mkdir $CUPF/openlane/FSIC/
@@ -106,8 +113,10 @@ cp $CLF/custom_design/fsic/openlane/user_proj_example/config.json $CUPF/openlane
 cp $CLF/custom_design/fsic/openlane/user_proj_example/pin_order.cfg $CUPF/openlane/user_proj_example/pin_order.cfg
 cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
 make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
+ls -l $CUPF/verilog/gl/user_proj_example.v
 
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
+ls -l $CUPF/verilog/gl/user_proj_example.v
 exit 1
 
 # Run gate level simulation (it will take 2~3 hours@i9/64GB)
