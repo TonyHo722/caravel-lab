@@ -3,7 +3,7 @@
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/home/tonyho/workspace/debug/la_test1
+export MF=/home/tonyho/workspace/debug_hls/la_test1
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
