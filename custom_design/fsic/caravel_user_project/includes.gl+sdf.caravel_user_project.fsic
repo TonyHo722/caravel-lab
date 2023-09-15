@@ -1,21 +1,21 @@
 // Caravel user project includes		
 $USER_PROJECT_VERILOG/gl/user_project_wrapper.v	     
 $USER_PROJECT_VERILOG/gl/user_proj_example.v
-// $USER_PROJECT_VERILOG/gl/axi_ctrl_logic.sv
-$USER_PROJECT_VERILOG/gl/axil_axis.sv.patch
-// $USER_PROJECT_VERILOG/gl/axilite_master.sv
-// $USER_PROJECT_VERILOG/gl/axilite_slave.sv
-// $USER_PROJECT_VERILOG/gl/axis_master.sv
-// $USER_PROJECT_VERILOG/gl/axis_slave.sv
-$USER_PROJECT_VERILOG/gl/config_ctrl.v
-// $USER_PROJECT_VERILOG/gl/defines.v
-$USER_PROJECT_VERILOG/gl/fsic_clkrst.v
-$USER_PROJECT_VERILOG/gl/fsic_coreclk_phase_cnt.v
-$USER_PROJECT_VERILOG/gl/fsic_io_serdes_rx.v
-$USER_PROJECT_VERILOG/gl/fsic.vo
-$USER_PROJECT_VERILOG/gl/io_serdes.v
-$USER_PROJECT_VERILOG/gl/mprj_io.sv
-$USER_PROJECT_VERILOG/gl/sw_caravel.v.patch
-$USER_PROJECT_VERILOG/gl/user_subsys.all.v
-$USER_PROJECT_VERILOG/gl/logic_anlz.dummy_io.vd
-
+//// $USER_PROJECT_VERILOG/gl/axi_ctrl_logic.sv
+//$USER_PROJECT_VERILOG/gl/axil_axis.sv.patch
+//// $USER_PROJECT_VERILOG/gl/axilite_master.sv
+//// $USER_PROJECT_VERILOG/gl/axilite_slave.sv
+//// $USER_PROJECT_VERILOG/gl/axis_master.sv
+//// $USER_PROJECT_VERILOG/gl/axis_slave.sv
+//$USER_PROJECT_VERILOG/gl/config_ctrl.v
+//// $USER_PROJECT_VERILOG/gl/defines.v
+//$USER_PROJECT_VERILOG/gl/fsic_clkrst.v
+//$USER_PROJECT_VERILOG/gl/fsic_coreclk_phase_cnt.v
+//$USER_PROJECT_VERILOG/gl/fsic_io_serdes_rx.v
+//$USER_PROJECT_VERILOG/gl/fsic.vo
+//$USER_PROJECT_VERILOG/gl/io_serdes.v
+//$USER_PROJECT_VERILOG/gl/mprj_io.sv
+//$USER_PROJECT_VERILOG/gl/sw_caravel.v.patch
+//$USER_PROJECT_VERILOG/gl/user_subsys.all.v
+//$USER_PROJECT_VERILOG/gl/logic_anlz.dummy_io.vd
+//

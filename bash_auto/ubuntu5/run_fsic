@@ -54,25 +54,28 @@ export PDK=sky130A
 cp $CLF/custom_design/fsic/verify-fsic-rtl/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
 
 cp $CLF/custom_design/fsic/verify-fsic-rtl/user_proj_example.v $CUPF/verilog/rtl/user_proj_example.v
-cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic.vo $CUPF/verilog/rtl/fsic.vo
-#cp $CLF/custom_design/fsic/verify-fsic-rtl/axilite_master.sv $CUPF/verilog/rtl/axilite_master.sv
-#cp $CLF/custom_design/fsic/verify-fsic-rtl/axilite_slave.sv $CUPF/verilog/rtl/axilite_slave.sv
-#cp $CLF/custom_design/fsic/verify-fsic-rtl/axis_master.sv $CUPF/verilog/rtl/axis_master.sv
-#cp $CLF/custom_design/fsic/verify-fsic-rtl/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
-#cp $CLF/custom_design/fsic/verify-fsic-rtl/axi_ctrl_logic.sv.patch $CUPF/verilog/rtl/axi_ctrl_logic.sv.patch
-cp $CLF/custom_design/fsic/verify-fsic-rtl/axil_axis.sv.patch $CUPF/verilog/rtl/axil_axis.sv.patch
-#cp $CLF/custom_design/fsic/verify-fsic-rtl/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
-cp $CLF/custom_design/fsic/verify-fsic-rtl/sw_caravel.v.patch $CUPF/verilog/rtl/sw_caravel.v.patch
-cp $CLF/custom_design/fsic/verify-fsic-rtl/config_ctrl.v $CUPF/verilog/rtl/config_ctrl.v
-cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic_clkrst.v $CUPF/verilog/rtl/fsic_clkrst.v
-cp $CLF/custom_design/fsic/verify-fsic-rtl/io_serdes.v $CUPF/verilog/rtl/io_serdes.v
-cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic_coreclk_phase_cnt.v $CUPF/verilog/rtl/fsic_coreclk_phase_cnt.v
-cp $CLF/custom_design/fsic/verify-fsic-rtl/fsic_io_serdes_rx.v $CUPF/verilog/rtl/fsic_io_serdes_rx.v
-cp $CLF/custom_design/fsic/verify-fsic-rtl/mprj_io.sv $CUPF/verilog/rtl/mprj_io.sv
-cp $CLF/custom_design/fsic/verify-fsic-rtl/user_subsys.all.v $CUPF/verilog/rtl/user_subsys.all.v
-cp $CLF/custom_design/fsic/verify-fsic-rtl/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd
-cp $CLF/custom_design/fsic/verify-fsic-rtl/uprj_netlists.v $CUPF/verilog/rtl/uprj_netlists.v
 
+# copy fsic module files
+cat $CLF/custom_design/fsic/verify-fsic-rtl/fsic.vo >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/verify-fsic-rtl/axilite_master.sv >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/verify-fsic-rtl/axilite_slave.sv >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/verify-fsic-rtl/axis_master.sv >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/verify-fsic-rtl/axis_slave.sv >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/verify-fsic-rtl/axi_ctrl_logic.sv.patch >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/axil_axis.sv.patch >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/verify-fsic-rtl/sw_caravel.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/sw_caravel.v.patch >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/config_ctrl.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/fsic_clkrst.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/io_serdes.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/fsic_coreclk_phase_cnt.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/fsic_io_serdes_rx.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/mprj_io.sv >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/user_subsys.all.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/verify-fsic-rtl/logic_anlz.dummy_io.vd >> $CUPF/verilog/rtl/user_proj_example.v
+
+# copy uprj_netlists.v
+cp $CLF/custom_design/fsic/verify-fsic-rtl/uprj_netlists.v $CUPF/verilog/rtl/uprj_netlists.v
 
 mkdir $CUPF/verilog/dv/system_test111
 cp $CLF/custom_design/fsic/verify-fsic-rtl/system_test111/Makefile $CUPF/verilog/dv/system_test111/Makefile
@@ -99,7 +102,7 @@ cp $CLF/custom_design/fsic/caravel_user_project/includes.gl+sdf.caravel_user_pro
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/fsic/caravel_user_project/sim.makefile.fsic $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
-#make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
+make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 #make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
 
 # Run Openlane to generate RTL netlist
