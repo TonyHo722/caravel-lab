@@ -31,7 +31,7 @@ fi
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0913debug_fsic_onefile https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0915debug_fsic_gl https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -93,11 +93,13 @@ cp $CLF/custom_design/fsic/verify-fsic-rtl/system_test111/project_define.svh $CU
 #cp $FAF/verif/vsim/tests/system_test114/top_bench.sv $CUPF/verilog/dv/system_test114/system_test114_tb.sv
 ## copy source file for caravel_user_project
 cp $CLF/custom_design/fsic/caravel_user_project/includes.rtl.caravel_user_project.fsic $CUPF/verilog/includes/includes.rtl.caravel_user_project
+cp $CLF/custom_design/fsic/caravel_user_project/includes.gl.caravel_user_project.fsic $CUPF/verilog/includes/includes.gl.caravel_user_project
+cp $CLF/custom_design/fsic/caravel_user_project/includes.gl+sdf.caravel_user_project.fsic $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
 
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/fsic/caravel_user_project/sim.makefile.fsic $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
-make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
+#make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 #make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
 
 # Run Openlane to generate RTL netlist
