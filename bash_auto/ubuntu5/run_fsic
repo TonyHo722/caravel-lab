@@ -48,7 +48,7 @@ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
 
-make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+[ ! -d $CUPF/caravel ] && echo "$CUPF/caravel not exist, run make setup" && make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
 
 # Run RTL simulation
 cp $CLF/custom_design/fsic/verify-fsic-rtl/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
@@ -108,7 +108,6 @@ cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openl
 make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
 
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
-exit 1
 
 # Run gate level simulation (it will take 2~3 hours@i9/64GB)
 make -d verify-system_test111-gl 2>&1 | tee $LF/mpw-8c-verify-system_test111-gl.log
