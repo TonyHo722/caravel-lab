@@ -1052,7 +1052,7 @@ endmodule // top_bench
 
   `include "fpga.v"
   `include "fsic_clock.v"
-  `include "fsic_coreclk_phase_cnt.v.v"
+  `include "fsic_coreclk_phase_cnt.v"
   `include "fsic_io_serdes_rx.v"
   `include "io_serdes.v"
 `default_nettype wire
