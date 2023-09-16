@@ -31,7 +31,7 @@
 
 `define USE_FOR_LOOP_Serial_Data_Out_tdata 1
 
-module IO_SERDES #(
+（* keep_hierarchy = "yes" *）module IO_SERDES #(
 		parameter pSERIALIO_WIDTH   = 12,
 		parameter pADDR_WIDTH   = 15,
 		parameter pDATA_WIDTH   = 32,
@@ -347,7 +347,7 @@ module IO_SERDES #(
 // For Rx Path
 	wire rxdata_out_valid[pSERIALIO_TDATA_WIDTH+2:0];		//add dummy connection to avoid WARNING message by xelab
 
-	reg	rxen;
+	(* dont_touch = "true" *) reg	rxen;
 
 	always @(negedge ioclk or negedge axis_rst_n)  begin
 		if ( !axis_rst_n ) begin
