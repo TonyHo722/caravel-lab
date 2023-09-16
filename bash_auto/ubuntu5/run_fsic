@@ -31,7 +31,7 @@ fi
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0915debug_fsic_gl https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0916debug_tb https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -120,6 +120,7 @@ cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openl
 
 # Run gate level simulation (it will take 2~3 hours@i9/64GB)
 make -d verify-system_test111-gl 2>&1 | tee $LF/mpw-8c-verify-system_test111-gl.log
+exit 1
 
 
 # Run gate level static timing verifier
