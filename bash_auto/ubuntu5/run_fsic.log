@@ -24,11 +24,11 @@ Cloning into 'caravel-lab'...
 + cd /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel-lab
 + git log -1
 + tee /SSD1T/debug/fsic_0913debug_fsic_onefile/log-0914/mpw-8c-CLF-git-log.log
-commit b599c90929116a2131fe7a18bf08097cd9cca303
+commit 1c0ed46df853c0e527be6527832ffe86fd97d513
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Sat Sep 16 11:51:10 2023 +0800
+Date:   Sat Sep 16 11:53:22 2023 +0800
 
-    remove timescale in fsic_io_serdes_rx.v
+    remove timescale in io_serdes.v
 + cd /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project
 + git log -1
 + tee /SSD1T/debug/fsic_0913debug_fsic_onefile/log-0914/mpw-8c-CUPF-git-log.log
@@ -109,20 +109,20 @@ Considering target file 'verify-system_test111-gl'.
    Finished prerequisites of target file 'simenv'.
   Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x561002e7b130 (simenv) PID 673035 on the chain.
-Live child 0x561002e7b130 (simenv) PID 673035 
+Putting child 0x5624b822a130 (simenv) PID 674724 on the chain.
+Live child 0x5624b822a130 (simenv) PID 674724 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x561002e7b130 PID 673035 
-Removing child 0x561002e7b130 PID 673035 from chain.
+Reaping winning child 0x5624b822a130 PID 674724 
+Removing child 0x5624b822a130 PID 674724 from chain.
   Successfully remade target file 'simenv'.
  Finished prerequisites of target file 'verify-system_test111-gl'.
 Must remake target 'verify-system_test111-gl'.
 docker run -v /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project:/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project -v /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/dependencies/pdks:/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/dependencies/pdks -v /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel:/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel -e TARGET_PATH=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project -e PDK_ROOT=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project -e USER_PROJECT_VERILOG=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel/verilog -e MCW_ROOT=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/verilog/dv/system_test111 && export SIM=GL && make -d"
-Putting child 0x561002e7f650 (verify-system_test111-gl) PID 673086 on the chain.
-Live child 0x561002e7f650 (verify-system_test111-gl) PID 673086 
+Putting child 0x5624b822e650 (verify-system_test111-gl) PID 674780 on the chain.
+Live child 0x5624b822e650 (verify-system_test111-gl) PID 674780 
 GNU Make 3.82
 Built for x86_64-redhat-linux-gnu
 Copyright (C) 2010  Free Software Foundation, Inc.
@@ -360,26 +360,26 @@ Invoking recipe from /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_proje
   -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
 -Wl,-Bstatic,-T,/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,--strip-debug \
 -ffreestanding -nostdlib -o system_test111.elf /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c system_test111.c
-Putting child 0x1a463b0 (system_test111.elf) PID 22 on the chain.
-Live child 0x1a463b0 (system_test111.elf) PID 22 
-Reaping winning child 0x1a463b0 PID 22 
-Removing child 0x1a463b0 PID 22 from chain.
+Putting child 0x10e43b0 (system_test111.elf) PID 22 on the chain.
+Live child 0x10e43b0 (system_test111.elf) PID 22 
+Reaping winning child 0x10e43b0 PID 22 
+Removing child 0x10e43b0 PID 22 from chain.
         Successfully remade target file `system_test111.elf'.
        Finished prerequisites of target file `system_test111.hex'.
        Prerequisite `system_test111.elf' is newer than target `system_test111.hex'.
       Must remake target `system_test111.hex'.
 Invoking recipe from /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:50 to update target `system_test111.hex'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog system_test111.elf system_test111.hex 
-Putting child 0x1a47510 (system_test111.hex) PID 31 on the chain.
-Live child 0x1a47510 (system_test111.hex) PID 31 
-Reaping winning child 0x1a47510 PID 31 
+Putting child 0x10e5510 (system_test111.hex) PID 31 on the chain.
+Live child 0x10e5510 (system_test111.hex) PID 31 
+Reaping winning child 0x10e5510 PID 31 
 # to fix flash base address
-Live child 0x1a47510 (system_test111.hex) PID 32 
-Reaping winning child 0x1a47510 PID 32 
+Live child 0x10e5510 (system_test111.hex) PID 32 
+Reaping winning child 0x10e5510 PID 32 
 sed -ie 's/@10/@00/g' system_test111.hex
-Live child 0x1a47510 (system_test111.hex) PID 33 
-Reaping winning child 0x1a47510 PID 33 
-Removing child 0x1a47510 PID 33 from chain.
+Live child 0x10e5510 (system_test111.hex) PID 33 
+Reaping winning child 0x10e5510 PID 33 
+Removing child 0x10e5510 PID 33 from chain.
       Successfully remade target file `system_test111.hex'.
      Finished prerequisites of target file `system_test111.vvp'.
      Prerequisite `system_test111_tb.v' is newer than target `system_test111.vvp'.
@@ -390,18 +390,18 @@ iverilog -Ttyp -DFUNCTIONAL -DGL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
         -g2012 \
         -f/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.gl.caravel \
         -f/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/verilog/includes/includes.gl.caravel_user_project -o system_test111.vvp system_test111_tb.v
-Putting child 0x1a48760 (system_test111.vvp) PID 34 on the chain.
-Live child 0x1a48760 (system_test111.vvp) PID 34 
+Putting child 0x10e6760 (system_test111.vvp) PID 34 on the chain.
+Live child 0x10e6760 (system_test111.vvp) PID 34 
 system_test111_tb.v:1056: Include file fsic_coreclk_phase_cnt.v.v not found
 ./fpga.v:101: error: Unknown module type: IO_SERDES
 2 error(s) during elaboration.
 *** These modules were missing:
         IO_SERDES referenced 1 times.
 ***
-Reaping losing child 0x1a48760 PID 34 
-Removing child 0x1a48760 PID 34 from chain.
 make: *** [system_test111.vvp] Error 2
-Reaping losing child 0x561002e7f650 PID 673086 
+Reaping losing child 0x10e6760 PID 34 
+Removing child 0x10e6760 PID 34 from chain.
+Reaping losing child 0x5624b822e650 PID 674780 
 make: *** [Makefile:153: verify-system_test111-gl] Error 2
-Removing child 0x561002e7f650 PID 673086 from chain.
+Removing child 0x5624b822e650 PID 674780 from chain.
 + exit 1
