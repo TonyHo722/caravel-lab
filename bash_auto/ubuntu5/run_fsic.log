@@ -24,12 +24,11 @@ Cloning into 'caravel-lab'...
 + cd /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel-lab
 + git log -1
 + tee /SSD1T/debug/fsic_0913debug_fsic_onefile/log-0914/mpw-8c-CLF-git-log.log
-commit cc470e6cb1cde451e6f84f685cf3cc502a0a1763
+commit e496ffb804f432e1f3883ded32b824323c275a0f
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Sat Sep 16 11:21:26 2023 +0800
+Date:   Sat Sep 16 11:46:44 2023 +0800
 
-    use include to check testbench issue
-    update run_fsic to use 0916debug_tb branch
+    use all include file in testbench
 + cd /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project
 + git log -1
 + tee /SSD1T/debug/fsic_0913debug_fsic_onefile/log-0914/mpw-8c-CUPF-git-log.log
@@ -110,20 +109,20 @@ Considering target file 'verify-system_test111-gl'.
    Finished prerequisites of target file 'simenv'.
   Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x55c6a835c130 (simenv) PID 666108 on the chain.
-Live child 0x55c6a835c130 (simenv) PID 666108 
+Putting child 0x556c3798e130 (simenv) PID 670109 on the chain.
+Live child 0x556c3798e130 (simenv) PID 670109 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x55c6a835c130 PID 666108 
-Removing child 0x55c6a835c130 PID 666108 from chain.
+Reaping winning child 0x556c3798e130 PID 670109 
+Removing child 0x556c3798e130 PID 670109 from chain.
   Successfully remade target file 'simenv'.
  Finished prerequisites of target file 'verify-system_test111-gl'.
 Must remake target 'verify-system_test111-gl'.
 docker run -v /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project:/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project -v /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/dependencies/pdks:/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/dependencies/pdks -v /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel:/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel -e TARGET_PATH=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project -e PDK_ROOT=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project -e USER_PROJECT_VERILOG=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel/verilog -e MCW_ROOT=/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/verilog/dv/system_test111 && export SIM=GL && make -d"
-Putting child 0x55c6a8360650 (verify-system_test111-gl) PID 666159 on the chain.
-Live child 0x55c6a8360650 (verify-system_test111-gl) PID 666159 
+Putting child 0x556c37992650 (verify-system_test111-gl) PID 670160 on the chain.
+Live child 0x556c37992650 (verify-system_test111-gl) PID 670160 
 GNU Make 3.82
 Built for x86_64-redhat-linux-gnu
 Copyright (C) 2010  Free Software Foundation, Inc.
@@ -216,167 +215,142 @@ Updating goal targets....
 Considering target file `all'.
  File `all' does not exist.
   Considering target file `system_test111.vcd'.
-   File `system_test111.vcd' does not exist.
    Looking for an implicit rule for `system_test111.vcd'.
    Trying pattern rule with stem `system_test111'.
    Trying implicit prerequisite `system_test111.vvp'.
-   Trying pattern rule with stem `system_test111.vcd'.
-   Trying implicit prerequisite `system_test111.vcd,v'.
-   Trying pattern rule with stem `system_test111.vcd'.
-   Trying implicit prerequisite `RCS/system_test111.vcd,v'.
-   Trying pattern rule with stem `system_test111.vcd'.
-   Trying implicit prerequisite `RCS/system_test111.vcd'.
-   Trying pattern rule with stem `system_test111.vcd'.
-   Trying implicit prerequisite `s.system_test111.vcd'.
-   Trying pattern rule with stem `system_test111.vcd'.
-   Trying implicit prerequisite `SCCS/s.system_test111.vcd'.
-   Trying pattern rule with stem `system_test111'.
-   Trying implicit prerequisite `system_test111.vvp'.
-   Looking for a rule with intermediate file `system_test111.vvp'.
-    Avoiding implicit rule recursion.
-    Trying pattern rule with stem `system_test111'.
-    Trying implicit prerequisite `system_test111_tb.v'.
-    Trying implicit prerequisite `system_test111.hex'.
    Found an implicit rule for `system_test111.vcd'.
-     Considering target file `system_test111_tb.v'.
-      Looking for an implicit rule for `system_test111_tb.v'.
-      Trying pattern rule with stem `system_test111_tb.v'.
-      Trying implicit prerequisite `system_test111_tb.v,v'.
-      Trying pattern rule with stem `system_test111_tb.v'.
-      Trying implicit prerequisite `RCS/system_test111_tb.v,v'.
-      Trying pattern rule with stem `system_test111_tb.v'.
-      Trying implicit prerequisite `RCS/system_test111_tb.v'.
-      Trying pattern rule with stem `system_test111_tb.v'.
-      Trying implicit prerequisite `s.system_test111_tb.v'.
-      Trying pattern rule with stem `system_test111_tb.v'.
-      Trying implicit prerequisite `SCCS/s.system_test111_tb.v'.
-      No implicit rule found for `system_test111_tb.v'.
-      Finished prerequisites of target file `system_test111_tb.v'.
-     No need to remake target `system_test111_tb.v'.
-     Considering target file `system_test111.hex'.
-      Looking for an implicit rule for `system_test111.hex'.
-      Trying pattern rule with stem `system_test111'.
-      Trying implicit prerequisite `system_test111.elf'.
-      Trying pattern rule with stem `system_test111.hex'.
-      Trying implicit prerequisite `system_test111.hex,v'.
-      Trying pattern rule with stem `system_test111.hex'.
-      Trying implicit prerequisite `RCS/system_test111.hex,v'.
-      Trying pattern rule with stem `system_test111.hex'.
-      Trying implicit prerequisite `RCS/system_test111.hex'.
-      Trying pattern rule with stem `system_test111.hex'.
-      Trying implicit prerequisite `s.system_test111.hex'.
-      Trying pattern rule with stem `system_test111.hex'.
-      Trying implicit prerequisite `SCCS/s.system_test111.hex'.
-      Trying pattern rule with stem `system_test111'.
-      Trying implicit prerequisite `system_test111.elf'.
-      Looking for a rule with intermediate file `system_test111.elf'.
-       Avoiding implicit rule recursion.
+    Considering target file `system_test111.vvp'.
+     Looking for an implicit rule for `system_test111.vvp'.
+     Trying pattern rule with stem `system_test111'.
+     Trying implicit prerequisite `system_test111_tb.v'.
+     Trying implicit prerequisite `system_test111.hex'.
+     Found an implicit rule for `system_test111.vvp'.
+      Considering target file `system_test111_tb.v'.
+       Looking for an implicit rule for `system_test111_tb.v'.
+       Trying pattern rule with stem `system_test111_tb.v'.
+       Trying implicit prerequisite `system_test111_tb.v,v'.
+       Trying pattern rule with stem `system_test111_tb.v'.
+       Trying implicit prerequisite `RCS/system_test111_tb.v,v'.
+       Trying pattern rule with stem `system_test111_tb.v'.
+       Trying implicit prerequisite `RCS/system_test111_tb.v'.
+       Trying pattern rule with stem `system_test111_tb.v'.
+       Trying implicit prerequisite `s.system_test111_tb.v'.
+       Trying pattern rule with stem `system_test111_tb.v'.
+       Trying implicit prerequisite `SCCS/s.system_test111_tb.v'.
+       No implicit rule found for `system_test111_tb.v'.
+       Finished prerequisites of target file `system_test111_tb.v'.
+      No need to remake target `system_test111_tb.v'.
+      Considering target file `system_test111.hex'.
+       Looking for an implicit rule for `system_test111.hex'.
        Trying pattern rule with stem `system_test111'.
-       Trying implicit prerequisite `system_test111.c'.
-       Trying rule prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
-       Trying rule prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
-       Trying rule prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
-      Found an implicit rule for `system_test111.hex'.
-        Considering target file `system_test111.c'.
-         Looking for an implicit rule for `system_test111.c'.
+       Trying implicit prerequisite `system_test111.elf'.
+       Found an implicit rule for `system_test111.hex'.
+        Considering target file `system_test111.elf'.
+         Looking for an implicit rule for `system_test111.elf'.
          Trying pattern rule with stem `system_test111'.
-         Trying implicit prerequisite `system_test111.w'.
-         Trying pattern rule with stem `system_test111.c'.
-         Trying implicit prerequisite `system_test111.c,v'.
-         Trying pattern rule with stem `system_test111.c'.
-         Trying implicit prerequisite `RCS/system_test111.c,v'.
-         Trying pattern rule with stem `system_test111.c'.
-         Trying implicit prerequisite `RCS/system_test111.c'.
-         Trying pattern rule with stem `system_test111.c'.
-         Trying implicit prerequisite `s.system_test111.c'.
-         Trying pattern rule with stem `system_test111.c'.
-         Trying implicit prerequisite `SCCS/s.system_test111.c'.
-         Trying pattern rule with stem `system_test111'.
-         Trying implicit prerequisite `system_test111.w'.
-         Looking for a rule with intermediate file `system_test111.w'.
-          Avoiding implicit rule recursion.
-          Trying pattern rule with stem `system_test111.w'.
-          Trying implicit prerequisite `system_test111.w,v'.
-          Trying pattern rule with stem `system_test111.w'.
-          Trying implicit prerequisite `RCS/system_test111.w,v'.
-          Trying pattern rule with stem `system_test111.w'.
-          Trying implicit prerequisite `RCS/system_test111.w'.
-          Trying pattern rule with stem `system_test111.w'.
-          Trying implicit prerequisite `s.system_test111.w'.
-          Trying pattern rule with stem `system_test111.w'.
-          Trying implicit prerequisite `SCCS/s.system_test111.w'.
-         No implicit rule found for `system_test111.c'.
-         Finished prerequisites of target file `system_test111.c'.
-        No need to remake target `system_test111.c'.
-        Considering target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
-         Looking for an implicit rule for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
-         Trying pattern rule with stem `sections.lds'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,v'.
-         Trying pattern rule with stem `sections.lds'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/sections.lds,v'.
-         Trying pattern rule with stem `sections.lds'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/sections.lds'.
-         Trying pattern rule with stem `sections.lds'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.sections.lds'.
-         Trying pattern rule with stem `sections.lds'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.sections.lds'.
-         No implicit rule found for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
-         Finished prerequisites of target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
-        No need to remake target `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
-        Considering target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
-         Looking for an implicit rule for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
-         Trying pattern rule with stem `crt0_vex.S'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S,v'.
-         Trying pattern rule with stem `crt0_vex.S'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/crt0_vex.S,v'.
-         Trying pattern rule with stem `crt0_vex.S'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/crt0_vex.S'.
-         Trying pattern rule with stem `crt0_vex.S'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.crt0_vex.S'.
-         Trying pattern rule with stem `crt0_vex.S'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.crt0_vex.S'.
-         No implicit rule found for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
-         Finished prerequisites of target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
-        No need to remake target `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
-        Considering target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
-         Looking for an implicit rule for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
-         Trying pattern rule with stem `isr'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
-         Trying pattern rule with stem `isr.c'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c,v'.
-         Trying pattern rule with stem `isr.c'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.c,v'.
-         Trying pattern rule with stem `isr.c'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.c'.
-         Trying pattern rule with stem `isr.c'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.isr.c'.
-         Trying pattern rule with stem `isr.c'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.isr.c'.
-         Trying pattern rule with stem `isr'.
-         Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
-         Looking for a rule with intermediate file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
-          Avoiding implicit rule recursion.
-          Trying pattern rule with stem `isr.w'.
-          Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w,v'.
-          Trying pattern rule with stem `isr.w'.
-          Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.w,v'.
-          Trying pattern rule with stem `isr.w'.
-          Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.w'.
-          Trying pattern rule with stem `isr.w'.
-          Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.isr.w'.
-          Trying pattern rule with stem `isr.w'.
-          Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.isr.w'.
-         No implicit rule found for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
-         Finished prerequisites of target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
-        No need to remake target `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
-      Considering target file `system_test111.elf'.
-       File `system_test111.elf' does not exist.
-        Pruning file `system_test111.c'.
-        Pruning file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
-        Pruning file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
-        Pruning file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
-       Finished prerequisites of target file `system_test111.elf'.
-      Must remake target `system_test111.elf'.
+         Trying implicit prerequisite `system_test111.c'.
+         Trying rule prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+         Trying rule prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+         Trying rule prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+         Found an implicit rule for `system_test111.elf'.
+          Considering target file `system_test111.c'.
+           Looking for an implicit rule for `system_test111.c'.
+           Trying pattern rule with stem `system_test111'.
+           Trying implicit prerequisite `system_test111.w'.
+           Trying pattern rule with stem `system_test111.c'.
+           Trying implicit prerequisite `system_test111.c,v'.
+           Trying pattern rule with stem `system_test111.c'.
+           Trying implicit prerequisite `RCS/system_test111.c,v'.
+           Trying pattern rule with stem `system_test111.c'.
+           Trying implicit prerequisite `RCS/system_test111.c'.
+           Trying pattern rule with stem `system_test111.c'.
+           Trying implicit prerequisite `s.system_test111.c'.
+           Trying pattern rule with stem `system_test111.c'.
+           Trying implicit prerequisite `SCCS/s.system_test111.c'.
+           Trying pattern rule with stem `system_test111'.
+           Trying implicit prerequisite `system_test111.w'.
+           Looking for a rule with intermediate file `system_test111.w'.
+            Avoiding implicit rule recursion.
+            Trying pattern rule with stem `system_test111.w'.
+            Trying implicit prerequisite `system_test111.w,v'.
+            Trying pattern rule with stem `system_test111.w'.
+            Trying implicit prerequisite `RCS/system_test111.w,v'.
+            Trying pattern rule with stem `system_test111.w'.
+            Trying implicit prerequisite `RCS/system_test111.w'.
+            Trying pattern rule with stem `system_test111.w'.
+            Trying implicit prerequisite `s.system_test111.w'.
+            Trying pattern rule with stem `system_test111.w'.
+            Trying implicit prerequisite `SCCS/s.system_test111.w'.
+           No implicit rule found for `system_test111.c'.
+           Finished prerequisites of target file `system_test111.c'.
+          No need to remake target `system_test111.c'.
+          Considering target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+           Looking for an implicit rule for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+           Trying pattern rule with stem `sections.lds'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,v'.
+           Trying pattern rule with stem `sections.lds'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/sections.lds,v'.
+           Trying pattern rule with stem `sections.lds'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/sections.lds'.
+           Trying pattern rule with stem `sections.lds'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.sections.lds'.
+           Trying pattern rule with stem `sections.lds'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.sections.lds'.
+           No implicit rule found for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+           Finished prerequisites of target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+          No need to remake target `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+          Considering target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+           Looking for an implicit rule for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+           Trying pattern rule with stem `crt0_vex.S'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S,v'.
+           Trying pattern rule with stem `crt0_vex.S'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/crt0_vex.S,v'.
+           Trying pattern rule with stem `crt0_vex.S'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/crt0_vex.S'.
+           Trying pattern rule with stem `crt0_vex.S'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.crt0_vex.S'.
+           Trying pattern rule with stem `crt0_vex.S'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.crt0_vex.S'.
+           No implicit rule found for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+           Finished prerequisites of target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+          No need to remake target `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+          Considering target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+           Looking for an implicit rule for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+           Trying pattern rule with stem `isr'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
+           Trying pattern rule with stem `isr.c'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c,v'.
+           Trying pattern rule with stem `isr.c'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.c,v'.
+           Trying pattern rule with stem `isr.c'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.c'.
+           Trying pattern rule with stem `isr.c'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.isr.c'.
+           Trying pattern rule with stem `isr.c'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.isr.c'.
+           Trying pattern rule with stem `isr'.
+           Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
+           Looking for a rule with intermediate file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
+            Avoiding implicit rule recursion.
+            Trying pattern rule with stem `isr.w'.
+            Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w,v'.
+            Trying pattern rule with stem `isr.w'.
+            Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.w,v'.
+            Trying pattern rule with stem `isr.w'.
+            Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.w'.
+            Trying pattern rule with stem `isr.w'.
+            Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.isr.w'.
+            Trying pattern rule with stem `isr.w'.
+            Trying implicit prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.isr.w'.
+           No implicit rule found for `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+           Finished prerequisites of target file `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+          No need to remake target `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+         Finished prerequisites of target file `system_test111.elf'.
+         Prerequisite `system_test111.c' is newer than target `system_test111.elf'.
+         Prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds' is older than target `system_test111.elf'.
+         Prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S' is older than target `system_test111.elf'.
+         Prerequisite `/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c' is older than target `system_test111.elf'.
+        Must remake target `system_test111.elf'.
 Invoking recipe from /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:37 to update target `system_test111.elf'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-gcc -g \
 -I/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware \
@@ -386,47 +360,48 @@ Invoking recipe from /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_proje
   -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
 -Wl,-Bstatic,-T,/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,--strip-debug \
 -ffreestanding -nostdlib -o system_test111.elf /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c system_test111.c
-Putting child 0x22c03c0 (system_test111.elf) PID 22 on the chain.
-Live child 0x22c03c0 (system_test111.elf) PID 22 
-Reaping winning child 0x22c03c0 PID 22 
-Removing child 0x22c03c0 PID 22 from chain.
-      Successfully remade target file `system_test111.elf'.
-      Finished prerequisites of target file `system_test111.hex'.
-      Prerequisite `system_test111.elf' is newer than target `system_test111.hex'.
-     Must remake target `system_test111.hex'.
+Putting child 0x1b773b0 (system_test111.elf) PID 22 on the chain.
+Live child 0x1b773b0 (system_test111.elf) PID 22 
+Reaping winning child 0x1b773b0 PID 22 
+Removing child 0x1b773b0 PID 22 from chain.
+        Successfully remade target file `system_test111.elf'.
+       Finished prerequisites of target file `system_test111.hex'.
+       Prerequisite `system_test111.elf' is newer than target `system_test111.hex'.
+      Must remake target `system_test111.hex'.
 Invoking recipe from /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:50 to update target `system_test111.hex'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog system_test111.elf system_test111.hex 
-Putting child 0x22c17c0 (system_test111.hex) PID 31 on the chain.
-Live child 0x22c17c0 (system_test111.hex) PID 31 
-Reaping winning child 0x22c17c0 PID 31 
+Putting child 0x1b78510 (system_test111.hex) PID 31 on the chain.
+Live child 0x1b78510 (system_test111.hex) PID 31 
+Reaping winning child 0x1b78510 PID 31 
 # to fix flash base address
-Live child 0x22c17c0 (system_test111.hex) PID 32 
-Reaping winning child 0x22c17c0 PID 32 
+Live child 0x1b78510 (system_test111.hex) PID 32 
+Reaping winning child 0x1b78510 PID 32 
 sed -ie 's/@10/@00/g' system_test111.hex
-Live child 0x22c17c0 (system_test111.hex) PID 33 
-Reaping winning child 0x22c17c0 PID 33 
-Removing child 0x22c17c0 PID 33 from chain.
-     Successfully remade target file `system_test111.hex'.
-   Considering target file `system_test111.vvp'.
-    File `system_test111.vvp' does not exist.
-     Pruning file `system_test111_tb.v'.
-     Pruning file `system_test111.hex'.
-    Finished prerequisites of target file `system_test111.vvp'.
-   Must remake target `system_test111.vvp'.
+Live child 0x1b78510 (system_test111.hex) PID 33 
+Reaping winning child 0x1b78510 PID 33 
+Removing child 0x1b78510 PID 33 from chain.
+      Successfully remade target file `system_test111.hex'.
+     Finished prerequisites of target file `system_test111.vvp'.
+     Prerequisite `system_test111_tb.v' is newer than target `system_test111.vvp'.
+     Prerequisite `system_test111.hex' is newer than target `system_test111.vvp'.
+    Must remake target `system_test111.vvp'.
 Invoking recipe from /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:82 to update target `system_test111.vvp'.
 iverilog -Ttyp -DFUNCTIONAL -DGL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
         -g2012 \
         -f/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.gl.caravel \
         -f/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/verilog/includes/includes.gl.caravel_user_project -o system_test111.vvp system_test111_tb.v
-Putting child 0x22c2a10 (system_test111.vvp) PID 34 on the chain.
-Live child 0x22c2a10 (system_test111.vvp) PID 34 
-/SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/caravel/verilog/gl/caravel.v:4988: warning: input port clock is coerced to inout.
-Reaping winning child 0x22c2a10 PID 34 
-Removing child 0x22c2a10 PID 34 from chain.
-   Successfully remade target file `system_test111.vvp'.
-   Finished prerequisites of target file `system_test111.vcd'.
-  Must remake target `system_test111.vcd'.
-Invoking recipe from /SSD1T/debug/fsic_0913debug_fsic_onefile/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:117 to update target `system_test111.vcd'.
-vvp  system_test111.vvp
-Putting child 0x22c1730 (system_test111.vcd) PID 38 on the chain.
-Live child 0x22c1730 (system_test111.vcd) PID 38 
+Putting child 0x1b79760 (system_test111.vvp) PID 34 on the chain.
+Live child 0x1b79760 (system_test111.vvp) PID 34 
+system_test111_tb.v:1056: Include file fsic_coreclk_phase_cnt.v.v not found
+./fpga.v:101: error: Unknown module type: IO_SERDES
+2 error(s) during elaboration.
+*** These modules were missing:
+        IO_SERDES referenced 1 times.
+***
+make: *** [system_test111.vvp] Error 2
+Reaping losing child 0x1b79760 PID 34 
+Removing child 0x1b79760 PID 34 from chain.
+Reaping losing child 0x556c37992650 PID 670160 
+make: *** [Makefile:153: verify-system_test111-gl] Error 2
+Removing child 0x556c37992650 PID 670160 from chain.
++ exit 1
