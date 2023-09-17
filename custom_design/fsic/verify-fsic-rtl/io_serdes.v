@@ -31,7 +31,7 @@
 
 `define USE_FOR_LOOP_Serial_Data_Out_tdata 1
 
-（* keep_hierarchy = "yes" *）module IO_SERDES #(
+module IO_SERDES #(
 		parameter pSERIALIO_WIDTH   = 12,
 		parameter pADDR_WIDTH   = 15,
 		parameter pDATA_WIDTH   = 32,
