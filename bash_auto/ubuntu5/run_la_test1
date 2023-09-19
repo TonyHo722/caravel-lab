@@ -3,7 +3,7 @@
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/home/tonyho/workspace/debug/la_test1
+export MF=/home/tonyho/workspace/debug/la_test1_0919
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -14,13 +14,11 @@ export MF=/home/tonyho/workspace/debug/la_test1
 # setup your PRECHECK_ROOT 
 export PRECHECK_ROOT=$MF/mpw_precheck
 # setup your log folder(LF)
-export LF=$MF/log
+export LF=$MF/log-0919
 # setup your caravel-lab folder(CLF)
 export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
 export CUPF=$MF/caravel_user_project
-# setup MPW_TAG
-#export MPW_TAG=mpw-8c
 
 cd $MF
 if [ ! -d "$MF" ] ;
@@ -31,7 +29,7 @@ fi
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0917debug_onefile https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -48,26 +46,34 @@ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
 
-make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+[ ! -d $CUPF/caravel ] && echo "$CUPF/caravel not exist, run make setup" && make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
 
-# Run RTL simulation
-cp $CUPF/verilog/rtl/user_project_wrapper.v.la_test1 $CUPF/verilog/rtl/user_project_wrapper.v
+# copy file for user_project_wrapper.v
+cp $CLF/custom_design/gcd/user_proj_example/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
+# copy file for user_proj_example.v
 cp $CLF/custom_design/gcd/user_proj_example/user_proj_example.v $CUPF/verilog/rtl/user_proj_example.v
+
+# copy files for testbench
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1.c $CUPF/verilog/dv/la_test1/la_test1.c
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v $CUPF/verilog/dv/la_test1/la_test1_tb.v
-make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 
 ## copy source file for caravel_user_project
 cp $CLF/custom_design/gcd/caravel_user_project/includes.rtl.caravel_user_project.la_test1 $CUPF/verilog/includes/includes.rtl.caravel_user_project
 cp $CLF/custom_design/gcd/caravel_user_project/user_project_wrapper.v.la_test1 $CUPF/verilog/rtl/user_project_wrapper.v
 
 ## copy sim.makefile for debugging
-cp $CLF/custom_design/gcd/caravel_user_project/sim.makefile.la_test1 $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
+cp $CLF/custom_design/gcd/verify-la_test1-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 
+make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
+
+# Run RTL simulation
 make -d verify-la_test1-rtl 2>&1 | tee $LF/mpw-8c-verify-la_test1-rtl.log
 
 # Run Openlane to generate RTL netlist
-cp $CLF/custom_design/gcd/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
+cp $CLF/custom_design/gcd/openlane/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
+cp $CLF/custom_design/gcd/openlane/user_proj_example/pin_order.cfg $CUPF/openlane/user_proj_example/pin_order.cfg
+cp $CLF/custom_design/gcd/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
+
 make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
 
