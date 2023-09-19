@@ -90,12 +90,12 @@ cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/veri
 cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/dv/system_test111/fsic_io_serdes_rx.v
 cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/dv/system_test111/io_serdes.v
 
+## copy includes file
+cp $CLF/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
+cp $CLF/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project $CUPF/verilog/includes/includes.gl.caravel_user_project
+cp $CLF/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
 
 # how to define USER_PROJ_IRQ0_EN?
-## copy source file for caravel_user_project
-#cp $CLF/custom_design/fsic/caravel_user_project/includes.rtl.caravel_user_project.fsic $CUPF/verilog/includes/includes.rtl.caravel_user_project
-#cp $CLF/custom_design/fsic/caravel_user_project/includes.gl.caravel_user_project.fsic $CUPF/verilog/includes/includes.gl.caravel_user_project
-#cp $CLF/custom_design/fsic/caravel_user_project/includes.gl+sdf.caravel_user_project.fsic $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
 
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
