@@ -75,15 +75,15 @@ cat $CLF/custom_design/fsic/user_proj_example/user_proj_example.v.tail >> $CUPF/
 
 # copy files for testbench
 mkdir $CUPF/verilog/dv/system_test111
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/Makefile $CUPF/verilog/dv/system_test111/Makefile
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/system_test111.c $CUPF/verilog/dv/system_test111/system_test111.c
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/system_test111_tb.v.patch $CUPF/verilog/dv/system_test111/system_test111_tb.v
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/bench_ini.svh $CUPF/verilog/dv/system_test111/bench_ini.svh
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/bench_vec.svh $CUPF/verilog/dv/system_test111/bench_vec.svh
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/project_define.svh $CUPF/verilog/dv/system_test111/project_define.svh
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/cpu_trace.v $CUPF/verilog/dv/system_test111/cpu_trace.v
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/dasm.v $CUPF/verilog/dv/system_test111/dasm.v
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/fpga.v $CUPF/verilog/dv/system_test111/fpga.v
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/Makefile $CUPF/verilog/dv/system_test111/Makefile
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111.c $CUPF/verilog/dv/system_test111/system_test111.c
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111_tb.v.patch $CUPF/verilog/dv/system_test111/system_test111_tb.v
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/bench_ini.svh $CUPF/verilog/dv/system_test111/bench_ini.svh
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/bench_vec.svh $CUPF/verilog/dv/system_test111/bench_vec.svh
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/project_define.svh $CUPF/verilog/dv/system_test111/project_define.svh
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/cpu_trace.v $CUPF/verilog/dv/system_test111/cpu_trace.v
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/dasm.v $CUPF/verilog/dv/system_test111/dasm.v
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/fpga.v $CUPF/verilog/dv/system_test111/fpga.v
 # copy some fsic module files for fpga in testbench
 cp $CLF/custom_design/fsic/user_proj_example/fsic_clock.v $CUPF/verilog/dv/system_test111/fsic_clock.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
