@@ -58,9 +58,9 @@ cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1.c $CUPF/verilog/dv/la_tes
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v $CUPF/verilog/dv/la_test1/la_test1_tb.v
 
 ## copy includes file
-cp $CLF/custom_design/gcd/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
-cp $CLF/custom_design/gcd/includes.gl.caravel_user_project $CUPF/verilog/includes/includes.gl.caravel_user_project
-cp $CLF/custom_design/gcd/includes.gl+sdf.caravel_user_project $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
+cp $CLF/custom_design/gcd/includes/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
+cp $CLF/custom_design/gcd/includes/includes.gl.caravel_user_project $CUPF/verilog/includes/includes.gl.caravel_user_project
+cp $CLF/custom_design/gcd/includes/includes.gl+sdf.caravel_user_project $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
 
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
