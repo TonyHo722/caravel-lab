@@ -1,6 +1,15 @@
 #!/bin/bash
 
+on_error(){
+  echo "error occurred"
+  exit 1
+}
+
+# enable trap for detect error
+trap 'on_error' ERR
+
 set -x # echo on for debug 
+
 
 # setup your main folder(MF)
 export MF=/SSD1T/debug/fsic_0917debug_onefile_2
@@ -29,7 +38,7 @@ fi
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0920_on_error https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -41,7 +50,7 @@ git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
 cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
 
-mkdir dependencies
+[ ! -d $CUPF/dependencies] && echo "$CLF/dependencies not exist, create it" && mkdir $CLF/dependencies
 export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
@@ -74,7 +83,7 @@ cat $CLF/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd >> $CUPF/ve
 cat $CLF/custom_design/fsic/user_proj_example/user_proj_example.v.tail >> $CUPF/verilog/rtl/user_proj_example.v
 
 # copy files for testbench
-mkdir $CUPF/verilog/dv/system_test111
+[ ! -d $CUPF/verilog/dv/system_test111 ] && echo "$CLF/verilog/dv/system_test111 not exist, create it" && mkdir $CLF/verilog/dv/system_test111
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/Makefile $CUPF/verilog/dv/system_test111/Makefile
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111.c $CUPF/verilog/dv/system_test111/system_test111.c
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111_tb.v.patch $CUPF/verilog/dv/system_test111/system_test111_tb.v
@@ -84,8 +93,8 @@ cp $CLF/custom_design/fsic/verify-system_test111-rtl/project_define.svh $CUPF/ve
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/cpu_trace.v $CUPF/verilog/dv/system_test111/cpu_trace.v
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/dasm.v $CUPF/verilog/dv/system_test111/dasm.v
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/fpga.v $CUPF/verilog/dv/system_test111/fpga.v
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/fsic_clock.v $CUPF/verilog/dv/system_test111/fsic_clock.v
 # copy some fsic module files for fpga in testbench
-cp $CLF/custom_design/fsic/user_proj_example/fsic_clock.v $CUPF/verilog/dv/system_test111/fsic_clock.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/dv/system_test111/fsic_io_serdes_rx.v
 cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/dv/system_test111/io_serdes.v
@@ -128,4 +137,3 @@ cp $CLF/custom_design/fsic/mpw_precheck/README.md  $CUPF/README.md
 cp $CLF/custom_design/fsic/mpw_precheck/user_defines.v  $CUPF/verilog/rtl/user_defines.v
 make -d precheck 2>&1 | tee $LF/mpw-8c-precheck.log
 make -d run-precheck 2>&1 | tee $LF/mpw-8c-run-precheck.log
-~
