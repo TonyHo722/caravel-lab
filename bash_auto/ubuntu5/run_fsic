@@ -3,7 +3,7 @@
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/SSD1T/debug/fsic_0917debug_onefile_2
+export MF=/ADATA2T/debug/fsic_0920_multi_files
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -14,7 +14,7 @@ export MF=/SSD1T/debug/fsic_0917debug_onefile_2
 # setup your PRECHECK_ROOT 
 export PRECHECK_ROOT=$MF/mpw_precheck
 # setup your log folder(LF)
-export LF=$MF/log-0919
+export LF=$MF/log-0920
 # setup your caravel-lab folder(CLF)
 export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
@@ -29,7 +29,7 @@ fi
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0920_multi_files_u5 https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -54,24 +54,22 @@ cp $CLF/custom_design/fsic/user_proj_example/user_project_wrapper.v $CUPF/verilo
 
 # merge fsic module files into user_proj_example.v
 cp $CLF/custom_design/fsic/user_proj_example/user_proj_example.v $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/fsic.vo >> $CUPF/verilog/rtl/user_proj_example.v
-#cat $CLF/custom_design/fsic/user_proj_example/axilite_master.sv >> $CUPF/verilog/rtl/user_proj_example.v
-#cat $CLF/custom_design/fsic/user_proj_example/axilite_slave.sv >> $CUPF/verilog/rtl/user_proj_example.v
-#cat $CLF/custom_design/fsic/user_proj_example/axis_master.sv >> $CUPF/verilog/rtl/user_proj_example.v
-#cat $CLF/custom_design/fsic/user_proj_example/axis_slave.sv >> $CUPF/verilog/rtl/user_proj_example.v
-#cat $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv.patch >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/axil_axis.sv.patch >> $CUPF/verilog/rtl/user_proj_example.v
-#cat $CLF/custom_design/fsic/user_proj_example/sw_caravel.v >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/sw_caravel.v.patch >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/config_ctrl.v >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/fsic_clkrst.v >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/io_serdes.v >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/mprj_io.sv >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/user_subsys.all.v >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd >> $CUPF/verilog/rtl/user_proj_example.v
-cat $CLF/custom_design/fsic/user_proj_example/user_proj_example.v.tail >> $CUPF/verilog/rtl/user_proj_example.v
+cp $CLF/custom_design/fsic/user_proj_example/fsic.vo $CUPF/verilog/rtl/fsic.vo
+#cp $CLF/custom_design/fsic/user_proj_example/axilite_master.sv $CUPF/verilog/rtl/axilite_master.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axilite_slave.sv $CUPF/verilog/rtl/axilite_slave.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axis_master.sv $CUPF/verilog/rtl/axis_master.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv.patch $CUPF/verilog/rtl/axi_ctrl_logic.sv
+cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv.patch $CUPF/verilog/rtl/axil_axis.sv
+cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v.patch $CUPF/verilog/rtl/sw_caravel.v
+cp $CLF/custom_design/fsic/user_proj_example/config_ctrl.v $CUPF/verilog/rtl/config_ctrl.v
+cp $CLF/custom_design/fsic/user_proj_example/fsic_clkrst.v $CUPF/verilog/rtl/fsic_clkrst.v
+cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/rtl/io_serdes.v
+cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/rtl/fsic_coreclk_phase_cnt.v
+cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/rtl/fsic_io_serdes_rx.v
+cp $CLF/custom_design/fsic/user_proj_example/mprj_io.sv $CUPF/verilog/rtl/mprj_io.sv
+cp $CLF/custom_design/fsic/user_proj_example/user_subsys.all.v $CUPF/verilog/rtl/user_subsys.all.v
+cp $CLF/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd
 
 # copy files for testbench
 mkdir $CUPF/verilog/dv/system_test111
