@@ -3,7 +3,7 @@
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/home/tonyho/workspace/debug/la_test1_0919
+export MF=/SSD1T/debug/la_test1_0920_1
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -57,9 +57,10 @@ cp $CLF/custom_design/gcd/user_proj_example/user_proj_example.v $CUPF/verilog/rt
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1.c $CUPF/verilog/dv/la_test1/la_test1.c
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v $CUPF/verilog/dv/la_test1/la_test1_tb.v
 
-## copy source file for caravel_user_project
-cp $CLF/custom_design/gcd/caravel_user_project/includes.rtl.caravel_user_project.la_test1 $CUPF/verilog/includes/includes.rtl.caravel_user_project
-cp $CLF/custom_design/gcd/caravel_user_project/user_project_wrapper.v.la_test1 $CUPF/verilog/rtl/user_project_wrapper.v
+## copy includes file
+cp $CLF/custom_design/gcd/user_proj_example/includes/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
+cp $CLF/custom_design/gcd/user_proj_example/includes/includes.gl.caravel_user_project $CUPF/verilog/includes/includes.gl.caravel_user_project
+cp $CLF/custom_design/gcd/user_proj_example/includes/includes.gl+sdf.caravel_user_project $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
 
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
