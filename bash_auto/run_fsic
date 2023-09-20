@@ -1,0 +1,131 @@
+#!/bin/bash
+
+set -x # echo on for debug 
+
+# setup your main folder(MF)
+export MF=/SSD1T/debug/fsic_0917debug_onefile
+
+# setup your fsic_fpga folder(FFF)
+#export FFF=/home/tonyho/workspace/fsic/fsic_fpga
+
+# setup your fsic_asic folder(FFF)
+#export FAF=/home/tonyho/workspace/fsic/fsic_asic
+
+# setup your PRECHECK_ROOT 
+export PRECHECK_ROOT=$MF/mpw_precheck
+# setup your log folder(LF)
+export LF=$MF/log-0919
+# setup your caravel-lab folder(CLF)
+export CLF=$MF/caravel-lab
+# setup your caravel_user_project folder(CUPF)
+export CUPF=$MF/caravel_user_project
+
+cd $MF
+if [ ! -d "$MF" ] ;
+then
+    echo "$MF not exist, please create it"
+    exit 1
+fi    
+
+[ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
+[ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone https://github.com/TonyHo722/caravel-lab
+[ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
+
+#cd $FFF
+#git log -1 2>&1 | tee $LF/mpw-8c-FFF-git-log.log
+#cd $FAF
+#git log -1 2>&1 | tee $LF/mpw-8c-FAF-git-log.log
+cd $CLF
+git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
+cd $CUPF
+git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
+
+mkdir dependencies
+export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
+export PDK_ROOT=$(pwd)/dependencies/pdks
+export PDK=sky130A
+
+[ ! -d $CUPF/caravel ] && echo "$CUPF/caravel not exist, run make setup" && make -d setup 2>&1 | tee $LF/mpw-8c-make-steup.log
+
+
+# copy file for user_project_wrapper.v
+cp $CLF/custom_design/fsic/user_proj_example/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
+
+# merge fsic module files into user_proj_example.v
+cp $CLF/custom_design/fsic/user_proj_example/user_proj_example.v $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/fsic.vo >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/user_proj_example/axilite_master.sv >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/user_proj_example/axilite_slave.sv >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/user_proj_example/axis_master.sv >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/user_proj_example/axis_slave.sv >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv.patch >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/axil_axis.sv.patch >> $CUPF/verilog/rtl/user_proj_example.v
+#cat $CLF/custom_design/fsic/user_proj_example/sw_caravel.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/sw_caravel.v.patch >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/config_ctrl.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/fsic_clkrst.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/io_serdes.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/mprj_io.sv >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/user_subsys.all.v >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd >> $CUPF/verilog/rtl/user_proj_example.v
+cat $CLF/custom_design/fsic/user_proj_example/user_proj_example.v.tail >> $CUPF/verilog/rtl/user_proj_example.v
+
+# copy files for testbench
+mkdir $CUPF/verilog/dv/system_test111
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/Makefile $CUPF/verilog/dv/system_test111/Makefile
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/system_test111.c $CUPF/verilog/dv/system_test111/system_test111.c
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/system_test111_tb.v.patch $CUPF/verilog/dv/system_test111/system_test111_tb.v
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/bench_ini.svh $CUPF/verilog/dv/system_test111/bench_ini.svh
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/bench_vec.svh $CUPF/verilog/dv/system_test111/bench_vec.svh
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/project_define.svh $CUPF/verilog/dv/system_test111/project_define.svh
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/cpu_trace.v $CUPF/verilog/dv/system_test111/cpu_trace.v
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/dasm.v $CUPF/verilog/dv/system_test111/dasm.v
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111/fpga.v $CUPF/verilog/dv/system_test111/fpga.v
+# copy some fsic module files for fpga in testbench
+cp $CLF/custom_design/fsic/user_proj_example/fsic_clock.v $CUPF/verilog/dv/system_test111/fsic_clock.v
+cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
+cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/dv/system_test111/fsic_io_serdes_rx.v
+cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/dv/system_test111/io_serdes.v
+
+
+# how to define USER_PROJ_IRQ0_EN?
+## copy source file for caravel_user_project
+#cp $CLF/custom_design/fsic/caravel_user_project/includes.rtl.caravel_user_project.fsic $CUPF/verilog/includes/includes.rtl.caravel_user_project
+#cp $CLF/custom_design/fsic/caravel_user_project/includes.gl.caravel_user_project.fsic $CUPF/verilog/includes/includes.gl.caravel_user_project
+#cp $CLF/custom_design/fsic/caravel_user_project/includes.gl+sdf.caravel_user_project.fsic $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
+
+## copy sim.makefile for debugging
+cp $CLF/custom_design/fsic/verify-system_test111-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
+
+make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
+
+# Run RTL simulation
+#make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+
+# Run Openlane to generate RTL netlist
+cp $CLF/custom_design/fsic/openlane/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
+cp $CLF/custom_design/fsic/openlane/user_proj_example/pin_order.cfg $CUPF/openlane/user_proj_example/pin_order.cfg
+cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
+
+make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
+make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
+
+# Run gate level simulation (it will take 2~3 hours@i9/64GB)
+make -d verify-system_test111-gl 2>&1 | tee $LF/mpw-8c-verify-system_test111-gl.log
+
+
+# Run gate level static timing verifier
+make -d setup-timing-scripts 2>&1 | tee $LF/mpw-8c-setup-timing-scripts.log
+make -d extract-parasitics 2>&1 | tee $LF/mpw-8c-extract-parasitics.log
+make -d create-spef-mapping 2>&1 | tee $LF/mpw-8c-create-spef-mapping.log
+make -d caravel-sta 2>&1 | tee $LF/mpw-8c-caravel-sta.log
+
+# Run MPW precheck
+cp $CLF/custom_design/fsic/mpw_precheck/README.md  $CUPF/README.md
+cp $CLF/custom_design/fsic/mpw_precheck/user_defines.v  $CUPF/verilog/rtl/user_defines.v
+make -d precheck 2>&1 | tee $LF/mpw-8c-precheck.log
+make -d run-precheck 2>&1 | tee $LF/mpw-8c-run-precheck.log
+~
