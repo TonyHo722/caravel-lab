@@ -1,9 +1,17 @@
 #!/bin/bash
 
+on_error(){
+  echo "error occurred"
+  exit 1
+}
+
+# enable trap for detect error
+trap 'on_error' ERR
+
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/SSD2T/debug/la_test1_0919_1
+export MF=/ADATA2T/debug/la_test1_0921
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -20,12 +28,12 @@ export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
 export CUPF=$MF/caravel_user_project
 
-cd $MF
 if [ ! -d "$MF" ] ;
 then
     echo "$MF not exist, please create it"
     exit 1
 fi    
+cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
@@ -41,7 +49,7 @@ git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
 cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
 
-mkdir dependencies
+[ ! -d $CUPF/dependencies] && echo "$CLF/dependencies not exist, create it" && mkdir $CLF/dependencies
 export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
@@ -92,4 +100,3 @@ cp $CLF/custom_design/gcd/mpw_precheck/README.md  $CUPF/README.md
 cp $CLF/custom_design/gcd/mpw_precheck/user_defines.v  $CUPF/verilog/rtl/user_defines.v
 make -d precheck 2>&1 | tee $LF/mpw-8c-precheck.log
 make -d run-precheck 2>&1 | tee $LF/mpw-8c-run-precheck.log
-~

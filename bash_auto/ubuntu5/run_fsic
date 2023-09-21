@@ -29,12 +29,12 @@ export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
 export CUPF=$MF/caravel_user_project
 
-cd $MF
 if [ ! -d "$MF" ] ;
 then
     echo "$MF not exist, please create it"
     exit 1
 fi    
+cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
