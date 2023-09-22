@@ -1,0 +1,23 @@
+tonyho@HLS05:~/workspace/fsic/caravel-lab/bash_auto/hls05$ grep -n -i 'error' run_fsic.log 
+1102:[ERROR]: There are hold violations in the design at the typical corner. Please refer to '../home/tonyho/workspace/debug/fsic_0921_AA/caravel_user_project/openlane/user_proj_example/runs/23_09_21_22_17/reports/signoff/26-rcx_sta.min.rpt'.
+1108:[ERROR]: Flow failed.
+1115:make[1]: *** [Makefile:73: user_proj_example] Error 255
+1119:make: *** [Makefile:107: user_proj_example] Error 2
+2044:[ERROR]: There are violations in the design after detailed routing.
+2045:[ERROR]: Total Number of violations is 1
+2051:[ERROR]: Flow failed.
+2053:make[1]: *** [Makefile:73: user_project_wrapper] Error 255
+2057:make: *** [Makefile:107: user_project_wrapper] Error 2
+2394:/home/tonyho/workspace/debug/fsic_0921_AA/caravel_user_project/verilog/gl/user_project_wrapper.v:57: error: port ``irq'' is not a port of mprj.
+2396:1 error(s) during elaboration.
+2401:make: *** [system_test111.vvp] Error 1
+2403:make: *** [Makefile:153: verify-system_test111-gl] Error 2
+5782:[WARNING ODB-0229] Error: library (sky130_sram_2kbyte_1rw1r_32x512_8) already exists
+5867:[WARNING ODB-0229] Error: library (sky130_sram_2kbyte_1rw1r_32x512_8) already exists
+6027:[WARNING ODB-0229] Error: library (sky130_sram_2kbyte_1rw1r_32x512_8) already exists
+9442:[WARNING ODB-0229] Error: library (sky130_sram_2kbyte_1rw1r_32x512_8) already exists
+9795:[WARNING ODB-0229] Error: library (sky130_sram_2kbyte_1rw1r_32x512_8) already exists
+10025:[WARNING ODB-0229] Error: library (sky130_sram_2kbyte_1rw1r_32x512_8) already exists
+11091:Warning: /home/tonyho/workspace/debug/fsic_0921_AA/caravel_user_project/caravel/signoff/chip_io/openlane-signoff/spef/chip_io.nom.spef line 9225, syntax error, unexpected CAP, expecting KW_P or KW_I.
+13359:Warning: /home/tonyho/workspace/debug/fsic_0921_AA/caravel_user_project/caravel/signoff/chip_io/openlane-signoff/spef/chip_io.nom.spef line 9225, syntax error, unexpected CAP, expecting KW_P or KW_I.
+15627:Warning: /home/tonyho/workspace/debug/fsic_0921_AA/caravel_user_project/caravel/signoff/chip_io/openlane-signoff/spef/chip_io.nom.spef line 9225, syntax error, unexpected CAP, expecting KW_P or KW_I.
