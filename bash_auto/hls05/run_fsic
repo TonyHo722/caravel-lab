@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/home/tonyho/workspace/debug/fsic_0921_AA
+export MF=/home/tonyho/workspace/debug/fsic_0922_AA
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -22,7 +22,7 @@ export MF=/home/tonyho/workspace/debug/fsic_0921_AA
 # setup your PRECHECK_ROOT 
 export PRECHECK_ROOT=$MF/mpw_precheck
 # setup your log folder(LF)
-export LF=$MF/log-0921
+export LF=$MF/log
 # setup your caravel-lab folder(CLF)
 export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
@@ -37,7 +37,7 @@ cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0921_yosys_issue_hls05_AA_update https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0922_AA_issue https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
