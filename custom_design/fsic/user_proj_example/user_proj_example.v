@@ -115,4 +115,5 @@ FSIC #(.BITS( BITS )) u_fsic  (
                      );
 
 endmodule
-// use cat to copy fsic module files in below
+
+`default_nettype wire
