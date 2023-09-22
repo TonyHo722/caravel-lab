@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_0921_multi_files
+export MF=/ADATA2T/debug/fsic_0922
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -22,7 +22,7 @@ export MF=/ADATA2T/debug/fsic_0921_multi_files
 # setup your PRECHECK_ROOT 
 export PRECHECK_ROOT=$MF/mpw_precheck
 # setup your log folder(LF)
-export LF=$MF/log-0921
+export LF=$MF/log
 # setup your caravel-lab folder(CLF)
 export CLF=$MF/caravel-lab
 # setup your caravel_user_project folder(CUPF)
@@ -69,7 +69,7 @@ cp $CLF/custom_design/fsic/user_proj_example/fsic.vo $CUPF/verilog/rtl/fsic.vo
 #cp $CLF/custom_design/fsic/user_proj_example/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
 #cp $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv.patch $CUPF/verilog/rtl/axi_ctrl_logic.sv
 cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv.patch $CUPF/verilog/rtl/axil_axis.sv
-cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v.patch $CUPF/verilog/rtl/sw_caravel.v
+cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
 cp $CLF/custom_design/fsic/user_proj_example/config_ctrl.v $CUPF/verilog/rtl/config_ctrl.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_clkrst.v $CUPF/verilog/rtl/fsic_clkrst.v
 cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/rtl/io_serdes.v
