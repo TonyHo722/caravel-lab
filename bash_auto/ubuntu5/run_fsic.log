@@ -18,17 +18,17 @@
 + '[' '!' -d /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab ']'
 + echo '/ADATA2T/debug/fsic_0922_AA_irq/caravel-lab not exist, git clone it'
 /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab not exist, git clone it
-+ git clone -b 0922_AA_u5 https://github.com/TonyHo722/caravel-lab
++ git clone -b 0922_AA_u5_irq https://github.com/TonyHo722/caravel-lab
 Cloning into 'caravel-lab'...
 + '[' '!' -d /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project ']'
 + cd /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab
 + git log -1
 + tee /ADATA2T/debug/fsic_0922_AA_irq/log/mpw-8c-CLF-git-log.log
-commit 5a23ecd8d7ccfe8be3c5ff23ef6e48171484e8cc
+commit 2a71ef62ac8ce6f55b654822545db5609e134020
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Sat Sep 23 21:41:24 2023 +0800
+Date:   Sat Sep 23 21:53:42 2023 +0800
 
-    update run_fsic, exit 1 before make -d user_proj_example
+    update run_fsic for use MF=/ADATA2T/debug/fsic_0922_AA_irq
 + cd /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project
 + git log -1
 + tee /ADATA2T/debug/fsic_0922_AA_irq/log/mpw-8c-CUPF-git-log.log
@@ -107,14 +107,14 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x55a6609074a0 (simenv) PID 3771236 on the chain.
-Live child 0x55a6609074a0 (simenv) PID 3771236 
+Putting child 0x55888f1b34a0 (simenv) PID 3776973 on the chain.
+Live child 0x55888f1b34a0 (simenv) PID 3776973 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x55a6609074a0 PID 3771236 
-Removing child 0x55a6609074a0 PID 3771236 from chain.
+Reaping winning child 0x55888f1b34a0 PID 3776973 
+Removing child 0x55888f1b34a0 PID 3776973 from chain.
 Successfully remade target file 'simenv'.
 + cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/openlane/user_proj_example/config.json /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/openlane/user_proj_example/config.json
 + cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/openlane/user_proj_example/pin_order.cfg /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/openlane/user_proj_example/pin_order.cfg
