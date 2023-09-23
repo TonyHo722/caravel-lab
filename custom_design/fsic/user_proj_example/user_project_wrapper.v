@@ -121,7 +121,7 @@ user_proj_example mprj (
     .user_clock2(user_clock2),
 
     // IRQ
-    .irq(user_irq)
+    .user_irq(user_irq)
 
 
 );
