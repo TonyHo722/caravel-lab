@@ -1,91 +1,91 @@
-+ export MF=/ADATA2T/debug/fsic_0922_AA_irq
-+ MF=/ADATA2T/debug/fsic_0922_AA_irq
-+ export PRECHECK_ROOT=/ADATA2T/debug/fsic_0922_AA_irq/mpw_precheck
-+ PRECHECK_ROOT=/ADATA2T/debug/fsic_0922_AA_irq/mpw_precheck
-+ export LF=/ADATA2T/debug/fsic_0922_AA_irq/log
-+ LF=/ADATA2T/debug/fsic_0922_AA_irq/log
-+ export CLF=/ADATA2T/debug/fsic_0922_AA_irq/caravel-lab
-+ CLF=/ADATA2T/debug/fsic_0922_AA_irq/caravel-lab
-+ export CUPF=/ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project
-+ CUPF=/ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project
-+ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_irq ']'
-+ cd /ADATA2T/debug/fsic_0922_AA_irq
-+ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_irq/log ']'
-+ '[' -d /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab ']'
-+ echo '/ADATA2T/debug/fsic_0922_AA_irq/caravel-lab exist, remove it'
-/ADATA2T/debug/fsic_0922_AA_irq/caravel-lab exist, remove it
-+ rm -rf /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab
-+ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab ']'
-+ echo '/ADATA2T/debug/fsic_0922_AA_irq/caravel-lab not exist, git clone it'
-/ADATA2T/debug/fsic_0922_AA_irq/caravel-lab not exist, git clone it
-+ git clone -b 0922_AA_u5_irq https://github.com/TonyHo722/caravel-lab
++ export MF=/ADATA2T/debug/fsic_0922_AA_user_irq
++ MF=/ADATA2T/debug/fsic_0922_AA_user_irq
++ export PRECHECK_ROOT=/ADATA2T/debug/fsic_0922_AA_user_irq/mpw_precheck
++ PRECHECK_ROOT=/ADATA2T/debug/fsic_0922_AA_user_irq/mpw_precheck
++ export LF=/ADATA2T/debug/fsic_0922_AA_user_irq/log
++ LF=/ADATA2T/debug/fsic_0922_AA_user_irq/log
++ export CLF=/ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab
++ CLF=/ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab
++ export CUPF=/ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project
++ CUPF=/ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project
++ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_user_irq ']'
++ cd /ADATA2T/debug/fsic_0922_AA_user_irq
++ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_user_irq/log ']'
++ '[' -d /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab ']'
++ echo '/ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab exist, remove it'
+/ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab exist, remove it
++ rm -rf /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab
++ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab ']'
++ echo '/ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab not exist, git clone it'
+/ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab not exist, git clone it
++ git clone -b 0922_AA_u5_user_irq https://github.com/TonyHo722/caravel-lab
 Cloning into 'caravel-lab'...
-+ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project ']'
-+ cd /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab
++ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project ']'
++ cd /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab
 + git log -1
-+ tee /ADATA2T/debug/fsic_0922_AA_irq/log/mpw-8c-CLF-git-log.log
-commit 2a71ef62ac8ce6f55b654822545db5609e134020
++ tee /ADATA2T/debug/fsic_0922_AA_user_irq/log/mpw-8c-CLF-git-log.log
+commit f9f9ff650c4bdfc40a93825c1e72f4af8be5ee3b
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Sat Sep 23 21:53:42 2023 +0800
+Date:   Sat Sep 23 22:00:20 2023 +0800
 
-    update run_fsic for use MF=/ADATA2T/debug/fsic_0922_AA_irq
-+ cd /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project
+    update run_fsic for check user_irq gl file
++ cd /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project
 + git log -1
-+ tee /ADATA2T/debug/fsic_0922_AA_irq/log/mpw-8c-CUPF-git-log.log
++ tee /ADATA2T/debug/fsic_0922_AA_user_irq/log/mpw-8c-CUPF-git-log.log
 commit a4ecba90bd78c797ab3f4cee61586635d4a33ced
 Author: tonyho <TonyHo@via.com.tw>
 Date:   Sat Sep 9 11:52:23 2023 +0800
 
     roll back user_project_wrapper.v for auto_bash script - run for la_test1
-+ '[' '!' -d '/ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/dependencies]'
++ '[' '!' -d '/ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/dependencies]'
 ./run_fsic: line 52: [: missing `]'
 ++ pwd
-+ export OPENLANE_ROOT=/ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/dependencies/openlane_src
-+ OPENLANE_ROOT=/ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/dependencies/openlane_src
++ export OPENLANE_ROOT=/ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/dependencies/openlane_src
++ OPENLANE_ROOT=/ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/dependencies/openlane_src
 ++ pwd
-+ export PDK_ROOT=/ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/dependencies/pdks
-+ PDK_ROOT=/ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/dependencies/pdks
++ export PDK_ROOT=/ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/dependencies/pdks
++ PDK_ROOT=/ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/dependencies/pdks
 + export PDK=sky130A
 + PDK=sky130A
-+ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/caravel ']'
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/user_project_wrapper.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/user_project_wrapper.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/user_proj_example.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/user_proj_example.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic.vo /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/fsic.vo
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/axilite_master.sv /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/axilite_master.sv
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/axilite_slave.sv /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/axilite_slave.sv
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/axis_master.sv /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/axis_master.sv
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/axis_slave.sv /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/axis_slave.sv
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv.patch /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/axil_axis.sv /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/axil_axis.sv
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/sw_caravel.v.patch /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/sw_caravel.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/config_ctrl.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/config_ctrl.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_clkrst.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/fsic_clkrst.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/io_serdes.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/io_serdes.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/fsic_coreclk_phase_cnt.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/fsic_io_serdes_rx.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/mprj_io.sv /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/mprj_io.sv
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/user_subsys.all.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/user_subsys.all.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/rtl/logic_anlz.dummy_io.vd
-+ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111 ']'
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/Makefile /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/Makefile
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/system_test111.c /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/system_test111.c
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/system_test111_tb.v.patch /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/system_test111_tb.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/bench_ini.svh /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/bench_ini.svh
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/bench_vec.svh /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/bench_vec.svh
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/project_define.svh /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/project_define.svh
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/cpu_trace.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/cpu_trace.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/dasm.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/dasm.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/fpga.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/fpga.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/fsic_clock.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/fsic_clock.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/fsic_io_serdes_rx.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/io_serdes.v /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/dv/system_test111/io_serdes.v
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/includes/includes.gl.caravel_user_project
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/verilog/includes/includes.gl+sdf.caravel_user_project
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/sim.makefile /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile
++ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/caravel ']'
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/user_project_wrapper.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/user_project_wrapper.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/user_proj_example.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/user_proj_example.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic.vo /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/fsic.vo
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/axilite_master.sv /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/axilite_master.sv
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/axilite_slave.sv /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/axilite_slave.sv
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/axis_master.sv /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/axis_master.sv
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/axis_slave.sv /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/axis_slave.sv
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv.patch /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/axil_axis.sv /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/axil_axis.sv
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/sw_caravel.v.patch /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/sw_caravel.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/config_ctrl.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/config_ctrl.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_clkrst.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/fsic_clkrst.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/io_serdes.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/io_serdes.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/fsic_coreclk_phase_cnt.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/fsic_io_serdes_rx.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/mprj_io.sv /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/mprj_io.sv
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/user_subsys.all.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/user_subsys.all.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/rtl/logic_anlz.dummy_io.vd
++ '[' '!' -d /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111 ']'
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/Makefile /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/Makefile
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/system_test111.c /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/system_test111.c
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/system_test111_tb.v.patch /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/system_test111_tb.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/bench_ini.svh /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/bench_ini.svh
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/bench_vec.svh /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/bench_vec.svh
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/project_define.svh /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/project_define.svh
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/cpu_trace.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/cpu_trace.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/dasm.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/dasm.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/fpga.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/fpga.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/fsic_clock.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/fsic_clock.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/fsic_io_serdes_rx.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/io_serdes.v /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/dv/system_test111/io_serdes.v
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/includes/includes.gl.caravel_user_project
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/verilog/includes/includes.gl+sdf.caravel_user_project
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/verify-system_test111-rtl/sim.makefile /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 + make -d simenv
-+ tee /ADATA2T/debug/fsic_0922_AA_irq/log/mpw-8c-simenv.log
++ tee /ADATA2T/debug/fsic_0922_AA_user_irq/log/mpw-8c-simenv.log
 GNU Make 4.2.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -107,16 +107,16 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x55888f1b34a0 (simenv) PID 3776973 on the chain.
-Live child 0x55888f1b34a0 (simenv) PID 3776973 
+Putting child 0x55f25fe7d510 (simenv) PID 3782102 on the chain.
+Live child 0x55f25fe7d510 (simenv) PID 3782102 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x55888f1b34a0 PID 3776973 
-Removing child 0x55888f1b34a0 PID 3776973 from chain.
+Reaping winning child 0x55f25fe7d510 PID 3782102 
+Removing child 0x55f25fe7d510 PID 3782102 from chain.
 Successfully remade target file 'simenv'.
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/openlane/user_proj_example/config.json /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/openlane/user_proj_example/config.json
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/openlane/user_proj_example/pin_order.cfg /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/openlane/user_proj_example/pin_order.cfg
-+ cp /ADATA2T/debug/fsic_0922_AA_irq/caravel-lab/custom_design/fsic/openlane/user_project_wrapper/config.json /ADATA2T/debug/fsic_0922_AA_irq/caravel_user_project/openlane/user_project_wrapper/config.json
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/openlane/user_proj_example/config.json /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/openlane/user_proj_example/config.json
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/openlane/user_proj_example/pin_order.cfg /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/openlane/user_proj_example/pin_order.cfg
++ cp /ADATA2T/debug/fsic_0922_AA_user_irq/caravel-lab/custom_design/fsic/openlane/user_project_wrapper/config.json /ADATA2T/debug/fsic_0922_AA_user_irq/caravel_user_project/openlane/user_project_wrapper/config.json
 + exit 1
