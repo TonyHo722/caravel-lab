@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/home/tonyho/workspace/debug/fsic_0922_AA
+export MF=/home/tonyho/workspace/debug/fsic_0923_AA_irq_issue
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -37,7 +37,7 @@ cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0922_AA_issue https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0923_AA_irq_issue_hls05_repo https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -101,6 +101,9 @@ cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/dv/system
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project $CUPF/verilog/includes/includes.gl.caravel_user_project
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
+
+## remove gl file
+rm -f $CUPF/verilog/gl/*
 
 # how to define USER_PROJ_IRQ0_EN?
 
