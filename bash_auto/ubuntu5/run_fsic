@@ -12,7 +12,7 @@ set -x # echo on for debug
 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_0923_irq
+export MF=/ADATA2T/debug/fsic_0926_AA_update
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -38,7 +38,7 @@ cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0923_AA_irq_issue https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0926_AA_update https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -68,7 +68,7 @@ cp $CLF/custom_design/fsic/user_proj_example/axilite_master.sv $CUPF/verilog/rtl
 cp $CLF/custom_design/fsic/user_proj_example/axilite_slave.sv $CUPF/verilog/rtl/axilite_slave.sv
 cp $CLF/custom_design/fsic/user_proj_example/axis_master.sv $CUPF/verilog/rtl/axis_master.sv
 cp $CLF/custom_design/fsic/user_proj_example/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
-cp $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv.patch $CUPF/verilog/rtl/axi_ctrl_logic.sv
+cp $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv $CUPF/verilog/rtl/axi_ctrl_logic.sv
 #cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv.patch $CUPF/verilog/rtl/axil_axis.sv
 cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv $CUPF/verilog/rtl/axil_axis.sv
 cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v.patch $CUPF/verilog/rtl/sw_caravel.v
@@ -126,6 +126,7 @@ make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
 
 # Run gate level simulation (it will take 2~3 hours@i9/64GB)
 make -d verify-system_test111-gl 2>&1 | tee $LF/mpw-8c-verify-system_test111-gl.log
+exit 1
 
 
 # Run gate level static timing verifier
