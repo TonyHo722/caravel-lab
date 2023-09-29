@@ -12,7 +12,7 @@ set -x # echo on for debug
 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_0926_AA_update_full_run
+export MF=/ADATA2T/debug/fsic_0929_rtl_sim
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -114,7 +114,8 @@ cp $CLF/custom_design/fsic/verify-system_test111-rtl/sim.makefile $CUPF/mgmt_cor
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 
 # Run RTL simulation
-#make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+exit 1
 
 # Run Openlane to generate RTL netlist
 cp $CLF/custom_design/fsic/openlane/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
