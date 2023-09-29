@@ -24,11 +24,11 @@ Cloning into 'caravel-lab'...
 + cd /ADATA2T/debug/fsic_0929_rtl_sim/caravel-lab
 + git log -1
 + tee /ADATA2T/debug/fsic_0929_rtl_sim/log/mpw-8c-CLF-git-log.log
-commit 5032510d5092fff8e6cddfaedc11106a3747cf25
+commit 98dacaf698ce62c7a99d3e1f49250bddc451d356
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Fri Sep 29 16:03:23 2023 +0800
+Date:   Fri Sep 29 20:30:36 2023 +0800
 
-    debug make -d verify-system_test111-rtl
+    roll back axi_ctrl_logic.sv to get the error log
 + cd /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project
 + git log -1
 + tee /ADATA2T/debug/fsic_0929_rtl_sim/log/mpw-8c-CUPF-git-log.log
@@ -108,14 +108,14 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x55e5802ae500 (simenv) PID 367001 on the chain.
-Live child 0x55e5802ae500 (simenv) PID 367001 
+Putting child 0x55bb44e1a500 (simenv) PID 506337 on the chain.
+Live child 0x55bb44e1a500 (simenv) PID 506337 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x55e5802ae500 PID 367001 
-Removing child 0x55e5802ae500 PID 367001 from chain.
+Reaping winning child 0x55bb44e1a500 PID 506337 
+Removing child 0x55bb44e1a500 PID 506337 from chain.
 Successfully remade target file 'simenv'.
 + make -d verify-system_test111-rtl
 + tee /ADATA2T/debug/fsic_0929_rtl_sim/log/mpw-8c-verify-system_test111-rtl.log
@@ -142,20 +142,20 @@ Considering target file 'verify-system_test111-rtl'.
    Finished prerequisites of target file 'simenv'.
   Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x560bd4b09510 (simenv) PID 367068 on the chain.
-Live child 0x560bd4b09510 (simenv) PID 367068 
+Putting child 0x55c49ea5f510 (simenv) PID 506416 on the chain.
+Live child 0x55c49ea5f510 (simenv) PID 506416 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x560bd4b09510 PID 367068 
-Removing child 0x560bd4b09510 PID 367068 from chain.
+Reaping winning child 0x55c49ea5f510 PID 506416 
+Removing child 0x55c49ea5f510 PID 506416 from chain.
   Successfully remade target file 'simenv'.
  Finished prerequisites of target file 'verify-system_test111-rtl'.
 Must remake target 'verify-system_test111-rtl'.
 docker run -v /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project:/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project -v /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/dependencies/pdks:/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/dependencies/pdks -v /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/caravel:/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/caravel -e TARGET_PATH=/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project -e PDK_ROOT=/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project -e USER_PROJECT_VERILOG=/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/caravel/verilog -e MCW_ROOT=/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/dv/system_test111 && export SIM=RTL && make -d"
-Putting child 0x560bd4b0ef20 (verify-system_test111-rtl) PID 367124 on the chain.
-Live child 0x560bd4b0ef20 (verify-system_test111-rtl) PID 367124 
+Putting child 0x55c49ea64f20 (verify-system_test111-rtl) PID 506469 on the chain.
+Live child 0x55c49ea64f20 (verify-system_test111-rtl) PID 506469 
 GNU Make 3.82
 Built for x86_64-redhat-linux-gnu
 Copyright (C) 2010  Free Software Foundation, Inc.
@@ -418,26 +418,26 @@ Invoking recipe from /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_
   -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
 -Wl,-Bstatic,-T,/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,--strip-debug \
 -ffreestanding -nostdlib -o system_test111.elf /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c system_test111.c
-Putting child 0xf12300 (system_test111.elf) PID 22 on the chain.
-Live child 0xf12300 (system_test111.elf) PID 22 
-Reaping winning child 0xf12300 PID 22 
-Removing child 0xf12300 PID 22 from chain.
+Putting child 0x1062300 (system_test111.elf) PID 22 on the chain.
+Live child 0x1062300 (system_test111.elf) PID 22 
+Reaping winning child 0x1062300 PID 22 
+Removing child 0x1062300 PID 22 from chain.
       Successfully remade target file `system_test111.elf'.
       Finished prerequisites of target file `system_test111.hex'.
       Prerequisite `system_test111.elf' is newer than target `system_test111.hex'.
      Must remake target `system_test111.hex'.
 Invoking recipe from /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:50 to update target `system_test111.hex'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog system_test111.elf system_test111.hex 
-Putting child 0xf13590 (system_test111.hex) PID 31 on the chain.
-Live child 0xf13590 (system_test111.hex) PID 31 
-Reaping winning child 0xf13590 PID 31 
+Putting child 0x1063590 (system_test111.hex) PID 31 on the chain.
+Live child 0x1063590 (system_test111.hex) PID 31 
+Reaping winning child 0x1063590 PID 31 
 # to fix flash base address
-Live child 0xf13590 (system_test111.hex) PID 32 
-Reaping winning child 0xf13590 PID 32 
+Live child 0x1063590 (system_test111.hex) PID 32 
+Reaping winning child 0x1063590 PID 32 
 sed -ie 's/@10/@00/g' system_test111.hex
-Live child 0xf13590 (system_test111.hex) PID 33 
-Reaping winning child 0xf13590 PID 33 
-Removing child 0xf13590 PID 33 from chain.
+Live child 0x1063590 (system_test111.hex) PID 33 
+Reaping winning child 0x1063590 PID 33 
+Removing child 0x1063590 PID 33 from chain.
      Successfully remade target file `system_test111.hex'.
    Considering target file `system_test111.vvp'.
     File `system_test111.vvp' does not exist.
@@ -447,8 +447,8 @@ Removing child 0xf13590 PID 33 from chain.
    Must remake target `system_test111.vvp'.
 Invoking recipe from /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:67 to update target `system_test111.vvp'.
 iverilog -V 2>&1 | tee iverilog-ver.log
-Putting child 0xf14be0 (system_test111.vvp) PID 34 on the chain.
-Live child 0xf14be0 (system_test111.vvp) PID 34 
+Putting child 0x1064be0 (system_test111.vvp) PID 34 on the chain.
+Live child 0x1064be0 (system_test111.vvp) PID 34 
 Icarus Verilog version 12.0 (devel) (s20150603-1288-gcc0a8c8-dirty)
 
 Copyright (c) 2000-2021 Stephen Williams (steve@icarus.com)
@@ -522,187 +522,41 @@ Copyright (c) 2001-2021 Stephen Williams (steve@icarus.com)
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-Reaping winning child 0xf14be0 PID 34 
+Reaping winning child 0x1064be0 PID 34 
 iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
         -g2012 \
         -f/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.rtl.caravel \
         -f/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project -o system_test111.vvp system_test111_tb.v 2>&1 | tee iverilog.log
-Live child 0xf14be0 (system_test111.vvp) PID 39 
+Live child 0x1064be0 (system_test111.vvp) PID 39 
 /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/caravel/verilog/rtl/caravel.v:363: warning: input port clock is coerced to inout.
-/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:781: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:781: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:290: error: This assignment requires an explicit cast.
+/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:296: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:296: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:296: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:296: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:771: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:771: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
 /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/fsic.vo:397: warning: Port 7 (axi_awaddr) of IO_SERDES expects 12 bits, got 15.
 /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/fsic.vo:397:        : Pruning 3 high bits of the expression.
 /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/fsic.vo:397: warning: Port 14 (axi_araddr) of IO_SERDES expects 12 bits, got 15.
 /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/verilog/rtl/fsic.vo:397:        : Pruning 3 high bits of the expression.
-Reaping winning child 0xf14be0 PID 39 
-Removing child 0xf14be0 PID 39 from chain.
+1 error(s) during elaboration.
+Reaping winning child 0x1064be0 PID 39 
+Removing child 0x1064be0 PID 39 from chain.
    Successfully remade target file `system_test111.vvp'.
    Finished prerequisites of target file `system_test111.vcd'.
   Must remake target `system_test111.vcd'.
 Invoking recipe from /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:113 to update target `system_test111.vcd'.
 vvp  system_test111.vvp
-Putting child 0xf13a40 (system_test111.vcd) PID 45 on the chain.
-Live child 0xf13a40 (system_test111.vcd) PID 45 
-Reading system_test111.hex
-system_test111.hex loaded into memory
-Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
-FST info: dumpfile system_test111.vcd opened for output.
-test111: test111_soc_to_fpga_mailbox_write - loop 00
-                  40=> fpga POR Assert
-                  40=> fpga reset Assert
-                  80=> fpga POR De-Assert
-                 120=> fpga reset De-Assert
-                 563=> fpga_as_to_is_init done
-   800.000 ns MSG system_test111_tb, Chip Reset# is released 
-                 963=> wait uut.mprj.u_fsic.U_IO_SERDES0.rxen
-                 963=> detect uut.mprj.u_fsic.U_IO_SERDES0.rxen=1
-                 963=> fpga_cfg_write : fpga_axi_awaddr=xxxx, fpga_axi_awvalid=x, fpga_axi_awready=x, fpga_axi_wdata=xxxxxxxx, axi_wstrb=1, fpga_axi_wvalid=x, fpga_axi_wready=x
-                 963=> fpga rxen_ctl=1
-                1463=> fpga_cfg_write : fpga_axi_awaddr=0000, fpga_axi_awvalid=1, fpga_axi_awready=1, fpga_axi_wdata=00000003, axi_wstrb=1, fpga_axi_wvalid=1, fpga_axi_wready=1
-                1463=> fpga txen_ctl=1
-100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0001
-200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0002
-300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0003
-400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0004
-500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0005
-600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0006
-700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0007
-800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0008
-900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0009
-1000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0010
-1100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0011
-1200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0012
-1300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0013
-1400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0014
-1500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0015
-1600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0016
-1700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0017
-1800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0018
-1900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0019
-2000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0020
-2100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0021
-2200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0022
-2300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0023
-2400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0024
-2500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0025
-2600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0026
-2700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0027
-2800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0028
-2900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0029
-3000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0030
-3100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0031
-3200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0032
-3300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0033
-3400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0034
-3500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0035
-3600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0036
-3700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0037
-3800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0038
-3900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0039
-4000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0040
-4100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0041
-4200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0042
-4300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0043
-4400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0044
-4500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0045
-4600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0046
-4700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0047
-4800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0048
-4900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0049
-5000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0050
-5100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0051
-5200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0052
-5300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0053
-5400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0054
-5500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0055
-5600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0056
-5700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0057
-5800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0058
-5900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0059
-6000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0060
-6100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0061
-6200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0062
-6300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0063
-6400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0064
-6500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0065
-6600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0066
-6700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0067
-6800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0068
-6900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0069
-7000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0070
-7100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0071
-7200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0072
-7300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0073
-7400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0074
-7500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0075
-7600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0076
-7700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0077
-7800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0078
-7900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0079
-8000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0080
-8100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0081
-8200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0082
-8300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0083
-8400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0084
-8500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0085
-8600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0086
-8700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0087
-8800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0088
-8900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0089
-9000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0090
-9100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0091
-9200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0092
-9300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0093
-9400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0094
-9500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0095
-9600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0096
-9700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0097
-9800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0098
-9900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0099
-10000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0100
-10100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0101
-=============================================================================================
-=============================================================================================
-=============================================================================================
-            10100450=> Final result [PASS], check_cnt =          0, error_cnt = 0000
-=============================================================================================
-=============================================================================================
-=============================================================================================
-system_test111_tb.v:310: $finish called at 10100450000 (1ps)
-Reaping winning child 0xf13a40 PID 45 
-mv system_test111.vcd RTL-system_test111.vcd
-Live child 0xf13a40 (system_test111.vcd) PID 46 
-Reaping winning child 0xf13a40 PID 46 
-Removing child 0xf13a40 PID 46 from chain.
-  Successfully remade target file `system_test111.vcd'.
-  Considering target file `system_test111.lst'.
-   Looking for an implicit rule for `system_test111.lst'.
-   Trying pattern rule with stem `system_test111'.
-   Trying implicit prerequisite `system_test111.elf'.
-   Found an implicit rule for `system_test111.lst'.
-   Considering target file `system_test111.elf'.
-   File `system_test111.elf' was considered already.
-   Finished prerequisites of target file `system_test111.lst'.
-   Prerequisite `system_test111.elf' is newer than target `system_test111.lst'.
-  Must remake target `system_test111.lst'.
-Invoking recipe from /ADATA2T/debug/fsic_0929_rtl_sim/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:47 to update target `system_test111.lst'.
-/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objdump -d -S system_test111.elf > system_test111.lst
-Putting child 0xf14000 (system_test111.lst) PID 47 on the chain.
-Live child 0xf14000 (system_test111.lst) PID 47 
-Reaping winning child 0xf14000 PID 47 
-Removing child 0xf14000 PID 47 from chain.
-  Successfully remade target file `system_test111.lst'.
- Finished prerequisites of target file `all'.
-Must remake target `all'.
-Successfully remade target file `all'.
+Putting child 0x1063a40 (system_test111.vcd) PID 45 on the chain.
+Live child 0x1063a40 (system_test111.vcd) PID 45 
+system_test111.vvp: Unable to open input file.
+Reaping losing child 0x1063a40 PID 45 
+Removing child 0x1063a40 PID 45 from chain.
+make: *** [system_test111.vcd] Error 255
 Removing intermediate files...
-rm system_test111.elf system_test111.vvp
-Reaping winning child 0x560bd4b0ef20 PID 367124 
-Removing child 0x560bd4b0ef20 PID 367124 from chain.
-Successfully remade target file 'verify-system_test111-rtl'.
+rm system_test111.elf
+Reaping losing child 0x55c49ea64f20 PID 506469 
+make: *** [Makefile:149: verify-system_test111-rtl] Error 2
+Removing child 0x55c49ea64f20 PID 506469 from chain.
 + exit 1
