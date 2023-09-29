@@ -287,13 +287,7 @@ module axi_ctrl_logic(
     logic [9:0]aa_index; // for index of aa_regs 
     logic [9:0]mb_index; // for index of mb_regs 
 
-    //assign next_trans = (next_ss) ? TRANS_SS : TRANS_LS;
-    /*
-    if (next_ss) 
-        next_trans = TRANS_SS;
-    else
-        next_trans = TRANS_LS;    
-      */      
+    assign next_trans = (next_ss) ? TRANS_SS : TRANS_LS;
 
     // compute control signals according to source (LS / SS) and address range
     // note this is combinational, so the signals can only exist when state is AXI_DECIDE_DEST, 
@@ -320,10 +314,6 @@ module axi_ctrl_logic(
         //mb_index = 10'b0;
 
         //next_trans = (next_ss) ? TRANS_SS : TRANS_LS;
-        if (next_ss) 
-            next_trans = TRANS_SS;
-        else
-            next_trans = TRANS_LS;    
 
         if(axi_state == AXI_DECIDE_DEST)begin
             case(next_trans)
