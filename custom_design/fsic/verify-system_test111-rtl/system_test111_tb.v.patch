@@ -172,6 +172,9 @@ module system_test111_tb #( parameter BITS=32,
     reg [31:0] soc_to_fpga_axilite_read_cpl_expect_value;
     reg [31:0] soc_to_fpga_axilite_read_cpl_captured;
     event soc_to_fpga_axilite_read_cpl_event;
+	
+	event soc_rxen_event;
+	event soc_aa_int_en_event;
 
     reg [31:0] error_cnt;
     reg [31:0] check_cnt;
@@ -563,6 +566,7 @@ module system_test111_tb #( parameter BITS=32,
                 #400;
                 $display($time, "=> wait uut.mprj.u_fsic.U_IO_SERDES0.rxen");
 //tony_debug        wait(uut.mprj.u_fsic.U_IO_SERDES0.rxen);
+				wait(soc_rxen_event);
                 $display($time, "=> detect uut.mprj.u_fsic.U_IO_SERDES0.rxen=1");
 
                 fpga_cfg_write(0,1,1,0);
@@ -748,6 +752,7 @@ module system_test111_tb #( parameter BITS=32,
         init_fpga_as();
                 $display($time, "=> wait uut.mprj.u_fsic.U_AXIL_AXIS0.axi_ctrl_logic.aa_regs[0][0] (interrupt enable bit)");
 //tony_debug        wait(uut.mprj.u_fsic.U_AXIL_AXIS0.axi_ctrl_logic.aa_regs[0][0]); //wait interrupt enable bit = 1
+				wait(soc_aa_int_en_event);
                 $display($time, "=> detect uut.mprj.u_fsic.U_AXIL_AXIS0.axi_ctrl_logic.aa_regs[0][0]=1");
                 test114_fpga_to_soc_CFG_write();        //target to AA_MailBox_Reg_Offset
                 #200;
@@ -1033,6 +1038,16 @@ module system_test111_tb #( parameter BITS=32,
         end
     end
 
+
+	initial begin
+		#2928775 -> soc_rxen_event;	//set soc_rxen_event
+	end
+
+	initial begin
+		#4599750 -> soc_aa_int_en_event;	//set 4599750=
+	end
+
+
   wire   uart_tx;
   assign uart_tx = mprj_io[6];
 
@@ -1056,3 +1071,4 @@ endmodule // top_bench
 //  `include "fsic_io_serdes_rx.v"
 //  `include "io_serdes.v"
 `default_nettype wire
+
