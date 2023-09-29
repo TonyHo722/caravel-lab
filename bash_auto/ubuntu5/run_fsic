@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_0921_3
+export MF=/ADATA2T/debug/fsic_0929_rtl_sim
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -37,7 +37,7 @@ cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0921_yosys_issue https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0929_rtl_sim https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -109,7 +109,8 @@ cp $CLF/custom_design/fsic/verify-system_test111-rtl/sim.makefile $CUPF/mgmt_cor
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 
 # Run RTL simulation
-#make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+exit 1
 
 # Run Openlane to generate RTL netlist
 cp $CLF/custom_design/fsic/openlane/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
