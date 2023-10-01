@@ -245,7 +245,7 @@ module system_test111_tb #( parameter BITS=32,
     `ifdef SYSTEM_test111
     test111();
     `endif //SYSTEM_test111
-
+/*
     `ifdef SYSTEM_test112
     test112();
     `endif //SYSTEM_test112
@@ -266,7 +266,7 @@ module system_test111_tb #( parameter BITS=32,
     `ifdef SYSTEM_test114
     test114();
     `endif //SYSTEM_test114
-
+*/
     end
 
   wire ioclk;
