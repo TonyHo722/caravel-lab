@@ -1040,11 +1040,15 @@ module system_test111_tb #( parameter BITS=32,
 
 
 	initial begin
-		#2928775 -> soc_rxen_event;	//set soc_rxen_event
+		#2928775;
+        $display($time, "=> set soc_rxen_event");
+		-> soc_rxen_event;	//set soc_rxen_event
 	end
 
 	initial begin
-		#4599750 -> soc_aa_int_en_event;	//set 4599750=
+		#4599750;
+        $display($time, "=> set soc_aa_int_en_event");
+		-> soc_aa_int_en_event;	//set soc_aa_int_en_event 
 	end
 
 
