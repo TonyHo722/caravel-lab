@@ -1,0 +1,135 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sun Oct  1 14:16:41 2023
+[*]
+[dumpfile] "/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/RTL-system_test111.vcd"
+[dumpfile_mtime] "Fri Sep 29 13:46:22 2023"
+[dumpfile_size] 12885110
+[savefile] "/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/RTL-system_test111.gtkw"
+[timestart] 3434450000
+[size] 1848 1016
+[pos] -51 -51
+*-21.000000 3440130000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] system_test111_tb.
+[treeopen] system_test111_tb.uut.
+[treeopen] system_test111_tb.uut.mprj.
+[treeopen] system_test111_tb.uut.mprj.mprj.
+[treeopen] system_test111_tb.uut.mprj.mprj.u_fsic.
+[treeopen] system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.
+[treeopen] system_test111_tb.uut.mprj.mprj.u_fsic.U_IO_SERDES0.
+[treeopen] system_test111_tb.uut.soc.core.
+[treeopen] system_test111_tb.uut.soc.core.VexRiscv.
+[sst_width] 426
+[signals_width] 270
+[sst_expanded] 1
+[sst_vpaned_height] 289
+@28
+system_test111_tb.soc_aa_int_en_event
+system_test111_tb.soc_rxen_event
+system_test111_tb.clock
+system_test111_tb.uut.mprj.mprj.u_fsic.U_IO_SERDES0.rxen
+system_test111_tb.uut.mprj.mprj.u_fsic.U_IO_SERDES0.rxen_ctl
+system_test111_tb.uut.mprj.mprj.u_fsic.U_IO_SERDES0.txen
+system_test111_tb.uut.mprj.mprj.u_fsic.U_IO_SERDES0.txen_ctl
+system_test111_tb.uut.mprj.wb_clk_i
+system_test111_tb.uut.mprj.wb_rst_i
+@22
+system_test111_tb.uut.mprj.wbs_adr_i[31:0]
+@28
+system_test111_tb.uut.mprj.wbs_cyc_i
+system_test111_tb.uut.mprj.wbs_ack_o
+@22
+system_test111_tb.uut.mprj.wbs_dat_i[31:0]
+system_test111_tb.uut.mprj.wbs_dat_o[31:0]
+system_test111_tb.uut.mprj.wbs_sel_i[3:0]
+@28
+system_test111_tb.uut.mprj.wbs_stb_i
+system_test111_tb.uut.mprj.wbs_we_i
+@22
+system_test111_tb.spiflash.spi_addr[23:0]
+system_test111_tb.spiflash.spi_out[7:0]
+system_test111_tb.uut.soc.core.VexRiscv.execute_PC[31:0]
+@200
+-CC
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wb_clk
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wb_fsm_reg
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wb_rst
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_adr[31:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_cyc
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_ack_o
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_ack
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_rdata[31:0]
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_rdata_o[31:0]
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_sel[3:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_stb
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_wdata[31:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_CFG_CTRL0.wbs_we
+@200
+-AA
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_aclk
+@200
+-W ADDR
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_awvalid
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_awready
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_awaddr[14:0]
+@200
+-W DATA
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_wvalid
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_wready
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_wdata[31:0]
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_araddr[14:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_aresetn
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_arready
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_arvalid
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_rd_next_state[2:0]
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_rd_state[2:0]
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_rdata[31:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_rready
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_rvalid
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_wr_next_state[2:0]
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_wr_state[2:0]
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.U_AXIL_AXIS0.ls.axi_wstrb[3:0]
+@200
+-AS
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.as_aa_tvalid
+@29
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.as_aa_tready
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.aa_as_tdata[31:0]
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.aa_as_tkeep[3:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.aa_as_tlast
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.aa_as_tready
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.aa_as_tstrb[3:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.aa_as_tuser[1:0]
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.aa_as_tvalid
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.as_aa_tdata[31:0]
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.as_aa_tkeep[3:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.as_aa_tlast
+@22
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.as_aa_tstrb[3:0]
+@28
+system_test111_tb.uut.mprj.mprj.u_fsic.AXIS_SW0.as_aa_tuser[1:0]
+[pattern_trace] 1
+[pattern_trace] 0
