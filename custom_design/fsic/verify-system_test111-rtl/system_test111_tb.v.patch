@@ -566,7 +566,7 @@ module system_test111_tb #( parameter BITS=32,
                 #400;
                 $display($time, "=> wait uut.mprj.u_fsic.U_IO_SERDES0.rxen");
 //tony_debug        wait(uut.mprj.u_fsic.U_IO_SERDES0.rxen);
-				wait(soc_rxen_event);
+				@(soc_rxen_event);
                 $display($time, "=> detect uut.mprj.u_fsic.U_IO_SERDES0.rxen=1");
 
                 fpga_cfg_write(0,1,1,0);
@@ -752,7 +752,7 @@ module system_test111_tb #( parameter BITS=32,
         init_fpga_as();
                 $display($time, "=> wait uut.mprj.u_fsic.U_AXIL_AXIS0.axi_ctrl_logic.aa_regs[0][0] (interrupt enable bit)");
 //tony_debug        wait(uut.mprj.u_fsic.U_AXIL_AXIS0.axi_ctrl_logic.aa_regs[0][0]); //wait interrupt enable bit = 1
-				wait(soc_aa_int_en_event);
+				@(soc_aa_int_en_event);
                 $display($time, "=> detect uut.mprj.u_fsic.U_AXIL_AXIS0.axi_ctrl_logic.aa_regs[0][0]=1");
                 test114_fpga_to_soc_CFG_write();        //target to AA_MailBox_Reg_Offset
                 #200;
