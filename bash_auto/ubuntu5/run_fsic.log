@@ -24,11 +24,11 @@ Cloning into 'caravel-lab'...
 + cd /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab
 + git log -1
 + tee /ADATA2T/debug/fsic_0929_verify_rtl/log/mpw-8c-CLF-git-log.log
-commit 19f54ca9cee5083f682d15cb4a994c82b175f828
+commit 93a1bd05f6ffc2c1fafffe64e599587f16c56622
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Tue Oct 3 09:35:12 2023 +0800
+Date:   Tue Oct 3 17:51:50 2023 +0800
 
-    use wait event
+    update testbench for tlast behavior when soc to fpga mailbox write
 + cd /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project
 + git log -1
 + tee /ADATA2T/debug/fsic_0929_verify_rtl/log/mpw-8c-CUPF-git-log.log
@@ -57,7 +57,7 @@ Date:   Sat Sep 9 11:52:23 2023 +0800
 + cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axis_slave.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axis_slave.sv
 + cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv
 + cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axil_axis.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axil_axis.sv
-+ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/sw_caravel.v.patch /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/sw_caravel.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/sw_caravel.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/sw_caravel.v
 + cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/config_ctrl.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/config_ctrl.v
 + cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/fsic_clkrst.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic_clkrst.v
 + cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/io_serdes.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/io_serdes.v
@@ -108,14 +108,14 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x55f7eced9560 (simenv) PID 3716282 on the chain.
-Live child 0x55f7eced9560 (simenv) PID 3716282 
+Putting child 0x55c0771ab560 (simenv) PID 4027488 on the chain.
+Live child 0x55c0771ab560 (simenv) PID 4027488 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x55f7eced9560 PID 3716282 
-Removing child 0x55f7eced9560 PID 3716282 from chain.
+Reaping winning child 0x55c0771ab560 PID 4027488 
+Removing child 0x55c0771ab560 PID 4027488 from chain.
 Successfully remade target file 'simenv'.
 + make -d verify-system_test111-rtl
 + tee /ADATA2T/debug/fsic_0929_verify_rtl/log/mpw-8c-verify-system_test111-rtl.log
@@ -142,20 +142,20 @@ Considering target file 'verify-system_test111-rtl'.
    Finished prerequisites of target file 'simenv'.
   Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x55dfbf094570 (simenv) PID 3716356 on the chain.
-Live child 0x55dfbf094570 (simenv) PID 3716356 
+Putting child 0x562866658570 (simenv) PID 4027563 on the chain.
+Live child 0x562866658570 (simenv) PID 4027563 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x55dfbf094570 PID 3716356 
-Removing child 0x55dfbf094570 PID 3716356 from chain.
+Reaping winning child 0x562866658570 PID 4027563 
+Removing child 0x562866658570 PID 4027563 from chain.
   Successfully remade target file 'simenv'.
  Finished prerequisites of target file 'verify-system_test111-rtl'.
 Must remake target 'verify-system_test111-rtl'.
 docker run -v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project:/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project -v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/pdks:/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/pdks -v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel:/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel -e TARGET_PATH=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project -e PDK_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project -e USER_PROJECT_VERILOG=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel/verilog -e MCW_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111 && export SIM=RTL && make -d"
-Putting child 0x55dfbf099730 (verify-system_test111-rtl) PID 3716409 on the chain.
-Live child 0x55dfbf099730 (verify-system_test111-rtl) PID 3716409 
+Putting child 0x56286665d730 (verify-system_test111-rtl) PID 4027616 on the chain.
+Live child 0x56286665d730 (verify-system_test111-rtl) PID 4027616 
 GNU Make 3.82
 Built for x86_64-redhat-linux-gnu
 Copyright (C) 2010  Free Software Foundation, Inc.
@@ -418,26 +418,26 @@ Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mg
   -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
 -Wl,-Bstatic,-T,/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,--strip-debug \
 -ffreestanding -nostdlib -o system_test111.elf /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c system_test111.c
-Putting child 0x1dc5310 (system_test111.elf) PID 22 on the chain.
-Live child 0x1dc5310 (system_test111.elf) PID 22 
-Reaping winning child 0x1dc5310 PID 22 
-Removing child 0x1dc5310 PID 22 from chain.
+Putting child 0x109b310 (system_test111.elf) PID 22 on the chain.
+Live child 0x109b310 (system_test111.elf) PID 22 
+Reaping winning child 0x109b310 PID 22 
+Removing child 0x109b310 PID 22 from chain.
       Successfully remade target file `system_test111.elf'.
       Finished prerequisites of target file `system_test111.hex'.
       Prerequisite `system_test111.elf' is newer than target `system_test111.hex'.
      Must remake target `system_test111.hex'.
 Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:50 to update target `system_test111.hex'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog system_test111.elf system_test111.hex 
-Putting child 0x1dc7900 (system_test111.hex) PID 31 on the chain.
-Live child 0x1dc7900 (system_test111.hex) PID 31 
-Reaping winning child 0x1dc7900 PID 31 
+Putting child 0x109d900 (system_test111.hex) PID 31 on the chain.
+Live child 0x109d900 (system_test111.hex) PID 31 
+Reaping winning child 0x109d900 PID 31 
 # to fix flash base address
-Live child 0x1dc7900 (system_test111.hex) PID 32 
-Reaping winning child 0x1dc7900 PID 32 
+Live child 0x109d900 (system_test111.hex) PID 32 
+Reaping winning child 0x109d900 PID 32 
 sed -ie 's/@10/@00/g' system_test111.hex
-Live child 0x1dc7900 (system_test111.hex) PID 33 
-Reaping winning child 0x1dc7900 PID 33 
-Removing child 0x1dc7900 PID 33 from chain.
+Live child 0x109d900 (system_test111.hex) PID 33 
+Reaping winning child 0x109d900 PID 33 
+Removing child 0x109d900 PID 33 from chain.
      Successfully remade target file `system_test111.hex'.
    Considering target file `system_test111.vvp'.
     File `system_test111.vvp' does not exist.
@@ -447,8 +447,8 @@ Removing child 0x1dc7900 PID 33 from chain.
    Must remake target `system_test111.vvp'.
 Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:67 to update target `system_test111.vvp'.
 iverilog -V 2>&1 | tee iverilog-ver.log
-Putting child 0x1dc5370 (system_test111.vvp) PID 34 on the chain.
-Live child 0x1dc5370 (system_test111.vvp) PID 34 
+Putting child 0x109b370 (system_test111.vvp) PID 34 on the chain.
+Live child 0x109b370 (system_test111.vvp) PID 34 
 Icarus Verilog version 12.0 (devel) (s20150603-1288-gcc0a8c8-dirty)
 
 Copyright (c) 2000-2021 Stephen Williams (steve@icarus.com)
@@ -522,14 +522,12 @@ Copyright (c) 2001-2021 Stephen Williams (steve@icarus.com)
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-Reaping winning child 0x1dc5370 PID 34 
+Reaping winning child 0x109b370 PID 34 
 iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
         -g2012 \
         -f/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.rtl.caravel \
         -f/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project -o system_test111.vvp system_test111_tb.v 2>&1 | tee iverilog.log
-Live child 0x1dc5370 (system_test111.vvp) PID 39 
-system_test111_tb.v:568: error: Unable to bind wire/reg/memory `uut.mprj.u_fsic.U_IO_SERDES0.rxen' in `system_test111_tb.init_fpga_as'
-system_test111_tb.v:568: error: Unable to elaborate wait condition expression.
+Live child 0x109b370 (system_test111.vvp) PID 39 
 /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel/verilog/rtl/caravel.v:363: warning: input port clock is coerced to inout.
 /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
 /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
@@ -541,23 +539,193 @@ system_test111_tb.v:568: error: Unable to elaborate wait condition expression.
 /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic.vo:397:        : Pruning 3 high bits of the expression.
 /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic.vo:397: warning: Port 14 (axi_araddr) of IO_SERDES expects 12 bits, got 15.
 /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic.vo:397:        : Pruning 3 high bits of the expression.
-2 error(s) during elaboration.
-Reaping winning child 0x1dc5370 PID 39 
-Removing child 0x1dc5370 PID 39 from chain.
+Reaping winning child 0x109b370 PID 39 
+Removing child 0x109b370 PID 39 from chain.
    Successfully remade target file `system_test111.vvp'.
    Finished prerequisites of target file `system_test111.vcd'.
   Must remake target `system_test111.vcd'.
 Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:113 to update target `system_test111.vcd'.
 vvp  system_test111.vvp
-Putting child 0x1dc7160 (system_test111.vcd) PID 45 on the chain.
-Live child 0x1dc7160 (system_test111.vcd) PID 45 
-system_test111.vvp: Unable to open input file.
-make: *** [system_test111.vcd] Error 255
-Reaping losing child 0x1dc7160 PID 45 
-Removing child 0x1dc7160 PID 45 from chain.
+Putting child 0x109d160 (system_test111.vcd) PID 45 on the chain.
+Live child 0x109d160 (system_test111.vcd) PID 45 
+Reading system_test111.hex
+system_test111.hex loaded into memory
+Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
+FST info: dumpfile system_test111.vcd opened for output.
+test111: test111_soc_to_fpga_mailbox_write - loop 00
+                  40=> fpga POR Assert
+                  40=> fpga reset Assert
+                  80=> fpga POR De-Assert
+                 120=> fpga reset De-Assert
+                 563=> fpga_as_to_is_init done
+   800.000 ns MSG system_test111_tb, Chip Reset# is released 
+                 963=> wait uut.mprj.u_fsic.U_IO_SERDES0.rxen
+100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0001
+200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0002
+300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0003
+400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0004
+500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0005
+600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0006
+700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0007
+800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0008
+900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0009
+1000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0010
+1100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0011
+1200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0012
+1300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0013
+1400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0014
+1500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0015
+1600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0016
+1700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0017
+1800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0018
+1900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0019
+2000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0020
+2100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0021
+2200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0022
+2300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0023
+2400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0024
+2500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0025
+2600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0026
+2700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0027
+2800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0028
+2900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0029
+             2928775=> set soc_rxen_event
+             2979475=> detect uut.mprj.u_fsic.U_IO_SERDES0.rxen=1
+             2979563=> fpga_cfg_write : fpga_axi_awaddr=0000, fpga_axi_awvalid=1, fpga_axi_awready=1, fpga_axi_wdata=00000001, axi_wstrb=1, fpga_axi_wvalid=1, fpga_axi_wready=1
+             2979563=> fpga rxen_ctl=1
+             2980063=> fpga_cfg_write : fpga_axi_awaddr=0000, fpga_axi_awvalid=1, fpga_axi_awready=1, fpga_axi_wdata=00000003, axi_wstrb=1, fpga_axi_wvalid=1, fpga_axi_wready=1
+             2980063=> fpga txen_ctl=1
+3000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0030
+3100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0031
+3200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0032
+3300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0033
+3400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0034
+             3441363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =xxxxxxxx, fpga_is_as_tdata=f0002000
+             3441363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
+             3441963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =xxxxxxxx, fpga_is_as_tdata=5a5a5a5a
+             3441963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
+             3441963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002000, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002000
+             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
+-----------------
+3500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0035
+             3550863=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
+             3550863=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
+             3551463=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
+             3551463=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
+             3551463=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002000, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002000
+             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
+-----------------
+3600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0036
+3700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0037
+             3783063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002004
+             3783063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
+             3783663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
+             3783663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
+             3783663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002004, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002004
+             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
+-----------------
+             3786363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
+             3786363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
+             3786963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
+             3786963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
+             3786963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002004, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002004
+             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
+-----------------
+3800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0038
+3900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0039
+4000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0040
+             4033063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002008
+             4033063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
+             4033663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
+             4033663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
+             4033663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002008, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002008
+             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
+-----------------
+             4036363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
+             4036363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
+             4036963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
+             4036963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
+             4036963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002008, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002008
+             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
+-----------------
+4100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0041
+4200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0042
+             4283063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f000200c
+             4283063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
+             4283663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
+             4283663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
+             4283663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=000200c, soc_to_fpga_mailbox_write_addr_captured[27:0]=000200c
+             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
+-----------------
+             4286363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
+             4286363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
+             4286963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
+             4286963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
+             4286963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=000200c, soc_to_fpga_mailbox_write_addr_captured[27:0]=000200c
+             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
+-----------------
+4300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=1,  repeat_cnt=0043
+=============================================================================================
+=============================================================================================
+=============================================================================================
+             4300450=> Final result [PASS], check_cnt =         24, error_cnt = 0000
+=============================================================================================
+=============================================================================================
+=============================================================================================
+system_test111_tb.v:313: $finish called at 4300450000 (1ps)
+Reaping winning child 0x109d160 PID 45 
+mv system_test111.vcd RTL-system_test111.vcd
+Live child 0x109d160 (system_test111.vcd) PID 46 
+Reaping winning child 0x109d160 PID 46 
+Removing child 0x109d160 PID 46 from chain.
+  Successfully remade target file `system_test111.vcd'.
+  Considering target file `system_test111.lst'.
+   Looking for an implicit rule for `system_test111.lst'.
+   Trying pattern rule with stem `system_test111'.
+   Trying implicit prerequisite `system_test111.elf'.
+   Found an implicit rule for `system_test111.lst'.
+   Considering target file `system_test111.elf'.
+   File `system_test111.elf' was considered already.
+   Finished prerequisites of target file `system_test111.lst'.
+   Prerequisite `system_test111.elf' is newer than target `system_test111.lst'.
+  Must remake target `system_test111.lst'.
+Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:47 to update target `system_test111.lst'.
+/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objdump -d -S system_test111.elf > system_test111.lst
+Putting child 0x109ce90 (system_test111.lst) PID 47 on the chain.
+Live child 0x109ce90 (system_test111.lst) PID 47 
+Reaping winning child 0x109ce90 PID 47 
+Removing child 0x109ce90 PID 47 from chain.
+  Successfully remade target file `system_test111.lst'.
+ Finished prerequisites of target file `all'.
+Must remake target `all'.
+Successfully remade target file `all'.
 Removing intermediate files...
-rm system_test111.elf
-Reaping losing child 0x55dfbf099730 PID 3716409 
-make: *** [Makefile:149: verify-system_test111-rtl] Error 2
-Removing child 0x55dfbf099730 PID 3716409 from chain.
+rm system_test111.elf system_test111.vvp
+Reaping winning child 0x56286665d730 PID 4027616 
+Removing child 0x56286665d730 PID 4027616 from chain.
+Successfully remade target file 'verify-system_test111-rtl'.
 + exit 1
