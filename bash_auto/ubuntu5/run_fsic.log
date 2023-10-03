@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 + export MF=/ADATA2T/debug/fsic_0921_3
 + MF=/ADATA2T/debug/fsic_0921_3
 + export PRECHECK_ROOT=/ADATA2T/debug/fsic_0921_3/mpw_precheck
@@ -32,11 +33,48 @@ Date:   Thu Sep 21 17:35:48 2023 +0800
 + cd /ADATA2T/debug/fsic_0921_3/caravel_user_project
 + git log -1
 + tee /ADATA2T/debug/fsic_0921_3/log/mpw-8c-CUPF-git-log.log
+=======
++ export MF=/ADATA2T/debug/fsic_0929_verify_rtl
++ MF=/ADATA2T/debug/fsic_0929_verify_rtl
++ export PRECHECK_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/mpw_precheck
++ PRECHECK_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/mpw_precheck
++ export LF=/ADATA2T/debug/fsic_0929_verify_rtl/log
++ LF=/ADATA2T/debug/fsic_0929_verify_rtl/log
++ export CLF=/ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab
++ CLF=/ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab
++ export CUPF=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project
++ CUPF=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project
++ '[' '!' -d /ADATA2T/debug/fsic_0929_verify_rtl ']'
++ cd /ADATA2T/debug/fsic_0929_verify_rtl
++ '[' '!' -d /ADATA2T/debug/fsic_0929_verify_rtl/log ']'
++ '[' -d /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab ']'
++ echo '/ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab exist, remove it'
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab exist, remove it
++ rm -rf /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab
++ '[' '!' -d /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab ']'
++ echo '/ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab not exist, git clone it'
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab not exist, git clone it
++ git clone -b 0929_verify_rtl https://github.com/TonyHo722/caravel-lab
+Cloning into 'caravel-lab'...
++ '[' '!' -d /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project ']'
++ cd /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab
++ git log -1
++ tee /ADATA2T/debug/fsic_0929_verify_rtl/log/mpw-8c-CLF-git-log.log
+commit 93a1bd05f6ffc2c1fafffe64e599587f16c56622
+Author: tonyho <TonyHo@via.com.tw>
+Date:   Tue Oct 3 17:51:50 2023 +0800
+
+    update testbench for tlast behavior when soc to fpga mailbox write
++ cd /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project
++ git log -1
++ tee /ADATA2T/debug/fsic_0929_verify_rtl/log/mpw-8c-CUPF-git-log.log
+>>>>>>> 0929_verify_rtl
 commit a4ecba90bd78c797ab3f4cee61586635d4a33ced
 Author: tonyho <TonyHo@via.com.tw>
 Date:   Sat Sep 9 11:52:23 2023 +0800
 
     roll back user_project_wrapper.v for auto_bash script - run for la_test1
+<<<<<<< HEAD
 + '[' '!' -d '/ADATA2T/debug/fsic_0921_3/caravel_user_project/dependencies]'
 ./run_fsic: line 52: [: missing `]'
 ++ pwd
@@ -81,6 +119,58 @@ Date:   Sat Sep 9 11:52:23 2023 +0800
 + cp /ADATA2T/debug/fsic_0921_3/caravel-lab/custom_design/fsic/verify-system_test111-rtl/sim.makefile /ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 + make -d simenv
 + tee /ADATA2T/debug/fsic_0921_3/log/mpw-8c-simenv.log
+=======
++ '[' '!' -d '/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies]'
+./run_fsic: line 53: [: missing `]'
+++ pwd
++ export OPENLANE_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/openlane_src
++ OPENLANE_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/openlane_src
+++ pwd
++ export PDK_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/pdks
++ PDK_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/pdks
++ export PDK=sky130A
++ PDK=sky130A
++ '[' '!' -d /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel ']'
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/user_project_wrapper.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/user_project_wrapper.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/user_proj_example.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/user_proj_example.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/fsic.vo /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic.vo
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axilite_master.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axilite_master.sv
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axilite_slave.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axilite_slave.sv
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axis_master.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axis_master.sv
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axis_slave.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axis_slave.sv
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/axil_axis.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axil_axis.sv
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/sw_caravel.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/sw_caravel.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/config_ctrl.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/config_ctrl.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/fsic_clkrst.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic_clkrst.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/io_serdes.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/io_serdes.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic_coreclk_phase_cnt.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic_io_serdes_rx.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/mprj_io.sv /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/mprj_io.sv
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/user_subsys.all.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/user_subsys.all.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/logic_anlz.dummy_io.vd
++ '[' '!' -d /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111 ']'
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/Makefile /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/Makefile
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/system_test111.c /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/system_test111.c
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/system_test111_tb.v.patch /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/system_test111_tb.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/bench_ini.svh /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/bench_ini.svh
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/bench_vec.svh /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/bench_vec.svh
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/project_define.svh /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/project_define.svh
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/cpu_trace.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/cpu_trace.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/dasm.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/dasm.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/fpga.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/fpga.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/fsic_clock.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/fsic_clock.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/fsic_io_serdes_rx.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/io_serdes.v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111/io_serdes.v
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/includes/includes.gl.caravel_user_project
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/includes/includes.gl+sdf.caravel_user_project
++ rm -f '/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/gl/*'
++ cp /ADATA2T/debug/fsic_0929_verify_rtl/caravel-lab/custom_design/fsic/verify-system_test111-rtl/sim.makefile /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile
++ make -d simenv
++ tee /ADATA2T/debug/fsic_0929_verify_rtl/log/mpw-8c-simenv.log
+>>>>>>> 0929_verify_rtl
 GNU Make 4.2.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -102,12 +192,18 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
+<<<<<<< HEAD
 Putting child 0x559e238044d0 (simenv) PID 2081252 on the chain.
 Live child 0x559e238044d0 (simenv) PID 2081252 
+=======
+Putting child 0x55c0771ab560 (simenv) PID 4027488 on the chain.
+Live child 0x55c0771ab560 (simenv) PID 4027488 
+>>>>>>> 0929_verify_rtl
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
+<<<<<<< HEAD
 Reaping winning child 0x559e238044d0 PID 2081252 
 Removing child 0x559e238044d0 PID 2081252 from chain.
 Successfully remade target file 'simenv'.
@@ -116,6 +212,13 @@ Successfully remade target file 'simenv'.
 + cp /ADATA2T/debug/fsic_0921_3/caravel-lab/custom_design/fsic/openlane/user_project_wrapper/config.json /ADATA2T/debug/fsic_0921_3/caravel_user_project/openlane/user_project_wrapper/config.json
 + make -d user_proj_example
 + tee /ADATA2T/debug/fsic_0921_3/log/mpw-8c-user_proj_example.log
+=======
+Reaping winning child 0x55c0771ab560 PID 4027488 
+Removing child 0x55c0771ab560 PID 4027488 from chain.
+Successfully remade target file 'simenv'.
++ make -d verify-system_test111-rtl
++ tee /ADATA2T/debug/fsic_0929_verify_rtl/log/mpw-8c-verify-system_test111-rtl.log
+>>>>>>> 0929_verify_rtl
 GNU Make 4.2.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -132,6 +235,7 @@ Updating makefiles....
   Finished prerequisites of target file 'Makefile'.
  No need to remake target 'Makefile'.
 Updating goal targets....
+<<<<<<< HEAD
 Considering target file 'user_proj_example'.
  File 'user_proj_example' does not exist.
  Finished prerequisites of target file 'user_proj_example'.
@@ -2126,17 +2230,27 @@ Updating makefiles....
 Updating goal targets....
 Considering target file 'verify-system_test111-gl'.
  File 'verify-system_test111-gl' does not exist.
+=======
+Considering target file 'verify-system_test111-rtl'.
+ File 'verify-system_test111-rtl' does not exist.
+>>>>>>> 0929_verify_rtl
   Considering target file 'simenv'.
    File 'simenv' does not exist.
    Finished prerequisites of target file 'simenv'.
   Must remake target 'simenv'.
 docker pull efabless/dv:latest
+<<<<<<< HEAD
 Putting child 0x5642f1b1c4e0 (simenv) PID 2089539 on the chain.
 Live child 0x5642f1b1c4e0 (simenv) PID 2089539 
+=======
+Putting child 0x562866658570 (simenv) PID 4027563 on the chain.
+Live child 0x562866658570 (simenv) PID 4027563 
+>>>>>>> 0929_verify_rtl
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
+<<<<<<< HEAD
 Reaping winning child 0x5642f1b1c4e0 PID 2089539 
 Removing child 0x5642f1b1c4e0 PID 2089539 from chain.
   Successfully remade target file 'simenv'.
@@ -2145,6 +2259,16 @@ Must remake target 'verify-system_test111-gl'.
 docker run -v /ADATA2T/debug/fsic_0921_3/caravel_user_project:/ADATA2T/debug/fsic_0921_3/caravel_user_project -v /ADATA2T/debug/fsic_0921_3/caravel_user_project/dependencies/pdks:/ADATA2T/debug/fsic_0921_3/caravel_user_project/dependencies/pdks -v /ADATA2T/debug/fsic_0921_3/caravel_user_project/caravel:/ADATA2T/debug/fsic_0921_3/caravel_user_project/caravel -e TARGET_PATH=/ADATA2T/debug/fsic_0921_3/caravel_user_project -e PDK_ROOT=/ADATA2T/debug/fsic_0921_3/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/ADATA2T/debug/fsic_0921_3/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/ADATA2T/debug/fsic_0921_3/caravel_user_project -e USER_PROJECT_VERILOG=/ADATA2T/debug/fsic_0921_3/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/ADATA2T/debug/fsic_0921_3/caravel_user_project/caravel/verilog -e MCW_ROOT=/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /ADATA2T/debug/fsic_0921_3/caravel_user_project/verilog/dv/system_test111 && export SIM=GL && make -d"
 Putting child 0x5642f1b208b0 (verify-system_test111-gl) PID 2089593 on the chain.
 Live child 0x5642f1b208b0 (verify-system_test111-gl) PID 2089593 
+=======
+Reaping winning child 0x562866658570 PID 4027563 
+Removing child 0x562866658570 PID 4027563 from chain.
+  Successfully remade target file 'simenv'.
+ Finished prerequisites of target file 'verify-system_test111-rtl'.
+Must remake target 'verify-system_test111-rtl'.
+docker run -v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project:/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project -v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/pdks:/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/pdks -v /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel:/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel -e TARGET_PATH=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project -e PDK_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project -e USER_PROJECT_VERILOG=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel/verilog -e MCW_ROOT=/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/dv/system_test111 && export SIM=RTL && make -d"
+Putting child 0x56286665d730 (verify-system_test111-rtl) PID 4027616 on the chain.
+Live child 0x56286665d730 (verify-system_test111-rtl) PID 4027616 
+>>>>>>> 0929_verify_rtl
 GNU Make 3.82
 Built for x86_64-redhat-linux-gnu
 Copyright (C) 2010  Free Software Foundation, Inc.
@@ -2153,6 +2277,7 @@ This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 Reading makefiles...
 Reading makefile `Makefile'...
+<<<<<<< HEAD
 Reading makefile `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile' (search path) (no ~ expansion)...
 Reading makefile `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/var.makefile' (search path) (no ~ expansion)...
 Reading makefile `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/cpu.makefile' (search path) (no ~ expansion)...
@@ -2218,6 +2343,73 @@ Updating makefiles....
   No implicit rule found for `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile'.
   Finished prerequisites of target file `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile'.
  No need to remake target `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile'.
+=======
+Reading makefile `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile' (search path) (no ~ expansion)...
+Reading makefile `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/var.makefile' (search path) (no ~ expansion)...
+Reading makefile `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/cpu.makefile' (search path) (no ~ expansion)...
+Reading makefile `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile' (search path) (no ~ expansion)...
+Updating makefiles....
+ Considering target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile'.
+  Looking for an implicit rule for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile'.
+  Trying pattern rule with stem `sim.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile,v'.
+  Trying pattern rule with stem `sim.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/RCS/sim.makefile,v'.
+  Trying pattern rule with stem `sim.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/RCS/sim.makefile'.
+  Trying pattern rule with stem `sim.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/s.sim.makefile'.
+  Trying pattern rule with stem `sim.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/SCCS/s.sim.makefile'.
+  No implicit rule found for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile'.
+  Finished prerequisites of target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile'.
+ No need to remake target `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile'.
+ Considering target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/cpu.makefile'.
+  Looking for an implicit rule for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/cpu.makefile'.
+  Trying pattern rule with stem `cpu.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/cpu.makefile,v'.
+  Trying pattern rule with stem `cpu.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/RCS/cpu.makefile,v'.
+  Trying pattern rule with stem `cpu.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/RCS/cpu.makefile'.
+  Trying pattern rule with stem `cpu.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/s.cpu.makefile'.
+  Trying pattern rule with stem `cpu.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/SCCS/s.cpu.makefile'.
+  No implicit rule found for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/cpu.makefile'.
+  Finished prerequisites of target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/cpu.makefile'.
+ No need to remake target `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/cpu.makefile'.
+ Considering target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/var.makefile'.
+  Looking for an implicit rule for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/var.makefile'.
+  Trying pattern rule with stem `var.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/var.makefile,v'.
+  Trying pattern rule with stem `var.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/RCS/var.makefile,v'.
+  Trying pattern rule with stem `var.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/RCS/var.makefile'.
+  Trying pattern rule with stem `var.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/s.var.makefile'.
+  Trying pattern rule with stem `var.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/SCCS/s.var.makefile'.
+  No implicit rule found for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/var.makefile'.
+  Finished prerequisites of target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/var.makefile'.
+ No need to remake target `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/var.makefile'.
+ Considering target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile'.
+  Looking for an implicit rule for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile'.
+  Trying pattern rule with stem `env.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile,v'.
+  Trying pattern rule with stem `env.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/RCS/env.makefile,v'.
+  Trying pattern rule with stem `env.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/RCS/env.makefile'.
+  Trying pattern rule with stem `env.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/s.env.makefile'.
+  Trying pattern rule with stem `env.makefile'.
+  Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/SCCS/s.env.makefile'.
+  No implicit rule found for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile'.
+  Finished prerequisites of target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile'.
+ No need to remake target `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/env.makefile'.
+>>>>>>> 0929_verify_rtl
  Considering target file `Makefile'.
   Looking for an implicit rule for `Makefile'.
   Trying pattern rule with stem `Makefile'.
@@ -2294,9 +2486,15 @@ Considering target file `all'.
        Avoiding implicit rule recursion.
        Trying pattern rule with stem `system_test111'.
        Trying implicit prerequisite `system_test111.c'.
+<<<<<<< HEAD
        Trying rule prerequisite `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
        Trying rule prerequisite `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
        Trying rule prerequisite `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+=======
+       Trying rule prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+       Trying rule prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+       Trying rule prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+>>>>>>> 0929_verify_rtl
       Found an implicit rule for `system_test111.hex'.
         Considering target file `system_test111.c'.
          Looking for an implicit rule for `system_test111.c'.
@@ -2329,6 +2527,7 @@ Considering target file `all'.
          No implicit rule found for `system_test111.c'.
          Finished prerequisites of target file `system_test111.c'.
         No need to remake target `system_test111.c'.
+<<<<<<< HEAD
         Considering target file `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
          Looking for an implicit rule for `/ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
          Trying pattern rule with stem `sections.lds'.
@@ -2411,10 +2610,95 @@ Putting child 0xac42f0 (system_test111.elf) PID 22 on the chain.
 Live child 0xac42f0 (system_test111.elf) PID 22 
 Reaping winning child 0xac42f0 PID 22 
 Removing child 0xac42f0 PID 22 from chain.
+=======
+        Considering target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+         Looking for an implicit rule for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+         Trying pattern rule with stem `sections.lds'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,v'.
+         Trying pattern rule with stem `sections.lds'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/sections.lds,v'.
+         Trying pattern rule with stem `sections.lds'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/sections.lds'.
+         Trying pattern rule with stem `sections.lds'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.sections.lds'.
+         Trying pattern rule with stem `sections.lds'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.sections.lds'.
+         No implicit rule found for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+         Finished prerequisites of target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+        No need to remake target `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+        Considering target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+         Looking for an implicit rule for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+         Trying pattern rule with stem `crt0_vex.S'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S,v'.
+         Trying pattern rule with stem `crt0_vex.S'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/crt0_vex.S,v'.
+         Trying pattern rule with stem `crt0_vex.S'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/crt0_vex.S'.
+         Trying pattern rule with stem `crt0_vex.S'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.crt0_vex.S'.
+         Trying pattern rule with stem `crt0_vex.S'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.crt0_vex.S'.
+         No implicit rule found for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+         Finished prerequisites of target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+        No need to remake target `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+        Considering target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+         Looking for an implicit rule for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+         Trying pattern rule with stem `isr'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
+         Trying pattern rule with stem `isr.c'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c,v'.
+         Trying pattern rule with stem `isr.c'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.c,v'.
+         Trying pattern rule with stem `isr.c'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.c'.
+         Trying pattern rule with stem `isr.c'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.isr.c'.
+         Trying pattern rule with stem `isr.c'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.isr.c'.
+         Trying pattern rule with stem `isr'.
+         Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
+         Looking for a rule with intermediate file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w'.
+          Avoiding implicit rule recursion.
+          Trying pattern rule with stem `isr.w'.
+          Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.w,v'.
+          Trying pattern rule with stem `isr.w'.
+          Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.w,v'.
+          Trying pattern rule with stem `isr.w'.
+          Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/RCS/isr.w'.
+          Trying pattern rule with stem `isr.w'.
+          Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/s.isr.w'.
+          Trying pattern rule with stem `isr.w'.
+          Trying implicit prerequisite `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/SCCS/s.isr.w'.
+         No implicit rule found for `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+         Finished prerequisites of target file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+        No need to remake target `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+      Considering target file `system_test111.elf'.
+       File `system_test111.elf' does not exist.
+        Pruning file `system_test111.c'.
+        Pruning file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds'.
+        Pruning file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S'.
+        Pruning file `/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c'.
+       Finished prerequisites of target file `system_test111.elf'.
+      Must remake target `system_test111.elf'.
+Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:37 to update target `system_test111.elf'.
+/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-gcc -g \
+-I/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware \
+-I/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/generated \
+-I/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/ \
+-I/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/common \
+  -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
+-Wl,-Bstatic,-T,/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,--strip-debug \
+-ffreestanding -nostdlib -o system_test111.elf /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c system_test111.c
+Putting child 0x109b310 (system_test111.elf) PID 22 on the chain.
+Live child 0x109b310 (system_test111.elf) PID 22 
+Reaping winning child 0x109b310 PID 22 
+Removing child 0x109b310 PID 22 from chain.
+>>>>>>> 0929_verify_rtl
       Successfully remade target file `system_test111.elf'.
       Finished prerequisites of target file `system_test111.hex'.
       Prerequisite `system_test111.elf' is newer than target `system_test111.hex'.
      Must remake target `system_test111.hex'.
+<<<<<<< HEAD
 Invoking recipe from /ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:50 to update target `system_test111.hex'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog system_test111.elf system_test111.hex 
 Putting child 0xac4550 (system_test111.hex) PID 31 on the chain.
@@ -2427,6 +2711,20 @@ sed -ie 's/@10/@00/g' system_test111.hex
 Live child 0xac4550 (system_test111.hex) PID 33 
 Reaping winning child 0xac4550 PID 33 
 Removing child 0xac4550 PID 33 from chain.
+=======
+Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:50 to update target `system_test111.hex'.
+/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog system_test111.elf system_test111.hex 
+Putting child 0x109d900 (system_test111.hex) PID 31 on the chain.
+Live child 0x109d900 (system_test111.hex) PID 31 
+Reaping winning child 0x109d900 PID 31 
+# to fix flash base address
+Live child 0x109d900 (system_test111.hex) PID 32 
+Reaping winning child 0x109d900 PID 32 
+sed -ie 's/@10/@00/g' system_test111.hex
+Live child 0x109d900 (system_test111.hex) PID 33 
+Reaping winning child 0x109d900 PID 33 
+Removing child 0x109d900 PID 33 from chain.
+>>>>>>> 0929_verify_rtl
      Successfully remade target file `system_test111.hex'.
    Considering target file `system_test111.vvp'.
     File `system_test111.vvp' does not exist.
@@ -2434,6 +2732,7 @@ Removing child 0xac4550 PID 33 from chain.
      Pruning file `system_test111.hex'.
     Finished prerequisites of target file `system_test111.vvp'.
    Must remake target `system_test111.vvp'.
+<<<<<<< HEAD
 Invoking recipe from /ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:82 to update target `system_test111.vvp'.
 iverilog -Ttyp -DFUNCTIONAL -DGL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
         -g2012 \
@@ -2451,6 +2750,111 @@ Invoking recipe from /ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_w
 vvp  system_test111.vvp
 Putting child 0xac4cb0 (system_test111.vcd) PID 38 on the chain.
 Live child 0xac4cb0 (system_test111.vcd) PID 38 
+=======
+Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:67 to update target `system_test111.vvp'.
+iverilog -V 2>&1 | tee iverilog-ver.log
+Putting child 0x109b370 (system_test111.vvp) PID 34 on the chain.
+Live child 0x109b370 (system_test111.vvp) PID 34 
+Icarus Verilog version 12.0 (devel) (s20150603-1288-gcc0a8c8-dirty)
+
+Copyright (c) 2000-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Preprocessor version 12.0 (devel) (s20150603-1288-gcc0a8c8-dirty)
+
+Copyright (c) 1999-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Parser/Elaborator version 12.0 (devel) (s20150603-1288-gcc0a8c8-dirty)
+
+Copyright (c) 1998-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+ FLAGS DLL vvp.tgt
+vvp.tgt: Icarus Verilog VVP Code Generator 12.0 (devel) (s20150603-1288-gcc0a8c8-dirty)
+
+Copyright (c) 2001-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Reaping winning child 0x109b370 PID 34 
+iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+        -g2012 \
+        -f/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.rtl.caravel \
+        -f/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project -o system_test111.vvp system_test111_tb.v 2>&1 | tee iverilog.log
+Live child 0x109b370 (system_test111.vvp) PID 39 
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/caravel/verilog/rtl/caravel.v:363: warning: input port clock is coerced to inout.
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:781: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:781: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic.vo:397: warning: Port 7 (axi_awaddr) of IO_SERDES expects 12 bits, got 15.
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic.vo:397:        : Pruning 3 high bits of the expression.
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic.vo:397: warning: Port 14 (axi_araddr) of IO_SERDES expects 12 bits, got 15.
+/ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/verilog/rtl/fsic.vo:397:        : Pruning 3 high bits of the expression.
+Reaping winning child 0x109b370 PID 39 
+Removing child 0x109b370 PID 39 from chain.
+   Successfully remade target file `system_test111.vvp'.
+   Finished prerequisites of target file `system_test111.vcd'.
+  Must remake target `system_test111.vcd'.
+Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:113 to update target `system_test111.vcd'.
+vvp  system_test111.vvp
+Putting child 0x109d160 (system_test111.vcd) PID 45 on the chain.
+Live child 0x109d160 (system_test111.vcd) PID 45 
+>>>>>>> 0929_verify_rtl
 Reading system_test111.hex
 system_test111.hex loaded into memory
 Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
@@ -2463,11 +2867,6 @@ test111: test111_soc_to_fpga_mailbox_write - loop 00
                  563=> fpga_as_to_is_init done
    800.000 ns MSG system_test111_tb, Chip Reset# is released 
                  963=> wait uut.mprj.u_fsic.U_IO_SERDES0.rxen
-                 963=> detect uut.mprj.u_fsic.U_IO_SERDES0.rxen=1
-                 963=> fpga_cfg_write : fpga_axi_awaddr=xxxx, fpga_axi_awvalid=x, fpga_axi_awready=x, fpga_axi_wdata=xxxxxxxx, axi_wstrb=1, fpga_axi_wvalid=x, fpga_axi_wready=x
-                 963=> fpga rxen_ctl=1
-                1463=> fpga_cfg_write : fpga_axi_awaddr=0000, fpga_axi_awvalid=1, fpga_axi_awready=1, fpga_axi_wdata=00000003, axi_wstrb=1, fpga_axi_wvalid=1, fpga_axi_wready=1
-                1463=> fpga txen_ctl=1
 100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0001
 200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0002
 300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0003
@@ -2497,91 +2896,128 @@ test111: test111_soc_to_fpga_mailbox_write - loop 00
 2700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0027
 2800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0028
 2900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0029
+             2928775=> set soc_rxen_event
+             2979475=> detect uut.mprj.u_fsic.U_IO_SERDES0.rxen=1
+             2979563=> fpga_cfg_write : fpga_axi_awaddr=0000, fpga_axi_awvalid=1, fpga_axi_awready=1, fpga_axi_wdata=00000001, axi_wstrb=1, fpga_axi_wvalid=1, fpga_axi_wready=1
+             2979563=> fpga rxen_ctl=1
+             2980063=> fpga_cfg_write : fpga_axi_awaddr=0000, fpga_axi_awvalid=1, fpga_axi_awready=1, fpga_axi_wdata=00000003, axi_wstrb=1, fpga_axi_wvalid=1, fpga_axi_wready=1
+             2980063=> fpga txen_ctl=1
 3000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0030
 3100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0031
 3200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0032
 3300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0033
 3400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0034
+             3441363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =xxxxxxxx, fpga_is_as_tdata=f0002000
+             3441363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
+             3441963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =xxxxxxxx, fpga_is_as_tdata=5a5a5a5a
+             3441963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
+             3441963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002000, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002000
+             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
+-----------------
 3500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0035
+             3550863=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
+             3550863=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
+             3551463=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
+             3551463=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
+             3551463=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002000, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002000
+             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
+-----------------
 3600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0036
 3700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0037
+             3783063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002004
+             3783063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
+             3783663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
+             3783663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
+             3783663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002004, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002004
+             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
+-----------------
+             3786363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
+             3786363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
+             3786963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
+             3786963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
+             3786963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002004, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002004
+             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
+-----------------
 3800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0038
 3900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0039
 4000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0040
+             4033063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002008
+             4033063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
+             4033663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
+             4033663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
+             4033663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002008, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002008
+             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
+-----------------
+             4036363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
+             4036363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
+             4036963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
+             4036963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
+             4036963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002008, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002008
+             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
+-----------------
 4100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0041
 4200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0042
-4300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0043
-4400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0044
-4500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0045
-4600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0046
-4700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0047
-4800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0048
-4900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0049
-5000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0050
-5100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0051
-5200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0052
-5300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0053
-5400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0054
-5500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0055
-5600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0056
-5700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0057
-5800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0058
-5900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0059
-6000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0060
-6100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0061
-6200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0062
-6300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0063
-6400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0064
-6500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0065
-6600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0066
-6700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0067
-6800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0068
-6900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0069
-7000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0070
-7100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0071
-7200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0072
-7300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0073
-7400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0074
-7500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0075
-7600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0076
-7700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0077
-7800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0078
-7900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0079
-8000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0080
-8100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0081
-8200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0082
-8300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0083
-8400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0084
-8500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0085
-8600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0086
-8700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0087
-8800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0088
-8900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0089
-9000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0090
-9100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0091
-9200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0092
-9300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0093
-9400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0094
-9500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0095
-9600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0096
-9700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0097
-9800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0098
-9900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0099
-10000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0100
-10100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0101
+             4283063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f000200c
+             4283063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
+             4283663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
+             4283663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
+             4283663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=000200c, soc_to_fpga_mailbox_write_addr_captured[27:0]=000200c
+             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
+-----------------
+             4286363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
+             4286363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
+             4286963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
+             4286963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
+             4286963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
+             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
+             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=000200c, soc_to_fpga_mailbox_write_addr_captured[27:0]=000200c
+             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
+             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
+-----------------
+4300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=1,  repeat_cnt=0043
 =============================================================================================
 =============================================================================================
 =============================================================================================
-            10100450=> Final result [PASS], check_cnt =          0, error_cnt = 0000
+             4300450=> Final result [PASS], check_cnt =         24, error_cnt = 0000
 =============================================================================================
 =============================================================================================
 =============================================================================================
+<<<<<<< HEAD
 system_test111_tb.v:310: $finish called at 10100450000 (1ps)
 Reaping winning child 0xac4cb0 PID 38 
 mv system_test111.vcd GL-system_test111.vcd
 Live child 0xac4cb0 (system_test111.vcd) PID 39 
 Reaping winning child 0xac4cb0 PID 39 
 Removing child 0xac4cb0 PID 39 from chain.
+=======
+system_test111_tb.v:313: $finish called at 4300450000 (1ps)
+Reaping winning child 0x109d160 PID 45 
+mv system_test111.vcd RTL-system_test111.vcd
+Live child 0x109d160 (system_test111.vcd) PID 46 
+Reaping winning child 0x109d160 PID 46 
+Removing child 0x109d160 PID 46 from chain.
+>>>>>>> 0929_verify_rtl
   Successfully remade target file `system_test111.vcd'.
   Considering target file `system_test111.lst'.
    Looking for an implicit rule for `system_test111.lst'.
@@ -2593,18 +3029,28 @@ Removing child 0xac4cb0 PID 39 from chain.
    Finished prerequisites of target file `system_test111.lst'.
    Prerequisite `system_test111.elf' is newer than target `system_test111.lst'.
   Must remake target `system_test111.lst'.
+<<<<<<< HEAD
 Invoking recipe from /ADATA2T/debug/fsic_0921_3/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:47 to update target `system_test111.lst'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objdump -d -S system_test111.elf > system_test111.lst
 Putting child 0xac49f0 (system_test111.lst) PID 40 on the chain.
 Live child 0xac49f0 (system_test111.lst) PID 40 
 Reaping winning child 0xac49f0 PID 40 
 Removing child 0xac49f0 PID 40 from chain.
+=======
+Invoking recipe from /ADATA2T/debug/fsic_0929_verify_rtl/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:47 to update target `system_test111.lst'.
+/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objdump -d -S system_test111.elf > system_test111.lst
+Putting child 0x109ce90 (system_test111.lst) PID 47 on the chain.
+Live child 0x109ce90 (system_test111.lst) PID 47 
+Reaping winning child 0x109ce90 PID 47 
+Removing child 0x109ce90 PID 47 from chain.
+>>>>>>> 0929_verify_rtl
   Successfully remade target file `system_test111.lst'.
  Finished prerequisites of target file `all'.
 Must remake target `all'.
 Successfully remade target file `all'.
 Removing intermediate files...
 rm system_test111.elf system_test111.vvp
+<<<<<<< HEAD
 Reaping winning child 0x5642f1b208b0 PID 2089593 
 Removing child 0x5642f1b208b0 PID 2089593 from chain.
 Successfully remade target file 'verify-system_test111-gl'.
@@ -17086,3 +17532,9 @@ WARNING: 183 shift/reduce conflicts
 Reaping winning child 0x55ea3853bca0 PID 2110059 
 Removing child 0x55ea3853bca0 PID 2110059 from chain.
 Successfully remade target file 'run-precheck'.
+=======
+Reaping winning child 0x56286665d730 PID 4027616 
+Removing child 0x56286665d730 PID 4027616 from chain.
+Successfully remade target file 'verify-system_test111-rtl'.
++ exit 1
+>>>>>>> 0929_verify_rtl
