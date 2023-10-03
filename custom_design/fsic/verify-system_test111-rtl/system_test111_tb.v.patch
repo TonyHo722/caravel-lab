@@ -565,8 +565,8 @@ module system_test111_tb #( parameter BITS=32,
 
                 #400;
                 $display($time, "=> wait uut.mprj.u_fsic.U_IO_SERDES0.rxen");
-//tony_debug        wait(uut.mprj.u_fsic.U_IO_SERDES0.rxen);
-				@(soc_rxen_event);
+                wait(uut.mprj.u_fsic.U_IO_SERDES0.rxen);
+				//@(soc_rxen_event);
                 $display($time, "=> detect uut.mprj.u_fsic.U_IO_SERDES0.rxen=1");
 
                 fpga_cfg_write(0,1,1,0);
