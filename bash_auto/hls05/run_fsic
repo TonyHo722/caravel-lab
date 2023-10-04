@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/home/tonyho/workspace/debug/1003_merge_verify_rtl_hls05_repo
+export MF=/home/tonyho/workspace/debug/1003_merge_verify_rtl_hls05_repo_2
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
