@@ -10,9 +10,8 @@ trap 'on_error' ERR
 
 set -x # echo on for debug 
 
-
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_0926_AA_update
+export MF=/ADATA2T/debug/fsic_1005_AA_gl_issue
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -38,7 +37,7 @@ cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 0926_AA_update https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 1005_AA_gl_issue https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -80,6 +79,9 @@ cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/r
 cp $CLF/custom_design/fsic/user_proj_example/mprj_io.sv $CUPF/verilog/rtl/mprj_io.sv
 cp $CLF/custom_design/fsic/user_proj_example/user_subsys.all.v $CUPF/verilog/rtl/user_subsys.all.v
 cp $CLF/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd
+
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/rtl
 
 # copy files for testbench
 [ ! -d $CUPF/verilog/dv/system_test111 ] && echo "$CLF/verilog/dv/system_test111 not exist, create it" && mkdir $CLF/verilog/dv/system_test111

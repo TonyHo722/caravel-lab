@@ -103,8 +103,12 @@ module axi_ctrl_logic(
                 axi_next_state = AXI_WAIT_DATA;
         endcase
     end
-    
-    assign trans_typ = bk_ls_rd_wr;
+
+    // assign trans_typ = bk_ls_rd_wr; // xsim do not allow this
+    always_comb begin
+        if(bk_ls_rd_wr == 1'b0) trans_typ = AXI_WR;
+        else trans_typ = AXI_RD;
+    end
 
     // get data from LS
     always_comb begin
@@ -131,7 +135,7 @@ module axi_ctrl_logic(
             end
         end
     end
-    
+
     // get second data from SS 
     // FSM state, sequential logic
     always_ff@(posedge axi_aclk or negedge axi_aresetn)begin
@@ -283,7 +287,13 @@ module axi_ctrl_logic(
     logic [9:0]aa_index; // for index of aa_regs 
     logic [9:0]mb_index; // for index of mb_regs 
 
-    assign next_trans = (next_ss) ? TRANS_SS : TRANS_LS;
+    //assign next_trans = (next_ss) ? TRANS_SS : TRANS_LS; // iverilog issue
+    always_comb begin
+        if(next_ss == 1'b1)
+            next_trans = TRANS_SS;
+        else
+            next_trans = TRANS_LS;
+    end
 
     // compute control signals according to source (LS / SS) and address range
     // note this is combinational, so the signals can only exist when state is AXI_DECIDE_DEST, 
@@ -486,8 +496,8 @@ module axi_ctrl_logic(
         end
     end
 
-    assign bk_sm_tstrb = 4'b0;
-    assign bk_sm_tkeep = 4'b0;
+    //assign bk_sm_tstrb = 4'b0;
+    //assign bk_sm_tkeep = 4'b0;
 
     logic [31:0] data_return;
     // registerName     offset Address
