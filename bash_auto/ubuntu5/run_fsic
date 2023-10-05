@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_1005_merge_verify_rtl
+export MF=/ADATA2T/debug/fsic_1005_merge_verify_rtl_irq
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
