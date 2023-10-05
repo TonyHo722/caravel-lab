@@ -78,6 +78,8 @@ cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/r
 cp $CLF/custom_design/fsic/user_proj_example/mprj_io.sv $CUPF/verilog/rtl/mprj_io.sv
 cp $CLF/custom_design/fsic/user_proj_example/user_subsys.all.v $CUPF/verilog/rtl/user_subsys.all.v
 cp $CLF/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/rtl
 
 # copy files for testbench
 [ ! -d $CUPF/verilog/dv/system_test111 ] && echo "$CLF/verilog/dv/system_test111 not exist, create it" && mkdir $CLF/verilog/dv/system_test111
@@ -95,16 +97,22 @@ cp $CLF/custom_design/fsic/verify-system_test111-rtl/fsic_clock.v $CUPF/verilog/
 cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/dv/system_test111/fsic_io_serdes_rx.v
 cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/dv/system_test111/io_serdes.v
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/dv/system_test111
 
 ## copy includes file
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project $CUPF/verilog/includes/includes.gl.caravel_user_project
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/includes
 
 # how to define USER_PROJ_IRQ0_EN?
 
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
+## for debug - check file name and size by ls -l
+ls -l $CUPF/mgmt_core_wrapper/verilog/dv/make
 
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 
@@ -114,7 +122,12 @@ make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 # Run Openlane to generate RTL netlist
 cp $CLF/custom_design/fsic/openlane/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
 cp $CLF/custom_design/fsic/openlane/user_proj_example/pin_order.cfg $CUPF/openlane/user_proj_example/pin_order.cfg
+## for debug - check file name and size by ls -l
+ls -l $CUPF/openlane/user_proj_example
+
 cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
+## for debug - check file name and size by ls -l
+ls -l $CUPF/openlane/user_project_wrapper
 
 make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
