@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_1005_main
+export MF=/home/tonyho/workspace/debug/1003_merge_verify_rtl_hls05_repo_3
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -37,7 +37,7 @@ cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 1003_merge_verify_rtl_hls05_repo https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -128,17 +128,16 @@ cp $CLF/custom_design/fsic/openlane/user_proj_example/config.json $CUPF/openlane
 cp $CLF/custom_design/fsic/openlane/user_proj_example/pin_order.cfg $CUPF/openlane/user_proj_example/pin_order.cfg
 ## for debug - check file name and size by ls -l
 ls -l $CUPF/openlane/user_proj_example
-
 cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
 ## for debug - check file name and size by ls -l
 ls -l $CUPF/openlane/user_project_wrapper
 
 make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
+exit 1
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
 
 # Run gate level simulation (it will take 2~3 hours@i9/64GB)
 make -d verify-system_test111-gl 2>&1 | tee $LF/mpw-8c-verify-system_test111-gl.log
-exit 1
 
 # Run gate level static timing verifier
 make -d setup-timing-scripts 2>&1 | tee $LF/mpw-8c-setup-timing-scripts.log

@@ -70,7 +70,7 @@ module user_proj_example #(
 	input user_clock2,
 
     // IRQ
-    output [2:0] user_irq
+    output [2:0] irq
 );
 
 
@@ -108,7 +108,7 @@ FSIC #(.BITS( BITS )) u_fsic  (
                       .io_oeb      (io_oeb),                  // O  38
 
                       // IRQ
-                      .user_irq    (user_irq),                // O  3
+                      .user_irq    (irq),                // O  3
 
                       // MISC (Independent clock, on independent integer divider)
                       .user_clock2 (user_clock2)              // I
