@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/home/tonyho/workspace/debug/1003_merge_verify_rtl_hls05_repo_2
+export MF=/home/tonyho/workspace/debug/1003_merge_verify_rtl_hls05_repo_3
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -69,7 +69,8 @@ cp $CLF/custom_design/fsic/user_proj_example/axis_master.sv $CUPF/verilog/rtl/ax
 cp $CLF/custom_design/fsic/user_proj_example/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
 cp $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv $CUPF/verilog/rtl/axi_ctrl_logic.sv
 cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv $CUPF/verilog/rtl/axil_axis.sv
-cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
+#cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
+cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v.patch $CUPF/verilog/rtl/sw_caravel.v
 cp $CLF/custom_design/fsic/user_proj_example/config_ctrl.v $CUPF/verilog/rtl/config_ctrl.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_clkrst.v $CUPF/verilog/rtl/fsic_clkrst.v
 cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/rtl/io_serdes.v
@@ -78,6 +79,8 @@ cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/r
 cp $CLF/custom_design/fsic/user_proj_example/mprj_io.sv $CUPF/verilog/rtl/mprj_io.sv
 cp $CLF/custom_design/fsic/user_proj_example/user_subsys.all.v $CUPF/verilog/rtl/user_subsys.all.v
 cp $CLF/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/rtl
 
 # copy files for testbench
 [ ! -d $CUPF/verilog/dv/system_test111 ] && echo "$CLF/verilog/dv/system_test111 not exist, create it" && mkdir $CLF/verilog/dv/system_test111
@@ -95,11 +98,15 @@ cp $CLF/custom_design/fsic/verify-system_test111-rtl/fsic_clock.v $CUPF/verilog/
 cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/dv/system_test111/fsic_io_serdes_rx.v
 cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/dv/system_test111/io_serdes.v
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/dv/system_test111
 
 ## copy includes file
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project $CUPF/verilog/includes/includes.gl.caravel_user_project
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/includes
 
 ## remove gl file
 rm -f $CUPF/verilog/gl/*
@@ -108,16 +115,22 @@ rm -f $CUPF/verilog/gl/*
 
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/fsic/verify-system_test111-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
+## for debug - check file name and size by ls -l
+ls -l $CUPF/mgmt_core_wrapper/verilog/dv/make
 
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 
 # Run RTL simulation
-make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+#make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
 
 # Run Openlane to generate RTL netlist
 cp $CLF/custom_design/fsic/openlane/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
 cp $CLF/custom_design/fsic/openlane/user_proj_example/pin_order.cfg $CUPF/openlane/user_proj_example/pin_order.cfg
+## for debug - check file name and size by ls -l
+ls -l $CUPF/openlane/user_proj_example
 cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
+## for debug - check file name and size by ls -l
+ls -l $CUPF/openlane/user_project_wrapper
 
 make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
 exit 1
