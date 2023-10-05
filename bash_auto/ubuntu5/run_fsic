@@ -69,8 +69,8 @@ cp $CLF/custom_design/fsic/user_proj_example/axis_master.sv $CUPF/verilog/rtl/ax
 cp $CLF/custom_design/fsic/user_proj_example/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
 cp $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv $CUPF/verilog/rtl/axi_ctrl_logic.sv
 cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv $CUPF/verilog/rtl/axil_axis.sv
-#cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
-cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v.patch $CUPF/verilog/rtl/sw_caravel.v
+cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
+#cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v.patch $CUPF/verilog/rtl/sw_caravel.v
 cp $CLF/custom_design/fsic/user_proj_example/config_ctrl.v $CUPF/verilog/rtl/config_ctrl.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_clkrst.v $CUPF/verilog/rtl/fsic_clkrst.v
 cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/rtl/io_serdes.v
