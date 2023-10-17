@@ -70,12 +70,7 @@ Date:   Sat Sep 9 11:52:23 2023 +0800
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/user_project_wrapper.v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/user_project_wrapper.v
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/user_proj_example.v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/user_proj_example.v
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/fsic.vo /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/fsic.vo
-+ cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/axilite_master.sv /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axilite_master.sv
-+ cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/axilite_slave.sv /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axilite_slave.sv
-+ cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/axis_master.sv /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axis_master.sv
-+ cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/axis_slave.sv /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axis_slave.sv
-+ cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv
-+ cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/axil_axis.sv /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv
++ cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/axil_axis.sv.patch /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/sw_caravel.v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/sw_caravel.v
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/config_ctrl.v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/config_ctrl.v
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/fsic_clkrst.v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/fsic_clkrst.v
@@ -102,7 +97,7 @@ Date:   Sat Sep 9 11:52:23 2023 +0800
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/includes/includes.gl.caravel_user_project
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/includes/includes.gl+sdf.caravel_user_project
-+ rm -f /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/gl/user_proj_example.nl.v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/gl/user_proj_example.v
++ rm -f '/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/gl/*'
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/verify-system_test111-rtl/sim.makefile /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 + make -d simenv
 + tee /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/log/mpw-8c-simenv.log
@@ -127,14 +122,14 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x5602cc1a6bd0 (simenv) PID 1897316 on the chain.
-Live child 0x5602cc1a6bd0 (simenv) PID 1897316 
+Putting child 0x55a5681bfbd0 (simenv) PID 2046339 on the chain.
+Live child 0x55a5681bfbd0 (simenv) PID 2046339 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x5602cc1a6bd0 PID 1897316 
-Removing child 0x5602cc1a6bd0 PID 1897316 from chain.
+Reaping winning child 0x55a5681bfbd0 PID 2046339 
+Removing child 0x55a5681bfbd0 PID 2046339 from chain.
 Successfully remade target file 'simenv'.
 + make -d verify-system_test111-rtl
 + tee /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/log/mpw-8c-verify-system_test111-rtl.log
@@ -161,20 +156,20 @@ Considering target file 'verify-system_test111-rtl'.
    Finished prerequisites of target file 'simenv'.
   Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x55f64cc4fbe0 (simenv) PID 1897516 on the chain.
-Live child 0x55f64cc4fbe0 (simenv) PID 1897516 
+Putting child 0x55c533f58be0 (simenv) PID 2046382 on the chain.
+Live child 0x55c533f58be0 (simenv) PID 2046382 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x55f64cc4fbe0 PID 1897516 
-Removing child 0x55f64cc4fbe0 PID 1897516 from chain.
+Reaping winning child 0x55c533f58be0 PID 2046382 
+Removing child 0x55c533f58be0 PID 2046382 from chain.
   Successfully remade target file 'simenv'.
  Finished prerequisites of target file 'verify-system_test111-rtl'.
 Must remake target 'verify-system_test111-rtl'.
 docker run -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel -e TARGET_PATH=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project -e PDK_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project -e USER_PROJECT_VERILOG=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel/verilog -e MCW_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/dv/system_test111 && export SIM=RTL && make -d"
-Putting child 0x55f64cc537b0 (verify-system_test111-rtl) PID 1897851 on the chain.
-Live child 0x55f64cc537b0 (verify-system_test111-rtl) PID 1897851 
+Putting child 0x55c533f5c7b0 (verify-system_test111-rtl) PID 2046411 on the chain.
+Live child 0x55c533f5c7b0 (verify-system_test111-rtl) PID 2046411 
 GNU Make 3.82
 Built for x86_64-redhat-linux-gnu
 Copyright (C) 2010  Free Software Foundation, Inc.
@@ -437,26 +432,26 @@ Invoking recipe from /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/de
   -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
 -Wl,-Bstatic,-T,/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,--strip-debug \
 -ffreestanding -nostdlib -o system_test111.elf /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c system_test111.c
-Putting child 0x1fbaa30 (system_test111.elf) PID 22 on the chain.
-Live child 0x1fbaa30 (system_test111.elf) PID 22 
-Reaping winning child 0x1fbaa30 PID 22 
-Removing child 0x1fbaa30 PID 22 from chain.
+Putting child 0x1e07a30 (system_test111.elf) PID 22 on the chain.
+Live child 0x1e07a30 (system_test111.elf) PID 22 
+Reaping winning child 0x1e07a30 PID 22 
+Removing child 0x1e07a30 PID 22 from chain.
       Successfully remade target file `system_test111.elf'.
       Finished prerequisites of target file `system_test111.hex'.
       Prerequisite `system_test111.elf' is newer than target `system_test111.hex'.
      Must remake target `system_test111.hex'.
 Invoking recipe from /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:50 to update target `system_test111.hex'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog system_test111.elf system_test111.hex 
-Putting child 0x1fbb390 (system_test111.hex) PID 31 on the chain.
-Live child 0x1fbb390 (system_test111.hex) PID 31 
-Reaping winning child 0x1fbb390 PID 31 
+Putting child 0x1e083d0 (system_test111.hex) PID 31 on the chain.
+Live child 0x1e083d0 (system_test111.hex) PID 31 
+Reaping winning child 0x1e083d0 PID 31 
 # to fix flash base address
-Live child 0x1fbb390 (system_test111.hex) PID 32 
-Reaping winning child 0x1fbb390 PID 32 
+Live child 0x1e083d0 (system_test111.hex) PID 32 
+Reaping winning child 0x1e083d0 PID 32 
 sed -ie 's/@10/@00/g' system_test111.hex
-Live child 0x1fbb390 (system_test111.hex) PID 33 
-Reaping winning child 0x1fbb390 PID 33 
-Removing child 0x1fbb390 PID 33 from chain.
+Live child 0x1e083d0 (system_test111.hex) PID 33 
+Reaping winning child 0x1e083d0 PID 33 
+Removing child 0x1e083d0 PID 33 from chain.
      Successfully remade target file `system_test111.hex'.
    Considering target file `system_test111.vvp'.
     File `system_test111.vvp' does not exist.
@@ -466,8 +461,8 @@ Removing child 0x1fbb390 PID 33 from chain.
    Must remake target `system_test111.vvp'.
 Invoking recipe from /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:67 to update target `system_test111.vvp'.
 iverilog -V 2>&1 | tee iverilog-ver.log
-Putting child 0x1fbead0 (system_test111.vvp) PID 34 on the chain.
-Live child 0x1fbead0 (system_test111.vvp) PID 34 
+Putting child 0x1e0bb10 (system_test111.vvp) PID 34 on the chain.
+Live child 0x1e0bb10 (system_test111.vvp) PID 34 
 Icarus Verilog version 12.0 (devel) (s20150603-1288-gcc0a8c8-dirty)
 
 Copyright (c) 2000-2021 Stephen Williams (steve@icarus.com)
@@ -541,216 +536,77 @@ Copyright (c) 2001-2021 Stephen Williams (steve@icarus.com)
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-Reaping winning child 0x1fbead0 PID 34 
+Reaping winning child 0x1e0bb10 PID 34 
 iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
         -g2012 \
         -f/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.rtl.caravel \
         -f/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project -o system_test111.vvp system_test111_tb.v 2>&1 | tee iverilog.log
-Live child 0x1fbead0 (system_test111.vvp) PID 39 
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel/verilog/rtl/caravel.v:363: warning: input port clock is coerced to inout.
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:302: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:777: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axi_ctrl_logic.sv:777: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/fsic.vo:397: warning: Port 7 (axi_awaddr) of IO_SERDES expects 12 bits, got 15.
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/fsic.vo:397:        : Pruning 3 high bits of the expression.
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/fsic.vo:397: warning: Port 14 (axi_araddr) of IO_SERDES expects 12 bits, got 15.
-/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/fsic.vo:397:        : Pruning 3 high bits of the expression.
-Reaping winning child 0x1fbead0 PID 39 
-Removing child 0x1fbead0 PID 39 from chain.
+Live child 0x1e0bb10 (system_test111.vvp) PID 39 
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:59: error: 'm_awvalid' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:11:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:60: error: 'm_awaddr' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:12:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:61: error: 'm_wvalid' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:13:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:62: error: 'm_wdata' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:14:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:63: error: 'm_wstrb' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:15:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:64: error: 'm_arvalid' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:16:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:65: error: 'm_araddr' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:17:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:66: error: 'm_rready' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:18:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:67: error: 's_rdata' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:19:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:68: error: 's_rvalid' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:20:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:69: error: 's_awready' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:21:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:70: error: 's_wready' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:22:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:71: error: 's_arready' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:23:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:72: error: 'aa_as_tready' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:44:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:73: error: 'aa_as_tdata' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:45:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:74: error: 'aa_as_tstrb' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:46:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:75: error: 'aa_as_tkeep' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:47:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:76: error: 'aa_as_tlast' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:48:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:77: error: 'aa_as_tvalid' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:49:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:78: error: 'aa_as_tuser' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:50:      : It was declared here as a net.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:79: error: 'mb_irq' has already been declared in this scope.
+/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/verilog/rtl/axil_axis.sv:52:      : It was declared here as a net.
+Reaping winning child 0x1e0bb10 PID 39 
+Removing child 0x1e0bb10 PID 39 from chain.
    Successfully remade target file `system_test111.vvp'.
    Finished prerequisites of target file `system_test111.vcd'.
   Must remake target `system_test111.vcd'.
 Invoking recipe from /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:113 to update target `system_test111.vcd'.
 vvp  system_test111.vvp
-Putting child 0x1fc0720 (system_test111.vcd) PID 45 on the chain.
-Live child 0x1fc0720 (system_test111.vcd) PID 45 
-Reading system_test111.hex
-system_test111.hex loaded into memory
-Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
-FST info: dumpfile system_test111.vcd opened for output.
-test111: test111_soc_to_fpga_mailbox_write - loop 00
-                  40=> fpga POR Assert
-                  40=> fpga reset Assert
-                  80=> fpga POR De-Assert
-                 120=> fpga reset De-Assert
-                 563=> fpga_as_to_is_init done
-   800.000 ns MSG system_test111_tb, Chip Reset# is released 
-                 963=> wait uut.mprj.u_fsic.U_IO_SERDES0.rxen
-100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0001
-200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0002
-300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0003
-400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0004
-500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0005
-600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0006
-700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0007
-800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0008
-900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0009
-1000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0010
-1100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0011
-1200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0012
-1300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0013
-1400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0014
-1500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0015
-1600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0016
-1700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0017
-1800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0018
-1900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0019
-2000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0020
-2100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0021
-2200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0022
-2300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0023
-2400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0024
-2500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0025
-2600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0026
-2700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0027
-2800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0028
-2900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0029
-             2979475=> detect uut.mprj.u_fsic.U_IO_SERDES0.rxen=1
-             2979563=> fpga_cfg_write : fpga_axi_awaddr=0000, fpga_axi_awvalid=1, fpga_axi_awready=1, fpga_axi_wdata=00000001, axi_wstrb=1, fpga_axi_wvalid=1, fpga_axi_wready=1
-             2979563=> fpga rxen_ctl=1
-             2980063=> fpga_cfg_write : fpga_axi_awaddr=0000, fpga_axi_awvalid=1, fpga_axi_awready=1, fpga_axi_wdata=00000003, axi_wstrb=1, fpga_axi_wvalid=1, fpga_axi_wready=1
-             2980063=> fpga txen_ctl=1
-3000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0030
-3100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0031
-3200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0032
-3300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0033
-3400450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0034
-             3441363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =xxxxxxxx, fpga_is_as_tdata=f0002000
-             3441363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
-             3441963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =xxxxxxxx, fpga_is_as_tdata=5a5a5a5a
-             3441963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
-             3441963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
-             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
-             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002000, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002000
-             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
-             3441963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
------------------
-3500450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0035
-             3550863=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
-             3550863=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002000
-             3551463=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
-             3551463=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
-             3551463=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
-             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
-             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002000, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002000
-             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
-             3551463=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
------------------
-3600450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0036
-3700450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0037
-             3783063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002000, fpga_is_as_tdata=f0002004
-             3783063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
-             3783663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
-             3783663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
-             3783663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
-             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
-             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002004, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002004
-             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
-             3783663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
------------------
-             3786363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
-             3786363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002004
-             3786963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
-             3786963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
-             3786963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
-             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
-             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002004, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002004
-             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
-             3786963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
------------------
-3800450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0038
-3900450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0039
-4000450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0040
-             4033063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002004, fpga_is_as_tdata=f0002008
-             4033063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
-             4033663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
-             4033663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
-             4033663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
-             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
-             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002008, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002008
-             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
-             4033663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
------------------
-             4036363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
-             4036363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f0002008
-             4036963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
-             4036963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
-             4036963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
-             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
-             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=0002008, soc_to_fpga_mailbox_write_addr_captured[27:0]=0002008
-             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
-             4036963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
------------------
-4100450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0041
-4200450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=0,  repeat_cnt=0042
-             4283063=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f0002008, fpga_is_as_tdata=f000200c
-             4283063=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
-             4283663=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=5a5a5a5a
-             4283663=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=5a5a5a5a
-             4283663=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
-             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
-             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=000200c, soc_to_fpga_mailbox_write_addr_captured[27:0]=000200c
-             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
-             4283663=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=5a5a5a5a, soc_to_fpga_mailbox_write_data_captured=5a5a5a5a
------------------
-             4286363=> get soc_to_fpga_mailbox_write_addr_captured be : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
-             4286363=> get soc_to_fpga_mailbox_write_addr_captured af : soc_to_fpga_mailbox_write_addr_captured =f000200c, fpga_is_as_tdata=f000200c
-             4286963=> get soc_to_fpga_mailbox_write_data_captured be : soc_to_fpga_mailbox_write_data_captured =5a5a5a5a, fpga_is_as_tdata=a5a5a5a5
-             4286963=> get soc_to_fpga_mailbox_write_data_captured af : soc_to_fpga_mailbox_write_data_captured =a5a5a5a5, fpga_is_as_tdata=a5a5a5a5
-             4286963=> soc_to_fpga_mailbox_write_data_captured : send soc_to_fpga_mailbox_write_event
-             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event : got soc_to_fpga_mailbox_write_event
-             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_expect_value=000200c, soc_to_fpga_mailbox_write_addr_captured[27:0]=000200c
-             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_addr_BE_expect_value=f, soc_to_fpga_mailbox_write_addr_captured[31:28]=f
-             4286963=> wait_and_check_soc_to_fpga_mailbox_write_event [PASS] soc_to_fpga_mailbox_write_data_expect_value=a5a5a5a5, soc_to_fpga_mailbox_write_data_captured=a5a5a5a5
------------------
-4300450.000 ns MSG system_test111_tb, +1000 cycles, finish_flag=1,  repeat_cnt=0043
-=============================================================================================
-=============================================================================================
-=============================================================================================
-             4300450=> Final result [PASS], check_cnt =         24, error_cnt = 0000
-=============================================================================================
-=============================================================================================
-=============================================================================================
-system_test111_tb.v:313: $finish called at 4300450000 (1ps)
-Reaping winning child 0x1fc0720 PID 45 
-mv system_test111.vcd RTL-system_test111.vcd
-Live child 0x1fc0720 (system_test111.vcd) PID 46 
-Reaping winning child 0x1fc0720 PID 46 
-Removing child 0x1fc0720 PID 46 from chain.
-  Successfully remade target file `system_test111.vcd'.
-  Considering target file `system_test111.lst'.
-   File `system_test111.lst' does not exist.
-   Looking for an implicit rule for `system_test111.lst'.
-   Trying pattern rule with stem `system_test111'.
-   Trying implicit prerequisite `system_test111.elf'.
-   Found an implicit rule for `system_test111.lst'.
-   Considering target file `system_test111.elf'.
-   File `system_test111.elf' was considered already.
-   Finished prerequisites of target file `system_test111.lst'.
-  Must remake target `system_test111.lst'.
-Invoking recipe from /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:47 to update target `system_test111.lst'.
-/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objdump -d -S system_test111.elf > system_test111.lst
-Putting child 0x1fbb320 (system_test111.lst) PID 47 on the chain.
-Live child 0x1fbb320 (system_test111.lst) PID 47 
-Reaping winning child 0x1fbb320 PID 47 
-Removing child 0x1fbb320 PID 47 from chain.
-  Successfully remade target file `system_test111.lst'.
- Finished prerequisites of target file `all'.
-Must remake target `all'.
-Successfully remade target file `all'.
+Putting child 0x1e0d760 (system_test111.vcd) PID 45 on the chain.
+Live child 0x1e0d760 (system_test111.vcd) PID 45 
+system_test111.vvp: Unable to open input file.
+Reaping losing child 0x1e0d760 PID 45 
+Removing child 0x1e0d760 PID 45 from chain.
 Removing intermediate files...
-rm system_test111.elf system_test111.vvp
-Reaping winning child 0x55f64cc537b0 PID 1897851 
-Removing child 0x55f64cc537b0 PID 1897851 from chain.
-Successfully remade target file 'verify-system_test111-rtl'.
+rm system_test111.elf
+make: *** [system_test111.vcd] Error 255
+Reaping losing child 0x55c533f5c7b0 PID 2046411 
+make: *** [Makefile:149: verify-system_test111-rtl] Error 2
+Removing child 0x55c533f5c7b0 PID 2046411 from chain.
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/openlane/user_proj_example/config.json /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/config.json
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/openlane/user_proj_example/pin_order.cfg /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/pin_order.cfg
 + cp /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel-lab/custom_design/fsic/openlane/user_project_wrapper/config.json /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_project_wrapper/config.json
-+ make -d user_proj_example
 + tee /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/log/mpw-8c-user_proj_example.log
++ make -d user_proj_example
 GNU Make 4.2.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -772,8 +628,8 @@ Considering target file 'user_proj_example'.
  Finished prerequisites of target file 'user_proj_example'.
 Must remake target 'user_proj_example'.
 make -C openlane user_proj_example
-Putting child 0x56106bb53bc0 (user_proj_example) PID 1981011 on the chain.
-Live child 0x56106bb53bc0 (user_proj_example) PID 1981011 
+Putting child 0x55ffac234bc0 (user_proj_example) PID 2046625 on the chain.
+Live child 0x55ffac234bc0 (user_proj_example) PID 2046625 
 GNU Make 4.2.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -1610,21 +1466,21 @@ Considering target file 'user_proj_example'.
  Finished prerequisites of target file 'user_proj_example'.
 Must remake target 'user_proj_example'.
 # user_proj_example
-Putting child 0x562e31e3c720 (user_proj_example) PID 1981024 on the chain.
-Live child 0x562e31e3c720 (user_proj_example) PID 1981024 
-Reaping winning child 0x562e31e3c720 PID 1981024 
-mkdir -p ./user_proj_example/runs/23_10_17_10_37 
-Live child 0x562e31e3c720 (user_proj_example) PID 1981025 
-Reaping winning child 0x562e31e3c720 PID 1981025 
+Putting child 0x56090755a720 (user_proj_example) PID 2046638 on the chain.
+Live child 0x56090755a720 (user_proj_example) PID 2046638 
+Reaping winning child 0x56090755a720 PID 2046638 
+mkdir -p ./user_proj_example/runs/23_10_17_10_50 
+Live child 0x56090755a720 (user_proj_example) PID 2046639 
+Reaping winning child 0x56090755a720 PID 2046639 
 rm -rf ./user_proj_example/runs/user_proj_example
-Live child 0x562e31e3c720 (user_proj_example) PID 1981026 
-Reaping winning child 0x562e31e3c720 PID 1981026 
-ln -s $(realpath ./user_proj_example/runs/23_10_17_10_37) ./user_proj_example/runs/user_proj_example
-Live child 0x562e31e3c720 (user_proj_example) PID 1981027 
-Reaping winning child 0x562e31e3c720 PID 1981027 
-docker run --rm -v $(realpath /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/..):$(realpath /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/..) -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/openlane_src:/openlane -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper -e PDK_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks -e PDK=sky130A -e MISMATCHES_OK=1 -e CARAVEL_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel -e OPENLANE_RUN_TAG=23_10_17_10_37 -e MCW_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper -u 1007:1007 \
-	efabless/openlane:2022.11.19 sh -c "flow.tcl -design $(realpath ./user_proj_example) -save_path $(realpath ..) -save -tag 23_10_17_10_37 -overwrite -ignore_mismatches"
-Live child 0x562e31e3c720 (user_proj_example) PID 1981029 
+Live child 0x56090755a720 (user_proj_example) PID 2046640 
+Reaping winning child 0x56090755a720 PID 2046640 
+ln -s $(realpath ./user_proj_example/runs/23_10_17_10_50) ./user_proj_example/runs/user_proj_example
+Live child 0x56090755a720 (user_proj_example) PID 2046641 
+Reaping winning child 0x56090755a720 PID 2046641 
+docker run --rm -v $(realpath /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/..):$(realpath /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/..) -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/openlane_src:/openlane -v /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper:/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper -e PDK_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/dependencies/pdks -e PDK=sky130A -e MISMATCHES_OK=1 -e CARAVEL_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/caravel -e OPENLANE_RUN_TAG=23_10_17_10_50 -e MCW_ROOT=/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/mgmt_core_wrapper -u 1007:1007 \
+	efabless/openlane:2022.11.19 sh -c "flow.tcl -design $(realpath ./user_proj_example) -save_path $(realpath ..) -save -tag 23_10_17_10_50 -overwrite -ignore_mismatches"
+Live child 0x56090755a720 (user_proj_example) PID 2046643 
 OpenLane cb59d1f84deb5cedbb5b0a3e3f3b4129a967c988
 All rights reserved. (c) 2020-2022 Efabless Corporation and contributors.
 Available under the Apache License, version 2.0. See the LICENSE file for more details.
@@ -1636,81 +1492,115 @@ This may introduce some issues. You may want to re-install the PDK by invoking `
 [INFO]: Process Design Kit: sky130A
 [INFO]: Standard Cell Library: sky130_fd_sc_hd
 [INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd
-[INFO]: Run Directory: /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37
+[INFO]: Run Directory: /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50
 [INFO]: Preparing LEF files for the nom corner...
 [INFO]: Preparing LEF files for the min corner...
 [INFO]: Preparing LEF files for the max corner...
 [STEP 1]
-[INFO]: Running Synthesis (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/synthesis/1-synthesis.log)...
+[INFO]: Running Synthesis (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/synthesis/1-synthesis.log)...
 [STEP 2]
-[INFO]: Running Single-Corner Static Timing Analysis (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/synthesis/2-sta.log)...
+[INFO]: Running Single-Corner Static Timing Analysis (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/synthesis/2-sta.log)...
 [STEP 3]
-[INFO]: Running Initial Floorplanning (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/floorplan/3-initial_fp.log)...
+[INFO]: Running Initial Floorplanning (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/floorplan/3-initial_fp.log)...
 [INFO]: Floorplanned with width 888.72 and height 576.64.
 [STEP 4]
-[INFO]: Running IO Placement (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/floorplan/4-place_io.log)...
+[INFO]: Running IO Placement (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/floorplan/4-place_io.log)...
 [STEP 5]
-[INFO]: Running Tap/Decap Insertion (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/floorplan/5-tap.log)...
+[INFO]: Running Tap/Decap Insertion (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/floorplan/5-tap.log)...
 [INFO]: Power planning with power {vccd1} and ground {vssd1}...
 [STEP 6]
-[INFO]: Generating PDN (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/floorplan/6-pdn.log)...
+[INFO]: Generating PDN (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/floorplan/6-pdn.log)...
 [STEP 7]
-[INFO]: Running Global Placement (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/placement/7-global.log)...
+[INFO]: Running Global Placement (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/placement/7-global.log)...
 [STEP 8]
-[INFO]: Running Placement Resizer Design Optimizations (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/placement/8-resizer.log)...
+[INFO]: Running Placement Resizer Design Optimizations (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/placement/8-resizer.log)...
 [STEP 9]
-[INFO]: Running Detailed Placement (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/placement/9-detailed.log)...
+[INFO]: Running Detailed Placement (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/placement/9-detailed.log)...
 [STEP 10]
-[INFO]: Running Clock Tree Synthesis (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/cts/10-cts.log)...
+[INFO]: Running Clock Tree Synthesis (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/cts/10-cts.log)...
 [STEP 11]
-[INFO]: Running Placement Resizer Timing Optimizations (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/cts/11-resizer.log)...
+[INFO]: Running Placement Resizer Timing Optimizations (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/cts/11-resizer.log)...
 [STEP 12]
-[INFO]: Running Global Routing Resizer Timing Optimizations (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/routing/12-resizer.log)...
+[INFO]: Running Global Routing Resizer Timing Optimizations (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/routing/12-resizer.log)...
 [STEP 13]
-[INFO]: Running Diode Insertion (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/routing/13-diodes.log)...
+[INFO]: Running Diode Insertion (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/routing/13-diodes.log)...
 [STEP 14]
-[INFO]: Running Detailed Placement (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/routing/14-diode_legalization.log)...
-[ERROR]: during executing openroad script /openlane/scripts/openroad/dpl.tcl
-[ERROR]: Log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/logs/routing/14-diode_legalization.log
-[ERROR]: Last 10 lines:
-[INFO DPL-0035]  ANTENNA__06632__B2
-[INFO DPL-0035]  ANTENNA__06632__B2
-[INFO DPL-0035]  ANTENNA_input42_A
-[INFO DPL-0035]  ANTENNA_input42_A
-[INFO DPL-0035]  ANTENNA__13019__A
-[INFO DPL-0035]  ANTENNA__13016__A
-[INFO DPL-0035]  ANTENNA_input47_A
-[ERROR DPL-0036] Detailed placement failed.
-Error: dpl.tcl, 20 DPL-0036
-child process exited abnormally
-
-[ERROR]: Creating issue reproducible...
+[INFO]: Running Detailed Placement (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/routing/14-diode_legalization.log)...
+[STEP 15]
+[INFO]: Running Fill Insertion (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/routing/15-fill.log)...
+[STEP 16]
+[INFO]: Running Global Routing (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/routing/16-global.log)...
+[STEP 17]
+[INFO]: Writing Verilog (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/routing/16-global_write_netlist.log)...
+[STEP 18]
+[INFO]: Running Detailed Routing (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/routing/18-detailed.log)...
+[INFO]: No DRC violations after detailed routing.
+[STEP 19]
+[INFO]: Checking Wire Lengths (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/routing/19-wire_lengths.log)...
+[STEP 20]
+[INFO]: Running SPEF Extraction at the min process corner (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/20-parasitics_extraction.min.log)...
+[STEP 21]
+[INFO]: Running Multi-Corner Static Timing Analysis at the min process corner (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/21-rcx_mcsta.min.log)...
+[STEP 22]
+[INFO]: Running SPEF Extraction at the max process corner (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/22-parasitics_extraction.max.log)...
+[STEP 23]
+[INFO]: Running Multi-Corner Static Timing Analysis at the max process corner (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/23-rcx_mcsta.max.log)...
+[STEP 24]
+[INFO]: Running SPEF Extraction at the nom process corner (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/24-parasitics_extraction.nom.log)...
+[STEP 25]
+[INFO]: Running Multi-Corner Static Timing Analysis at the nom process corner (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/25-rcx_mcsta.nom.log)...
+[STEP 26]
+[INFO]: Running Single-Corner Static Timing Analysis at the nom process corner (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/26-rcx_sta.log)...
+[STEP 27]
+[INFO]: Creating IR Drop Report (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/27-irdrop.log)...
+[STEP 28]
+[INFO]: Running Magic to generate various views...
+[INFO]: Streaming out GDSII with Magic (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/28-gdsii.log)...
+[INFO]: Generating MAGLEF views...
+[STEP 29]
+[INFO]: Streaming out GDSII with KLayout (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/29-gdsii-klayout.log)...
+[STEP 30]
+[INFO]: Running XOR on the layouts using KLayout (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/30-xor.log)...
+[STEP 31]
+[INFO]: Running Magic Spice Export from LEF (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/31-spice.log)...
+[STEP 32]
+[INFO]: Writing Powered Verilog (logs: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/32-write_powered_def.log, ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/32-write_powered_verilog.log)...
+[STEP 33]
+[INFO]: Writing Verilog (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/32-write_powered_verilog.log)...
+[STEP 34]
+[INFO]: Running LVS (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/34-lvs.lef.log)...
+[STEP 35]
+[INFO]: Running Magic DRC (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/35-drc.log)...
+[INFO]: Converting Magic DRC database to various tool-readable formats...
+[INFO]: No DRC violations after GDS streaming out.
+[STEP 36]
+[INFO]: Running OpenROAD Antenna Rule Checker (log: ../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/logs/signoff/36-antenna.log)...
+[INFO]: Saving current set of views in '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/results/final'...
+[INFO]: Saving current set of views in '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project'...
 [INFO]: Saving runtime environment...
-OpenLane TCL Issue Packager
-
-EFABLESS CORPORATION AND ALL AUTHORS OF THE OPENLANE PROJECT SHALL NOT BE HELD
-LIABLE FOR ANY LEAKS THAT MAY OCCUR TO ANY PROPRIETARY DATA AS A RESULT OF USING
-THIS SCRIPT. THIS SCRIPT IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND.
-
-BY USING THIS SCRIPT, YOU ACKNOWLEDGE THAT YOU FULLY UNDERSTAND THIS DISCLAIMER
-AND ALL IT ENTAILS.
-
-Parsing config file(s)…
-Setting up /home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/issue_reproducible…
-Done.
-[INFO]: Reproducible packaged: Please tarball and upload '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/issue_reproducible' if you're going to submit an issue.
-[INFO]: Saving current set of views in '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/results/final'...
 [INFO]: Generating final set of reports...
-[INFO]: Created manufacturability report at '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/reports/manufacturability.rpt'.
-[INFO]: Created metrics report at '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_37/reports/metrics.csv'.
-[INFO]: Saving runtime environment...
-[ERROR]: Flow failed.
-Reaping losing child 0x562e31e3c720 PID 1981029 
-make[1]: *** [Makefile:73: user_proj_example] Error 255
-Removing child 0x562e31e3c720 PID 1981029 from chain.
+[INFO]: Created manufacturability report at '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/reports/manufacturability.rpt'.
+[INFO]: Created metrics report at '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/reports/metrics.csv'.
+[WARNING]: There are max fanout violations in the design at the typical corner. Please refer to '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/reports/signoff/26-rcx_sta.slew.rpt'.
+[INFO]: There are no hold violations in the design at the typical corner.
+[INFO]: There are no setup violations in the design at the typical corner.
+[SUCCESS]: Flow complete.
+[INFO]: Note that the following warnings have been generated:
+[WARNING]: There are max fanout violations in the design at the typical corner. Please refer to '../home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane/user_proj_example/runs/23_10_17_10_50/reports/signoff/26-rcx_sta.slew.rpt'.
+
+Reaping winning child 0x56090755a720 PID 2046643 
+Live child 0x56090755a720 (user_proj_example) PID 2048065 
+Reaping winning child 0x56090755a720 PID 2048065 
+Live child 0x56090755a720 (user_proj_example) PID 2048066 
+Reaping winning child 0x56090755a720 PID 2048066 
+Live child 0x56090755a720 (user_proj_example) PID 2048067 
+Reaping winning child 0x56090755a720 PID 2048067 
+Live child 0x56090755a720 (user_proj_example) PID 2048068 
+Reaping winning child 0x56090755a720 PID 2048068 
+Removing child 0x56090755a720 PID 2048068 from chain.
+Successfully remade target file 'user_proj_example'.
 make[1]: Leaving directory '/home/tonyho/workspace/fsic/hdebug/caravel-lab/bash_auto/debug/caravel_user_project/openlane'
-Reaping losing child 0x56106bb53bc0 PID 1981011 
-make: *** [Makefile:107: user_proj_example] Error 2
-Removing child 0x56106bb53bc0 PID 1981011 from chain.
+Reaping winning child 0x55ffac234bc0 PID 2046625 
+Removing child 0x55ffac234bc0 PID 2046625 from chain.
+Successfully remade target file 'user_proj_example'.
 + exit 1

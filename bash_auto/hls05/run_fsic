@@ -63,12 +63,13 @@ cp $CLF/custom_design/fsic/user_proj_example/user_project_wrapper.v $CUPF/verilo
 # merge fsic module files into user_proj_example.v
 cp $CLF/custom_design/fsic/user_proj_example/user_proj_example.v $CUPF/verilog/rtl/user_proj_example.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic.vo $CUPF/verilog/rtl/fsic.vo
-cp $CLF/custom_design/fsic/user_proj_example/axilite_master.sv $CUPF/verilog/rtl/axilite_master.sv
-cp $CLF/custom_design/fsic/user_proj_example/axilite_slave.sv $CUPF/verilog/rtl/axilite_slave.sv
-cp $CLF/custom_design/fsic/user_proj_example/axis_master.sv $CUPF/verilog/rtl/axis_master.sv
-cp $CLF/custom_design/fsic/user_proj_example/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
-cp $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv $CUPF/verilog/rtl/axi_ctrl_logic.sv
-cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv $CUPF/verilog/rtl/axil_axis.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axilite_master.sv $CUPF/verilog/rtl/axilite_master.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axilite_slave.sv $CUPF/verilog/rtl/axilite_slave.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axis_master.sv $CUPF/verilog/rtl/axis_master.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axis_slave.sv $CUPF/verilog/rtl/axis_slave.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axi_ctrl_logic.sv $CUPF/verilog/rtl/axi_ctrl_logic.sv
+#cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv $CUPF/verilog/rtl/axil_axis.sv
+cp $CLF/custom_design/fsic/user_proj_example/axil_axis.sv.patch $CUPF/verilog/rtl/axil_axis.sv
 cp $CLF/custom_design/fsic/user_proj_example/sw_caravel.v $CUPF/verilog/rtl/sw_caravel.v
 cp $CLF/custom_design/fsic/user_proj_example/config_ctrl.v $CUPF/verilog/rtl/config_ctrl.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_clkrst.v $CUPF/verilog/rtl/fsic_clkrst.v
