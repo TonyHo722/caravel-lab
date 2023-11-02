@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_1005_merge_verify_rtl_irq
+export MF=/ADATA2T/debug/fsic_1102_clock
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -37,7 +37,7 @@ cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 1005_merge_verify_rtl https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 1005_AS_gl_issue https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -131,6 +131,7 @@ ls -l $CUPF/openlane/user_proj_example
 cp $CLF/custom_design/fsic/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
 ## for debug - check file name and size by ls -l
 ls -l $CUPF/openlane/user_project_wrapper
+cp $CLF/custom_design/fsic/dependencies/openlane_src/scripts/base.sdc $CUPF/dependencies/openlane_src/scripts/base.sdc
 
 make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
 exit 1

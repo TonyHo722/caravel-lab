@@ -19,9 +19,12 @@
 	"dir::../../verilog/rtl/user_subsys.all.v", 
 	"dir::../../verilog/rtl/logic_anlz.dummy_io.vd ", 
 	"dir::../../verilog/rtl/fsic.vo"],
-    "CLOCK_PERIOD": 85,
-    "CLOCK_PORT": "wb_clk_i",
-    "CLOCK_NET": "u_fsic.wb_clk",
+    "CLOCK_PERIOD": 20,
+    "CLOCK_PORT": "io_in[37]",
+    "CLOCK_NET": "io_in[37]",
+    "//CLOCK_PORT": "wb_clk_i",
+    "//CLOCK_NET": "u_fsic.wb_clk",
+    "SYNTH_STRATEGY": "AREA 3",
     "FP_SIZING": "absolute",
     "DIE_AREA": "0 0 900 600",
     "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
@@ -35,20 +38,20 @@
         "FP_CORE_UTIL": 45,
         "RT_MAX_LAYER": "met4",
         "scl::sky130_fd_sc_hd": {
-            "CLOCK_PERIOD": 85
+            "CLOCK_PERIOD": 20
         },
         "scl::sky130_fd_sc_hdll": {
-            "CLOCK_PERIOD": 85
+            "CLOCK_PERIOD": 20
         },
         "scl::sky130_fd_sc_hs": {
-            "CLOCK_PERIOD": 85
+            "CLOCK_PERIOD": 20
         },
         "scl::sky130_fd_sc_ls": {
-            "CLOCK_PERIOD": 85,
+            "CLOCK_PERIOD": 20,
             "SYNTH_MAX_FANOUT": 5
         },
         "scl::sky130_fd_sc_ms": {
-            "CLOCK_PERIOD": 85
+            "CLOCK_PERIOD": 20
         }
     },
     "pdk::gf180mcuC": {
