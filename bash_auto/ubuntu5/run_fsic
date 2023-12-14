@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/fsic_1102_clock
+export MF=/ADATA2T/debug/fsic_1214_edge_detect
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -37,7 +37,7 @@ cd $MF
 
 [ ! -d $LF ] && echo "$LF not exist, create it" && mkdir $LF
 [ -d $CLF ] && echo "$CLF exist, remove it" && rm -rf $CLF
-[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 1005_AS_gl_issue https://github.com/TonyHo722/caravel-lab
+[ ! -d $CLF ] && echo "$CLF not exist, git clone it" && git clone -b 1214_edge_detect https://github.com/TonyHo722/caravel-lab
 [ ! -d $CUPF ] && echo "$CUPF not exist, git clone it" && git clone -b mpw-8c-patch https://github.com/TonyHo722/caravel_user_project
 
 #cd $FFF
@@ -62,7 +62,7 @@ cp $CLF/custom_design/fsic/user_proj_example/user_project_wrapper.v $CUPF/verilo
 
 # merge fsic module files into user_proj_example.v
 cp $CLF/custom_design/fsic/user_proj_example/user_proj_example.v $CUPF/verilog/rtl/user_proj_example.v
-cp $CLF/custom_design/fsic/user_proj_example/fsic.vo $CUPF/verilog/rtl/fsic.vo
+cp $CLF/custom_design/fsic/user_proj_example/fsic.v $CUPF/verilog/rtl/fsic.v
 cp $CLF/custom_design/fsic/user_proj_example/axilite_master.sv $CUPF/verilog/rtl/axilite_master.sv
 cp $CLF/custom_design/fsic/user_proj_example/axilite_slave.sv $CUPF/verilog/rtl/axilite_slave.sv
 cp $CLF/custom_design/fsic/user_proj_example/axis_master.sv $CUPF/verilog/rtl/axis_master.sv
@@ -76,30 +76,50 @@ cp $CLF/custom_design/fsic/user_proj_example/fsic_clkrst.v $CUPF/verilog/rtl/fsi
 cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/rtl/io_serdes.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/rtl/fsic_coreclk_phase_cnt.v
 cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/rtl/fsic_io_serdes_rx.v
-cp $CLF/custom_design/fsic/user_proj_example/mprj_io.sv $CUPF/verilog/rtl/mprj_io.sv
-cp $CLF/custom_design/fsic/user_proj_example/user_subsys.all.v $CUPF/verilog/rtl/user_subsys.all.v
-cp $CLF/custom_design/fsic/user_proj_example/logic_anlz.dummy_io.vd $CUPF/verilog/rtl/logic_anlz.dummy_io.vd
+cp $CLF/custom_design/fsic/user_proj_example/fsic_mprj_io.v $CUPF/verilog/rtl/fsic_mprj_io.v
+cp $CLF/custom_design/fsic/user_proj_example/user_subsys.v $CUPF/verilog/rtl/user_subsys.v
+cp $CLF/custom_design/fsic/user_proj_example/LogicAnalyzer.v $CUPF/verilog/rtl/LogicAnalyzer.v
+cp $CLF/custom_design/fsic/user_proj_example/user_prj0.v $CUPF/verilog/rtl/user_prj0.v
+cp $CLF/custom_design/fsic/user_proj_example/user_prj1.v $CUPF/verilog/rtl/user_prj1.v
+cp $CLF/custom_design/fsic/user_proj_example/user_prj2.v $CUPF/verilog/rtl/user_prj2.v
+cp $CLF/custom_design/fsic/user_proj_example/user_prj3.v $CUPF/verilog/rtl/user_prj3.v
+
+cp $CLF/custom_design/fsic/user_proj_example/concat_EdgeDetect_Top_fsic.wire.v $CUPF/verilog/rtl/concat_EdgeDetect_Top_fsic.wire.v
+cp $CLF/custom_design/fsic/user_proj_example/spram.wire.v $CUPF/verilog/rtl/spram.wire.v
+cp $CLF/custom_design/fsic/user_proj_example/axil_slav.v $CUPF/verilog/rtl/axil_slav.v
+cp $CLF/custom_design/fsic/user_proj_example/axis_mstr.v $CUPF/verilog/rtl/axis_mstr.v
+cp $CLF/custom_design/fsic/user_proj_example/axis_slav.v $CUPF/verilog/rtl/axis_slav.v
+cp $CLF/custom_design/fsic/user_proj_example/irq_mux.v $CUPF/verilog/rtl/irq_mux.v
+cp $CLF/custom_design/fsic/user_proj_example/la_mux.v $CUPF/verilog/rtl/la_mux.v
+
+
+
 ## for debug - check file name and size by ls -l
 ls -l $CUPF/verilog/rtl
 
 # copy files for testbench
-[ ! -d $CUPF/verilog/dv/system_test111 ] && echo "$CLF/verilog/dv/system_test111 not exist, create it" && mkdir $CLF/verilog/dv/system_test111
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/Makefile $CUPF/verilog/dv/system_test111/Makefile
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111.c $CUPF/verilog/dv/system_test111/system_test111.c
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111_tb.v.patch $CUPF/verilog/dv/system_test111/system_test111_tb.v
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/bench_ini.svh $CUPF/verilog/dv/system_test111/bench_ini.svh
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/bench_vec.svh $CUPF/verilog/dv/system_test111/bench_vec.svh
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/project_define.svh $CUPF/verilog/dv/system_test111/project_define.svh
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/cpu_trace.v $CUPF/verilog/dv/system_test111/cpu_trace.v
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/dasm.v $CUPF/verilog/dv/system_test111/dasm.v
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/fpga.v $CUPF/verilog/dv/system_test111/fpga.v
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/fsic_clock.v $CUPF/verilog/dv/system_test111/fsic_clock.v
+[ ! -d $CUPF/verilog/dv/edge_detect ] && echo "$CUPF/verilog/dv/edge_detect not exist, create it" && mkdir $CUPF/verilog/dv/edge_detect
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/Makefile $CUPF/verilog/dv/edge_detect/Makefile
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/edge_detect.c $CUPF/verilog/dv/edge_detect/edge_detect.c
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/edge_detect_tb.v $CUPF/verilog/dv/edge_detect/edge_detect_tb.v
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/bench_ini.svh $CUPF/verilog/dv/edge_detect/bench_ini.svh
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/bench_vec.svh $CUPF/verilog/dv/edge_detect/bench_vec.svh
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/project_define.svh $CUPF/verilog/dv/edge_detect/project_define.svh
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/cpu_trace.v $CUPF/verilog/dv/edge_detect/cpu_trace.v
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/dasm.v $CUPF/verilog/dv/edge_detect/dasm.v
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/fpga.v $CUPF/verilog/dv/edge_detect/fpga.v
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/fsic_clock.v $CUPF/verilog/dv/edge_detect/fsic_clock.v
+# copy edge detect patten files
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/crc32_in_img.hex $CUPF/verilog/dv/edge_detect/crc32_in_img.hex
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/crc32_out_img.hex $CUPF/verilog/dv/edge_detect/crc32_out_img.hex
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/in_img.hex $CUPF/verilog/dv/edge_detect/in_img.hex
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/out_img.hex $CUPF/verilog/dv/edge_detect/out_img.hex
 # copy some fsic module files for fpga in testbench
-cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/dv/system_test111/fsic_coreclk_phase_cnt.v
-cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/dv/system_test111/fsic_io_serdes_rx.v
-cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/dv/system_test111/io_serdes.v
+cp $CLF/custom_design/fsic/user_proj_example/fsic_coreclk_phase_cnt.v $CUPF/verilog/dv/edge_detect/fsic_coreclk_phase_cnt.v
+cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/dv/edge_detect/fsic_io_serdes_rx.v
+cp $CLF/custom_design/fsic/user_proj_example/io_serdes.v $CUPF/verilog/dv/edge_detect/io_serdes.v
 ## for debug - check file name and size by ls -l
-ls -l $CUPF/verilog/dv/system_test111
+ls -l $CUPF/verilog/dv/edge_detect
 
 ## copy includes file
 cp $CLF/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
@@ -114,14 +134,15 @@ rm -f $CUPF/verilog/gl/*
 # how to define USER_PROJ_IRQ0_EN?
 
 ## copy sim.makefile for debugging
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 ## for debug - check file name and size by ls -l
 ls -l $CUPF/mgmt_core_wrapper/verilog/dv/make
 
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 
 # Run RTL simulation
-make -d verify-system_test111-rtl 2>&1 | tee $LF/mpw-8c-verify-system_test111-rtl.log
+make -d verify-edge_detect-rtl 2>&1 | tee $LF/mpw-8c-verify-edge_detect-rtl.log
+exit 1
 
 # Run Openlane to generate RTL netlist
 cp $CLF/custom_design/fsic/openlane/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
@@ -138,8 +159,8 @@ make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
 
 # Run gate level simulation (it will take 2~3 hours@i9/64GB)
-cp $CLF/custom_design/fsic/verify-system_test111-rtl/system_test111_tb.v.patch_gl $CUPF/verilog/dv/system_test111/system_test111_tb.v
-make -d verify-system_test111-gl 2>&1 | tee $LF/mpw-8c-verify-system_test111-gl.log
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/edge_detect_tb.v.patch_gl $CUPF/verilog/dv/edge_detect/edge_detect_tb.v
+make -d verify-edge_detect-gl 2>&1 | tee $LF/mpw-8c-verify-edge_detect-gl.log
 
 # Run gate level static timing verifier
 make -d setup-timing-scripts 2>&1 | tee $LF/mpw-8c-setup-timing-scripts.log
@@ -152,3 +173,4 @@ cp $CLF/custom_design/fsic/mpw_precheck/README.md  $CUPF/README.md
 cp $CLF/custom_design/fsic/mpw_precheck/user_defines.v  $CUPF/verilog/rtl/user_defines.v
 make -d precheck 2>&1 | tee $LF/mpw-8c-precheck.log
 make -d run-precheck 2>&1 | tee $LF/mpw-8c-run-precheck.log
+

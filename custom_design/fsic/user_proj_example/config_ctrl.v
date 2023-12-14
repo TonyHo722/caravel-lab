@@ -1,3 +1,4 @@
+`timescale 1 ns / 1 ps
 
 module CFG_CTRL #( parameter pADDR_WIDTH   = 12,
                    parameter pDATA_WIDTH   = 32
