@@ -24,11 +24,11 @@ Cloning into 'caravel-lab'...
 + cd /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab
 + git log -1
 + tee /ADATA2T/debug/fsic_1214_edge_detect/log/mpw-8c-CLF-git-log.log
-commit 73b077d057e772bf7834cf15a66de290a6db737c
+commit ff5412c3620b7d3be66c6704e0214446311efb0b
 Author: tonyho <TonyHo@via.com.tw>
-Date:   Thu Dec 14 20:53:14 2023 +0800
+Date:   Thu Dec 14 21:54:53 2023 +0800
 
-    add files for run edge detect simulation
+    fix parameter issue
 + cd /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project
 + git log -1
 + tee /ADATA2T/debug/fsic_1214_edge_detect/log/mpw-8c-CUPF-git-log.log
@@ -79,46 +79,43 @@ Date:   Sat Sep 9 11:52:23 2023 +0800
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/user_proj_example/la_mux.v /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/rtl/la_mux.v
 + ls -l /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/rtl
 total 688
--rwxrwxr-x 1 tonyho tonyho  32748 十二 14 21:27 axi_ctrl_logic.sv
--rwxrwxr-x 1 tonyho tonyho   6515 十二 14 21:27 axil_axis.sv
--rwxrwxr-x 1 tonyho tonyho   8001 十二 14 21:27 axilite_master.sv
--rwxrwxr-x 1 tonyho tonyho  10832 十二 14 21:27 axilite_slave.sv
--rw-rw-r-- 1 tonyho tonyho   7340 十二 14 21:27 axil_slav.v
--rwxrwxr-x 1 tonyho tonyho   3069 十二 14 21:27 axis_master.sv
--rw-rw-r-- 1 tonyho tonyho   5887 十二 14 21:27 axis_mstr.v
--rwxrwxr-x 1 tonyho tonyho   3332 十二 14 21:27 axis_slave.sv
--rw-rw-r-- 1 tonyho tonyho   3026 十二 14 21:27 axis_slav.v
--rw-rw-r-- 1 tonyho tonyho 254726 十二 14 21:27 concat_EdgeDetect_Top_fsic.wire.v
--rw-rw-r-- 1 tonyho tonyho  18019 十二 14 21:27 config_ctrl.v
+-rwxrwxr-x 1 tonyho tonyho  32748 十二 14 22:01 axi_ctrl_logic.sv
+-rwxrwxr-x 1 tonyho tonyho   6515 十二 14 22:01 axil_axis.sv
+-rwxrwxr-x 1 tonyho tonyho   8001 十二 14 22:01 axilite_master.sv
+-rwxrwxr-x 1 tonyho tonyho  10832 十二 14 22:01 axilite_slave.sv
+-rw-rw-r-- 1 tonyho tonyho   7340 十二 14 22:01 axil_slav.v
+-rwxrwxr-x 1 tonyho tonyho   3069 十二 14 22:01 axis_master.sv
+-rw-rw-r-- 1 tonyho tonyho   5887 十二 14 22:01 axis_mstr.v
+-rwxrwxr-x 1 tonyho tonyho   3332 十二 14 22:01 axis_slave.sv
+-rw-rw-r-- 1 tonyho tonyho   3026 十二 14 22:01 axis_slav.v
+-rw-rw-r-- 1 tonyho tonyho 254726 十二 14 22:01 concat_EdgeDetect_Top_fsic.wire.v
+-rw-rw-r-- 1 tonyho tonyho  18019 十二 14 22:01 config_ctrl.v
 -rw-rw-r-- 1 tonyho tonyho   2235 十二 14 21:00 defines.v
--rw-rw-r-- 1 tonyho tonyho   2046 十二 14 21:27 fsic_clkrst.v
--rw-rw-r-- 1 tonyho tonyho   2033 十二 14 21:27 fsic_coreclk_phase_cnt.v
--rw-rw-r-- 1 tonyho tonyho   4613 十二 14 21:27 fsic_io_serdes_rx.v
--rw-rw-r-- 1 tonyho tonyho   2675 十二 14 21:27 fsic_mprj_io.v
--rw-rw-r-- 1 tonyho tonyho  40265 十二 14 21:27 fsic.v
+-rw-rw-r-- 1 tonyho tonyho   2046 十二 14 22:01 fsic_clkrst.v
+-rw-rw-r-- 1 tonyho tonyho   2033 十二 14 22:01 fsic_coreclk_phase_cnt.v
+-rw-rw-r-- 1 tonyho tonyho   4613 十二 14 22:01 fsic_io_serdes_rx.v
+-rw-rw-r-- 1 tonyho tonyho   2675 十二 14 22:01 fsic_mprj_io.v
+-rw-rw-r-- 1 tonyho tonyho  40265 十二 14 22:01 fsic.v
 -rw-rw-r-- 1 tonyho tonyho  38130 十二 14 21:00 fsic.vo
--rw-rw-r-- 1 tonyho tonyho  18963 十二 14 21:27 io_serdes.v
--rw-rw-r-- 1 tonyho tonyho   1647 十二 14 21:27 irq_mux.v
--rw-rw-r-- 1 tonyho tonyho   1173 十二 14 21:27 la_mux.v
--rw-rw-r-- 1 tonyho tonyho  15789 十二 14 21:27 LogicAnalyzer.v
+-rw-rw-r-- 1 tonyho tonyho  18963 十二 14 22:01 io_serdes.v
+-rw-rw-r-- 1 tonyho tonyho   1647 十二 14 22:01 irq_mux.v
+-rw-rw-r-- 1 tonyho tonyho   1173 十二 14 22:01 la_mux.v
+-rw-rw-r-- 1 tonyho tonyho  15789 十二 14 22:01 LogicAnalyzer.v
 -rw-rw-r-- 1 tonyho tonyho   1895 十二 14 21:00 logic_anlz.dummy_io.vd
 -rw-rw-r-- 1 tonyho tonyho   1737 十二 14 21:00 mprj_io.sv
--rw-rw-r-- 1 tonyho tonyho    536 十二 14 21:27 spram.wire.v
--rw-rw-r-- 1 tonyho tonyho  19710 十二 14 21:27 sw_caravel.v
+-rw-rw-r-- 1 tonyho tonyho    536 十二 14 22:01 spram.wire.v
+-rw-rw-r-- 1 tonyho tonyho  19710 十二 14 22:01 sw_caravel.v
 -rw-rw-r-- 1 tonyho tonyho   1069 十二 14 21:00 uprj_netlists.v
 -rw-rw-r-- 1 tonyho tonyho   4211 十二 14 21:00 user_defines.v
--rw-rw-r-- 1 tonyho tonyho  14199 十二 14 21:27 user_prj0.v
--rw-rw-r-- 1 tonyho tonyho   2820 十二 14 21:27 user_prj1.v
--rw-rw-r-- 1 tonyho tonyho   2820 十二 14 21:27 user_prj2.v
--rw-rw-r-- 1 tonyho tonyho   2820 十二 14 21:27 user_prj3.v
--rw-rw-r-- 1 tonyho tonyho   3431 十二 14 21:27 user_project_wrapper.v
--rw-rw-r-- 1 tonyho tonyho   4149 十二 14 21:27 user_proj_example.v
+-rw-rw-r-- 1 tonyho tonyho  14199 十二 14 22:01 user_prj0.v
+-rw-rw-r-- 1 tonyho tonyho   2820 十二 14 22:01 user_prj1.v
+-rw-rw-r-- 1 tonyho tonyho   2820 十二 14 22:01 user_prj2.v
+-rw-rw-r-- 1 tonyho tonyho   2820 十二 14 22:01 user_prj3.v
+-rw-rw-r-- 1 tonyho tonyho   3431 十二 14 22:01 user_project_wrapper.v
+-rw-rw-r-- 1 tonyho tonyho   4149 十二 14 22:01 user_proj_example.v
 -rw-rw-r-- 1 tonyho tonyho  47284 十二 14 21:00 user_subsys.all.v
--rw-rw-r-- 1 tonyho tonyho  47284 十二 14 21:27 user_subsys.v
+-rw-rw-r-- 1 tonyho tonyho  47284 十二 14 22:01 user_subsys.v
 + '[' '!' -d /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect ']'
-+ echo '/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect not exist, create it'
-/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect not exist, create it
-+ mkdir /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/verify-edge_detect-rtl/Makefile /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect/Makefile
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/verify-edge_detect-rtl/edge_detect.c /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect/edge_detect.c
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/verify-edge_detect-rtl/edge_detect_tb.v /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect/edge_detect_tb.v
@@ -137,39 +134,43 @@ total 688
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect/fsic_io_serdes_rx.v
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/user_proj_example/io_serdes.v /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect/io_serdes.v
 + ls -l /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect
-total 1524
--rw-rw-r-- 1 tonyho tonyho      1 十二 14 21:27 bench_ini.svh
--rw-rw-r-- 1 tonyho tonyho    307 十二 14 21:27 bench_vec.svh
--rw-rw-r-- 1 tonyho tonyho   6451 十二 14 21:27 cpu_trace.v
--rw-rw-r-- 1 tonyho tonyho      9 十二 14 21:27 crc32_in_img.hex
--rw-rw-r-- 1 tonyho tonyho      9 十二 14 21:27 crc32_out_img.hex
--rw-rw-r-- 1 tonyho tonyho  18274 十二 14 21:27 dasm.v
--rw-rw-r-- 1 tonyho tonyho   7946 十二 14 21:27 edge_detect.c
--rw-rw-r-- 1 tonyho tonyho  65881 十二 14 21:27 edge_detect_tb.v
--rw-rw-r-- 1 tonyho tonyho   6891 十二 14 21:27 fpga.v
--rw-rw-r-- 1 tonyho tonyho   1591 十二 14 21:27 fsic_clock.v
--rw-rw-r-- 1 tonyho tonyho   2033 十二 14 21:27 fsic_coreclk_phase_cnt.v
--rw-rw-r-- 1 tonyho tonyho   4613 十二 14 21:27 fsic_io_serdes_rx.v
--rw-rw-r-- 1 tonyho tonyho 691200 十二 14 21:27 in_img.hex
--rw-rw-r-- 1 tonyho tonyho  18963 十二 14 21:27 io_serdes.v
--rw-rw-r-- 1 tonyho tonyho    974 十二 14 21:27 Makefile
--rw-rw-r-- 1 tonyho tonyho 691200 十二 14 21:27 out_img.hex
--rw-rw-r-- 1 tonyho tonyho    657 十二 14 21:27 project_define.svh
+total 1548
+-rw-rw-r-- 1 tonyho tonyho      1 十二 14 22:01 bench_ini.svh
+-rw-rw-r-- 1 tonyho tonyho    307 十二 14 22:01 bench_vec.svh
+-rw-rw-r-- 1 tonyho tonyho   6451 十二 14 22:01 cpu_trace.v
+-rw-rw-r-- 1 tonyho tonyho      9 十二 14 22:01 crc32_in_img.hex
+-rw-rw-r-- 1 tonyho tonyho      9 十二 14 22:01 crc32_out_img.hex
+-rw-rw-r-- 1 tonyho tonyho  18274 十二 14 22:01 dasm.v
+-rw-rw-r-- 1 tonyho tonyho   7946 十二 14 22:01 edge_detect.c
+-rwxr-xr-x 1 tonyho tonyho   4201 十二 14 21:55 edge_detect.hex
+-rwxr-xr-x 1 tonyho tonyho   4201 十二 14 21:55 edge_detect.hexe
+-rw-rw-r-- 1 tonyho tonyho  66054 十二 14 22:01 edge_detect_tb.v
+-rw-rw-r-- 1 tonyho tonyho   7751 十二 14 22:01 fpga.v
+-rw-rw-r-- 1 tonyho tonyho   1591 十二 14 22:01 fsic_clock.v
+-rw-rw-r-- 1 tonyho tonyho   2033 十二 14 22:01 fsic_coreclk_phase_cnt.v
+-rw-rw-r-- 1 tonyho tonyho   4613 十二 14 22:01 fsic_io_serdes_rx.v
+-rw-rw-r-- 1 tonyho tonyho 691200 十二 14 22:01 in_img.hex
+-rw-rw-r-- 1 tonyho tonyho  18963 十二 14 22:01 io_serdes.v
+-rw-r--r-- 1 tonyho tonyho   2066 十二 14 21:55 iverilog.log
+-rw-r--r-- 1 tonyho tonyho   3406 十二 14 21:55 iverilog-ver.log
+-rw-rw-r-- 1 tonyho tonyho    974 十二 14 22:01 Makefile
+-rw-rw-r-- 1 tonyho tonyho 691200 十二 14 22:01 out_img.hex
+-rw-rw-r-- 1 tonyho tonyho    657 十二 14 22:01 project_define.svh
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.rtl.caravel_user_project /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl.caravel_user_project /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/includes/includes.gl.caravel_user_project
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/user_proj_example/includes/includes.gl+sdf.caravel_user_project /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/includes/includes.gl+sdf.caravel_user_project
 + ls -l /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/includes
 total 12
--rw-rw-r-- 1 tonyho tonyho 152 十二 14 21:27 includes.gl.caravel_user_project
--rw-rw-r-- 1 tonyho tonyho 134 十二 14 21:27 includes.gl+sdf.caravel_user_project
--rw-rw-r-- 1 tonyho tonyho 938 十二 14 21:27 includes.rtl.caravel_user_project
+-rw-rw-r-- 1 tonyho tonyho 152 十二 14 22:01 includes.gl.caravel_user_project
+-rw-rw-r-- 1 tonyho tonyho 134 十二 14 22:01 includes.gl+sdf.caravel_user_project
+-rw-rw-r-- 1 tonyho tonyho 938 十二 14 22:01 includes.rtl.caravel_user_project
 + rm -f '/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/gl/*'
 + cp /ADATA2T/debug/fsic_1214_edge_detect/caravel-lab/custom_design/fsic/verify-edge_detect-rtl/sim.makefile /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile
 + ls -l /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/dv/make
 total 20
 -rw-rw-r-- 1 tonyho tonyho 1238 十二 14 21:02 cpu.makefile
 -rw-rw-r-- 1 tonyho tonyho 1736 十二 14 21:02 env.makefile
--rw-rw-r-- 1 tonyho tonyho 4468 十二 14 21:27 sim.makefile
+-rw-rw-r-- 1 tonyho tonyho 4805 十二 14 22:01 sim.makefile
 -rw-rw-r-- 1 tonyho tonyho  752 十二 14 21:02 var.makefile
 + make -d simenv
 + tee /ADATA2T/debug/fsic_1214_edge_detect/log/mpw-8c-simenv.log
@@ -194,14 +195,14 @@ Considering target file 'simenv'.
  Finished prerequisites of target file 'simenv'.
 Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x5612dd1fbac0 (simenv) PID 1993093 on the chain.
-Live child 0x5612dd1fbac0 (simenv) PID 1993093 
+Putting child 0x55bf50cddac0 (simenv) PID 2013291 on the chain.
+Live child 0x55bf50cddac0 (simenv) PID 2013291 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x5612dd1fbac0 PID 1993093 
-Removing child 0x5612dd1fbac0 PID 1993093 from chain.
+Reaping winning child 0x55bf50cddac0 PID 2013291 
+Removing child 0x55bf50cddac0 PID 2013291 from chain.
 Successfully remade target file 'simenv'.
 + make -d verify-edge_detect-rtl
 + tee /ADATA2T/debug/fsic_1214_edge_detect/log/mpw-8c-verify-edge_detect-rtl.log
@@ -228,20 +229,20 @@ Considering target file 'verify-edge_detect-rtl'.
    Finished prerequisites of target file 'simenv'.
   Must remake target 'simenv'.
 docker pull efabless/dv:latest
-Putting child 0x56469fecfac0 (simenv) PID 1993165 on the chain.
-Live child 0x56469fecfac0 (simenv) PID 1993165 
+Putting child 0x55b705e90ac0 (simenv) PID 2013357 on the chain.
+Live child 0x55b705e90ac0 (simenv) PID 2013357 
 latest: Pulling from efabless/dv
 Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
 Status: Image is up to date for efabless/dv:latest
 docker.io/efabless/dv:latest
-Reaping winning child 0x56469fecfac0 PID 1993165 
-Removing child 0x56469fecfac0 PID 1993165 from chain.
+Reaping winning child 0x55b705e90ac0 PID 2013357 
+Removing child 0x55b705e90ac0 PID 2013357 from chain.
   Successfully remade target file 'simenv'.
  Finished prerequisites of target file 'verify-edge_detect-rtl'.
 Must remake target 'verify-edge_detect-rtl'.
 docker run -v /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project:/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project -v /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/dependencies/pdks:/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/dependencies/pdks -v /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/caravel:/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/caravel -e TARGET_PATH=/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project -e PDK_ROOT=/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project -e USER_PROJECT_VERILOG=/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/caravel/verilog -e MCW_ROOT=/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/dv/edge_detect && export SIM=RTL && make -d"
-Putting child 0x56469fed4070 (verify-edge_detect-rtl) PID 1993223 on the chain.
-Live child 0x56469fed4070 (verify-edge_detect-rtl) PID 1993223 
+Putting child 0x55b705e95070 (verify-edge_detect-rtl) PID 2013413 on the chain.
+Live child 0x55b705e95070 (verify-edge_detect-rtl) PID 2013413 
 GNU Make 3.82
 Built for x86_64-redhat-linux-gnu
 Copyright (C) 2010  Free Software Foundation, Inc.
@@ -372,7 +373,6 @@ Considering target file `all'.
       Finished prerequisites of target file `edge_detect_tb.v'.
      No need to remake target `edge_detect_tb.v'.
      Considering target file `edge_detect.hex'.
-      File `edge_detect.hex' does not exist.
       Looking for an implicit rule for `edge_detect.hex'.
       Trying pattern rule with stem `edge_detect'.
       Trying implicit prerequisite `edge_detect.elf'.
@@ -505,25 +505,26 @@ Invoking recipe from /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/m
   -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
 -Wl,-Bstatic,-T,/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,--strip-debug \
 -ffreestanding -nostdlib -o edge_detect.elf /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c edge_detect.c
-Putting child 0x1876330 (edge_detect.elf) PID 22 on the chain.
-Live child 0x1876330 (edge_detect.elf) PID 22 
-Reaping winning child 0x1876330 PID 22 
-Removing child 0x1876330 PID 22 from chain.
+Putting child 0x88e3d0 (edge_detect.elf) PID 22 on the chain.
+Live child 0x88e3d0 (edge_detect.elf) PID 22 
+Reaping winning child 0x88e3d0 PID 22 
+Removing child 0x88e3d0 PID 22 from chain.
       Successfully remade target file `edge_detect.elf'.
       Finished prerequisites of target file `edge_detect.hex'.
+      Prerequisite `edge_detect.elf' is newer than target `edge_detect.hex'.
      Must remake target `edge_detect.hex'.
 Invoking recipe from /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:50 to update target `edge_detect.hex'.
 /foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog edge_detect.elf edge_detect.hex 
-Putting child 0x1878920 (edge_detect.hex) PID 31 on the chain.
-Live child 0x1878920 (edge_detect.hex) PID 31 
-Reaping winning child 0x1878920 PID 31 
+Putting child 0x88f890 (edge_detect.hex) PID 31 on the chain.
+Live child 0x88f890 (edge_detect.hex) PID 31 
+Reaping winning child 0x88f890 PID 31 
 # to fix flash base address
-Live child 0x1878920 (edge_detect.hex) PID 32 
-Reaping winning child 0x1878920 PID 32 
+Live child 0x88f890 (edge_detect.hex) PID 32 
+Reaping winning child 0x88f890 PID 32 
 sed -ie 's/@10/@00/g' edge_detect.hex
-Live child 0x1878920 (edge_detect.hex) PID 33 
-Reaping winning child 0x1878920 PID 33 
-Removing child 0x1878920 PID 33 from chain.
+Live child 0x88f890 (edge_detect.hex) PID 33 
+Reaping winning child 0x88f890 PID 33 
+Removing child 0x88f890 PID 33 from chain.
      Successfully remade target file `edge_detect.hex'.
    Considering target file `edge_detect.vvp'.
     File `edge_detect.vvp' does not exist.
@@ -533,8 +534,8 @@ Removing child 0x1878920 PID 33 from chain.
    Must remake target `edge_detect.vvp'.
 Invoking recipe from /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:67 to update target `edge_detect.vvp'.
 iverilog -V 2>&1 | tee iverilog-ver.log
-Putting child 0x1878d20 (edge_detect.vvp) PID 34 on the chain.
-Live child 0x1878d20 (edge_detect.vvp) PID 34 
+Putting child 0x88f690 (edge_detect.vvp) PID 34 on the chain.
+Live child 0x88f690 (edge_detect.vvp) PID 34 
 Icarus Verilog version 12.0 (devel) (s20150603-1288-gcc0a8c8-dirty)
 
 Copyright (c) 2000-2021 Stephen Williams (steve@icarus.com)
@@ -608,35 +609,33 @@ Copyright (c) 2001-2021 Stephen Williams (steve@icarus.com)
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-Reaping winning child 0x1878d20 PID 34 
-iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+Reaping winning child 0x88f690 PID 34 
+iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 -DUSE_EDGEDETECT_IP -DUSER_PROJECT_SIDEBAND_SUPPORT \
         -g2012 \
         -f/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.rtl.caravel \
         -f/ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project -o edge_detect.vvp edge_detect_tb.v 2>&1 | tee iverilog.log
-Live child 0x1878d20 (edge_detect.vvp) PID 39 
-edge_detect_tb.v:572: error: Unknown module type: fsic_clock_div
-edge_detect_tb.v:586: error: Unknown module type: fpga
-3 error(s) during elaboration.
-*** These modules were missing:
-        fpga referenced 1 times.
-        fsic_clock_div referenced 1 times.
-***
-Reaping winning child 0x1878d20 PID 39 
-Removing child 0x1878d20 PID 39 from chain.
+Live child 0x88f690 (edge_detect.vvp) PID 39 
+./fpga.v:66: error: ';' is an invalid port declaration separator.
+./fpga.v:68: syntax error
+./fpga.v:1: Errors in port declarations.
+./fpga.v:68: syntax error
+I give up.
+Reaping winning child 0x88f690 PID 39 
+Removing child 0x88f690 PID 39 from chain.
    Successfully remade target file `edge_detect.vvp'.
    Finished prerequisites of target file `edge_detect.vcd'.
   Must remake target `edge_detect.vcd'.
 Invoking recipe from /ADATA2T/debug/fsic_1214_edge_detect/caravel_user_project/mgmt_core_wrapper/verilog/dv/make/sim.makefile:113 to update target `edge_detect.vcd'.
 vvp  edge_detect.vvp
-Putting child 0x1878d40 (edge_detect.vcd) PID 45 on the chain.
-Live child 0x1878d40 (edge_detect.vcd) PID 45 
+Putting child 0x88fa90 (edge_detect.vcd) PID 45 on the chain.
+Live child 0x88fa90 (edge_detect.vcd) PID 45 
 edge_detect.vvp: Unable to open input file.
+Reaping losing child 0x88fa90 PID 45 
+Removing child 0x88fa90 PID 45 from chain.
 make: *** [edge_detect.vcd] Error 255
-Reaping losing child 0x1878d40 PID 45 
-Removing child 0x1878d40 PID 45 from chain.
 Removing intermediate files...
 rm edge_detect.elf
-Reaping losing child 0x56469fed4070 PID 1993223 
+Reaping losing child 0x55b705e95070 PID 2013413 
 make: *** [Makefile:149: verify-edge_detect-rtl] Error 2
-Removing child 0x56469fed4070 PID 1993223 from chain.
+Removing child 0x55b705e95070 PID 2013413 from chain.
 + exit 1
