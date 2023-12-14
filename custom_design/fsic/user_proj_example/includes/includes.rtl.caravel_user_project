@@ -12,12 +12,21 @@
 -v $(USER_PROJECT_VERILOG)/rtl/fsic_clkrst.v
 -v $(USER_PROJECT_VERILOG)/rtl/fsic_coreclk_phase_cnt.v
 -v $(USER_PROJECT_VERILOG)/rtl/fsic_io_serdes_rx.v
--v $(USER_PROJECT_VERILOG)/rtl/fsic.vo
+-v $(USER_PROJECT_VERILOG)/rtl/fsic.v
 -v $(USER_PROJECT_VERILOG)/rtl/io_serdes.v
--v $(USER_PROJECT_VERILOG)/rtl/mprj_io.sv
+-v $(USER_PROJECT_VERILOG)/rtl/fsic_mprj_io.v
 -v $(USER_PROJECT_VERILOG)/rtl/sw_caravel.v
--v $(USER_PROJECT_VERILOG)/rtl/user_subsys.all.v
--v $(USER_PROJECT_VERILOG)/rtl/logic_anlz.dummy_io.vd
+-v $(USER_PROJECT_VERILOG)/rtl/LogicAnalyzer.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_subsys.v
+-v $(USER_PROJECT_VERILOG)/rtl/axil_slav.v
+-v $(USER_PROJECT_VERILOG)/rtl/axis_mstr.v
+-v $(USER_PROJECT_VERILOG)/rtl/axis_slav.v
+-v $(USER_PROJECT_VERILOG)/rtl/irq_mux.v
+-v $(USER_PROJECT_VERILOG)/rtl/la_mux.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_prj0.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_prj1.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_prj2.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_prj3.v
+-v $(USER_PROJECT_VERILOG)/rtl/concat_EdgeDetect_Top_fsic.wire.v
+-v $(USER_PROJECT_VERILOG)/rtl/spram.wire.v
 
-
- 
