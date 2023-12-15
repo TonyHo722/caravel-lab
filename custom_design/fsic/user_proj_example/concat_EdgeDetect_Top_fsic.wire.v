@@ -1144,9 +1144,9 @@ input wire [33:0] dat_in_rsci_idat;
   end
 
   function [31:0] MUX_v_32_2_2;
-input wire [31:0] input_0;
-input wire [31:0] input_1;
-input wire sel;
+input [31:0] input_0;
+input [31:0] input_1;
+input sel;
     reg [31:0] result;
   begin
     case (sel)
