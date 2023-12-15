@@ -84,8 +84,8 @@ cp $CLF/custom_design/fsic/user_proj_example/user_prj1.v $CUPF/verilog/rtl/user_
 cp $CLF/custom_design/fsic/user_proj_example/user_prj2.v $CUPF/verilog/rtl/user_prj2.v
 cp $CLF/custom_design/fsic/user_proj_example/user_prj3.v $CUPF/verilog/rtl/user_prj3.v
 
-cp $CLF/custom_design/fsic/user_proj_example/concat_EdgeDetect_Top_fsic.wire.v $CUPF/verilog/rtl/concat_EdgeDetect_Top_fsic.v
-cp $CLF/custom_design/fsic/user_proj_example/spram.wire.v $CUPF/verilog/rtl/spram.v
+cp $CLF/custom_design/fsic/user_proj_example/concat_EdgeDetect_Top_fsic.v $CUPF/verilog/rtl/concat_EdgeDetect_Top_fsic.v
+cp $CLF/custom_design/fsic/user_proj_example/spram.v $CUPF/verilog/rtl/spram.v
 cp $CLF/custom_design/fsic/user_proj_example/concat_EdgeDetect_Top_fsic.wire.v $CUPF/verilog/rtl/concat_EdgeDetect_Top_fsic.wire.v
 cp $CLF/custom_design/fsic/user_proj_example/spram.wire.v $CUPF/verilog/rtl/spram.wire.v
 cp $CLF/custom_design/fsic/user_proj_example/axil_slav.v $CUPF/verilog/rtl/axil_slav.v
