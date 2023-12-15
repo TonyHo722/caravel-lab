@@ -331,6 +331,8 @@ module edge_detect_tb #( parameter BITS=32,
 
 
    initial begin
+    $dumpfile("edge_detect.vcd");
+    $dumpvars(0, edge_detect_tb);       
 
     `ifdef USE_EDGEDETECT_IP
       run_edge_detect();
