@@ -98,9 +98,9 @@ FSIC #(.BITS( BITS )) u_fsic  (
                       .wbs_rdata   (wbs_dat_o),               // O  32
 
                       // Logic Analyzer
-                      .la_data_in  (la_data_in),              // I  128
-                      .la_oenb     (la_oenb),                 // I  128
-                      .la_data_out (la_data_out),             // O  128
+                      //.la_data_in  (la_data_in),              // I  128
+                      //.la_oenb     (la_oenb),                 // I  128
+                      //.la_data_out (la_data_out),             // O  128
 
                       // IO Pads
                       .io_in       (io_in),                   // I  38
@@ -117,3 +117,4 @@ FSIC #(.BITS( BITS )) u_fsic  (
 endmodule
 
 `default_nettype wire
+
