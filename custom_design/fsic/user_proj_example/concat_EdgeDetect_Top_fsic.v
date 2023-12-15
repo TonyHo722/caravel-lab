@@ -1143,7 +1143,7 @@ module EdgeDetect_VerDer_run_dat_in_rsci_dat_in_wait_dp (
     end
   end
 
-  function automatic [31:0] MUX_v_32_2_2;
+  function  [31:0] MUX_v_32_2_2;
     input [31:0] input_0;
     input [31:0] input_1;
     input  sel;
@@ -1686,7 +1686,7 @@ module EdgeDetect_MagAng_run_pix_in_rsci_pix_in_wait_dp (
     end
   end
 
-  function automatic [31:0] MUX_v_32_2_2;
+  function  [31:0] MUX_v_32_2_2;
     input [31:0] input_0;
     input [31:0] input_1;
     input  sel;
@@ -2886,7 +2886,7 @@ module EdgeDetect_VerDer_run (
   assign and_70_nl = ((VCOL_if_6_mux_tmp!=9'b000000000)) & or_dcpl_21;
   assign mux_5_nl = MUX_s_1_2_2(or_dcpl_7, and_70_nl, VROW_stage_0_2);
 
-  function automatic [31:0] MUX1HOT_v_32_3_2;
+  function  [31:0] MUX1HOT_v_32_3_2;
     input [31:0] input_2;
     input [31:0] input_1;
     input [31:0] input_0;
@@ -2901,7 +2901,7 @@ module EdgeDetect_VerDer_run (
   endfunction
 
 
-  function automatic  MUX_s_1_2_2;
+  function   MUX_s_1_2_2;
     input  input_0;
     input  input_1;
     input  sel;
@@ -2920,7 +2920,7 @@ module EdgeDetect_VerDer_run (
   endfunction
 
 
-  function automatic [31:0] MUX_v_32_2_2;
+  function  [31:0] MUX_v_32_2_2;
     input [31:0] input_0;
     input [31:0] input_1;
     input  sel;
@@ -2939,7 +2939,7 @@ module EdgeDetect_VerDer_run (
   endfunction
 
 
-  function automatic [63:0] MUX_v_64_2_2;
+  function  [63:0] MUX_v_64_2_2;
     input [63:0] input_0;
     input [63:0] input_1;
     input  sel;
@@ -2958,7 +2958,7 @@ module EdgeDetect_VerDer_run (
   endfunction
 
 
-  function automatic [7:0] MUX_v_8_2_2;
+  function  [7:0] MUX_v_8_2_2;
     input [7:0] input_0;
     input [7:0] input_1;
     input  sel;
@@ -2977,7 +2977,7 @@ module EdgeDetect_VerDer_run (
   endfunction
 
 
-  function automatic [8:0] MUX_v_9_2_2;
+  function  [8:0] MUX_v_9_2_2;
     input [8:0] input_0;
     input [8:0] input_1;
     input  sel;
@@ -2996,7 +2996,7 @@ module EdgeDetect_VerDer_run (
   endfunction
 
 
-  function automatic [0:0] readslicef_10_1_9;
+  function  [0:0] readslicef_10_1_9;
     input [9:0] vector;
     reg [9:0] tmp;
   begin
@@ -3006,7 +3006,7 @@ module EdgeDetect_VerDer_run (
   endfunction
 
 
-  function automatic [8:0] conv_u2s_8_9 ;
+  function  [8:0] conv_u2s_8_9 ;
     input [7:0]  vector ;
   begin
     conv_u2s_8_9 =  {1'b0, vector};
@@ -3014,7 +3014,7 @@ module EdgeDetect_VerDer_run (
   endfunction
 
 
-  function automatic [9:0] conv_u2s_9_10 ;
+  function  [9:0] conv_u2s_9_10 ;
     input [8:0]  vector ;
   begin
     conv_u2s_9_10 =  {1'b0, vector};
@@ -3407,7 +3407,7 @@ module EdgeDetect_HorDer_run (
   assign nl_operator_8_false_2_acc_2_itm_1  = ({1'b1 , win_5_sva_mx0}) + conv_u2s_8_9(~
       HCOL_if_1_for_1_mux_4_nl) + 9'b000000001;
 
-  function automatic [7:0] MUX1HOT_v_8_3_2;
+  function  [7:0] MUX1HOT_v_8_3_2;
     input [7:0] input_2;
     input [7:0] input_1;
     input [7:0] input_0;
@@ -3422,7 +3422,7 @@ module EdgeDetect_HorDer_run (
   endfunction
 
 
-  function automatic  MUX_s_1_2_2;
+  function   MUX_s_1_2_2;
     input  input_0;
     input  input_1;
     input  sel;
@@ -3441,7 +3441,7 @@ module EdgeDetect_HorDer_run (
   endfunction
 
 
-  function automatic [31:0] MUX_v_32_2_2;
+  function  [31:0] MUX_v_32_2_2;
     input [31:0] input_0;
     input [31:0] input_1;
     input  sel;
@@ -3460,7 +3460,7 @@ module EdgeDetect_HorDer_run (
   endfunction
 
 
-  function automatic [7:0] MUX_v_8_2_2;
+  function  [7:0] MUX_v_8_2_2;
     input [7:0] input_0;
     input [7:0] input_1;
     input  sel;
@@ -3479,7 +3479,7 @@ module EdgeDetect_HorDer_run (
   endfunction
 
 
-  function automatic [8:0] MUX_v_9_2_2;
+  function  [8:0] MUX_v_9_2_2;
     input [8:0] input_0;
     input [8:0] input_1;
     input  sel;
@@ -3498,7 +3498,7 @@ module EdgeDetect_HorDer_run (
   endfunction
 
 
-  function automatic [0:0] readslicef_9_1_8;
+  function  [0:0] readslicef_9_1_8;
     input [8:0] vector;
     reg [8:0] tmp;
   begin
@@ -3508,7 +3508,7 @@ module EdgeDetect_HorDer_run (
   endfunction
 
 
-  function automatic [8:0] conv_u2s_8_9 ;
+  function  [8:0] conv_u2s_8_9 ;
     input [7:0]  vector ;
   begin
     conv_u2s_8_9 =  {1'b0, vector};
@@ -5340,7 +5340,7 @@ module EdgeDetect_MagAng_run (
   assign nl_z_out = ({MROW_MROW_and_1_nl , MROW_mux_2_nl}) + 9'b000000001;
   assign z_out = nl_z_out[8:0];
 
-  function automatic  MUX1HOT_s_1_3_2;
+  function   MUX1HOT_s_1_3_2;
     input  input_2;
     input  input_1;
     input  input_0;
@@ -5355,7 +5355,7 @@ module EdgeDetect_MagAng_run (
   endfunction
 
 
-  function automatic [7:0] MUX_v_8_2_2;
+  function  [7:0] MUX_v_8_2_2;
     input [7:0] input_0;
     input [7:0] input_1;
     input  sel;
@@ -5374,7 +5374,7 @@ module EdgeDetect_MagAng_run (
   endfunction
 
 
-  function automatic [8:0] MUX_v_9_2_2;
+  function  [8:0] MUX_v_9_2_2;
     input [8:0] input_0;
     input [8:0] input_1;
     input  sel;
@@ -5393,7 +5393,7 @@ module EdgeDetect_MagAng_run (
   endfunction
 
 
-  function automatic [7:0] signext_8_1;
+  function  [7:0] signext_8_1;
     input  vector;
   begin
     signext_8_1= {{7{vector}}, vector};
@@ -5401,7 +5401,7 @@ module EdgeDetect_MagAng_run (
   endfunction
 
 
-  function automatic [8:0] conv_u2s_8_9 ;
+  function  [8:0] conv_u2s_8_9 ;
     input [7:0]  vector ;
   begin
     conv_u2s_8_9 =  {1'b0, vector};
@@ -5409,7 +5409,7 @@ module EdgeDetect_MagAng_run (
   endfunction
 
 
-  function automatic [7:0] conv_u2u_1_8 ;
+  function  [7:0] conv_u2u_1_8 ;
     input [0:0]  vector ;
   begin
     conv_u2u_1_8 = {{7{1'b0}}, vector};
@@ -5417,7 +5417,7 @@ module EdgeDetect_MagAng_run (
   endfunction
 
 
-  function automatic [8:0] conv_u2u_8_9 ;
+  function  [8:0] conv_u2u_8_9 ;
     input [7:0]  vector ;
   begin
     conv_u2u_8_9 = {1'b0, vector};
@@ -6058,5 +6058,6 @@ output dat_out_rsc_vld;
 // depth : 128   - widthIn/8  ~640x480  640/8 -> 80
 //  pixel data: 8-bit gray level - 
 //  kernel : 3x3 
+
 
 
