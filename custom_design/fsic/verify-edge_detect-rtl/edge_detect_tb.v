@@ -385,7 +385,7 @@ module edge_detect_tb #( parameter BITS=32,
         repeat (1000) @(posedge clock);
         $display("%t MSG %m, +1000 cycles, finish_flag=%b,  repeat_cnt=%04d", $time, finish_flag, repeat_cnt);
     end
-    while(finish_flag == 0 && repeat_cnt <= 100 );
+    while(finish_flag == 0 && repeat_cnt <= 60 );
 
 
 		$display("=============================================================================================");
@@ -1616,6 +1616,7 @@ endmodule // top_bench
 //  `include "fsic_io_serdes_rx.v"
 //  `include "io_serdes.v"
 `default_nettype wire
+
 
 
 
