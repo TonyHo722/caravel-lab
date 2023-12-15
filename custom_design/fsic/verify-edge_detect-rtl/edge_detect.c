@@ -186,10 +186,13 @@ void main()
     uint32_t value;
     uint32_t io_serdes_base = IS_BASE;
 
+    REG_IS_BASE = 3;    //write again to avoid risc-v core do not issue this cycle to IS.
+
    
     
     while(1);
 }
+
 
 
 
