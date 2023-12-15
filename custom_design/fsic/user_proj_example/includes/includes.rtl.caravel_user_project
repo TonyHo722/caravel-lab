@@ -17,6 +17,7 @@
 -v $(USER_PROJECT_VERILOG)/rtl/fsic_mprj_io.v
 -v $(USER_PROJECT_VERILOG)/rtl/sw_caravel.v
 -v $(USER_PROJECT_VERILOG)/rtl/LogicAnalyzer.v
+-v $(USER_PROJECT_VERILOG)/rtl/Sram.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_subsys.v
 -v $(USER_PROJECT_VERILOG)/rtl/axil_slav.v
 -v $(USER_PROJECT_VERILOG)/rtl/axis_mstr.v

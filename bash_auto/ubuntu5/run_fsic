@@ -79,6 +79,7 @@ cp $CLF/custom_design/fsic/user_proj_example/fsic_io_serdes_rx.v $CUPF/verilog/r
 cp $CLF/custom_design/fsic/user_proj_example/fsic_mprj_io.v $CUPF/verilog/rtl/fsic_mprj_io.v
 cp $CLF/custom_design/fsic/user_proj_example/user_subsys.v $CUPF/verilog/rtl/user_subsys.v
 cp $CLF/custom_design/fsic/user_proj_example/LogicAnalyzer.v $CUPF/verilog/rtl/LogicAnalyzer.v
+cp $CLF/custom_design/fsic/user_proj_example/Sram.v $CUPF/verilog/rtl/Sram.v
 cp $CLF/custom_design/fsic/user_proj_example/user_prj0.v $CUPF/verilog/rtl/user_prj0.v
 cp $CLF/custom_design/fsic/user_proj_example/user_prj1.v $CUPF/verilog/rtl/user_prj1.v
 cp $CLF/custom_design/fsic/user_proj_example/user_prj2.v $CUPF/verilog/rtl/user_prj2.v
