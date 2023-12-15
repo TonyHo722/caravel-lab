@@ -885,10 +885,10 @@ module edge_detect_tb #( parameter BITS=32,
 			for (i=0;i<CoreClkPhaseLoop;i=i+1) begin
 				$display("run_edge_detect_test002: fpga_axis_req - loop %02d", i);
 
-        $readmemh("../tests/edge_detect/pattern/in_img.hex",        tst_img_in_buf        );
-        $readmemh("../tests/edge_detect/pattern/out_img.hex",       tst_img_out_buf       );
-        $readmemh("../tests/edge_detect/pattern/crc32_in_img.hex",  tst_crc32_img_in_buf  );
-        $readmemh("../tests/edge_detect/pattern/crc32_out_img.hex", tst_crc32_img_out_buf );
+        $readmemh("in_img.hex",        tst_img_in_buf        );
+        $readmemh("out_img.hex",       tst_img_out_buf       );
+        $readmemh("crc32_in_img.hex",  tst_crc32_img_in_buf  );
+        $readmemh("crc32_out_img.hex", tst_crc32_img_out_buf );
 
 
 			  for (frm_cnt=0;frm_cnt<TST_TOTAL_FRAME_NUM;frm_cnt=frm_cnt+1) begin
@@ -1616,6 +1616,7 @@ endmodule // top_bench
 //  `include "fsic_io_serdes_rx.v"
 //  `include "io_serdes.v"
 `default_nettype wire
+
 
 
 
