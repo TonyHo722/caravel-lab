@@ -33,6 +33,7 @@
 #define  AA_MailBox_Reg_Offset (0x000)
 #define  AA_Internal_Reg_Offset (0x100)
 
+#define USER_PROJECT_SIDEBAND_SUPPORT 1
 // --------------------------------------------------------
 // define only one of below items
 // --------------------------------------------------------
