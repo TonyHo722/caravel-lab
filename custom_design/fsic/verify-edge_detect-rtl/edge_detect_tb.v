@@ -870,8 +870,8 @@ module edge_detect_tb #( parameter BITS=32,
 
 	reg[31:0] idx3;
   reg[31:0] frm_cnt;
-  reg[7:0]  tst_img_in_buf [TST_TOTAL_PIXEL_NUM];
-  reg[7:0]  tst_img_out_buf[TST_TOTAL_PIXEL_NUM];
+  reg[7:0]  tst_img_in_buf [0:TST_TOTAL_PIXEL_NUM];
+  reg[7:0]  tst_img_out_buf[0:TST_TOTAL_PIXEL_NUM];
   reg[31:0] tst_crc32_img_in_buf[1];
   reg[31:0] tst_crc32_img_out_buf[1];
 
