@@ -162,7 +162,7 @@ make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
 
 # Run gate level simulation (it will take 2~3 hours@i9/64GB)
-cp $CLF/custom_design/fsic/verify-edge_detect-rtl/edge_detect_tb.v.patch_gl $CUPF/verilog/dv/edge_detect/edge_detect_tb.v
+cp $CLF/custom_design/fsic/verify-edge_detect-rtl/edge_detect_tb.v $CUPF/verilog/dv/edge_detect/edge_detect_tb.v
 make -d verify-edge_detect-gl 2>&1 | tee $LF/mpw-8c-verify-edge_detect-gl.log
 
 # Run gate level static timing verifier
