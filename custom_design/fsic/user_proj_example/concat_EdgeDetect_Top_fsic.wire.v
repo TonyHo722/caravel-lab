@@ -1143,7 +1143,7 @@ input wire [33:0] dat_in_rsci_idat;
     end
   end
 
-  function automatic [31:0] MUX_v_32_2_2;
+  function [31:0] MUX_v_32_2_2;
 input wire [31:0] input_0;
 input wire [31:0] input_1;
 input wire sel;
