@@ -28,8 +28,7 @@
 -v $(USER_PROJECT_VERILOG)/rtl/user_prj1.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_prj2.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_prj3.v
-#-v $(USER_PROJECT_VERILOG)/rtl/concat_EdgeDetect_Top_fsic.wire.v
-#-v $(USER_PROJECT_VERILOG)/rtl/spram.wire.v
 -v $(USER_PROJECT_VERILOG)/rtl/concat_EdgeDetect_Top_fsic.v
 -v $(USER_PROJECT_VERILOG)/rtl/spram.v
+
 
