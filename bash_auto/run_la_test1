@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/la_test1_0921
+export MF=/ADATA2T/debug/la_test1_0104_repro
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
@@ -60,18 +60,27 @@ export PDK=sky130A
 cp $CLF/custom_design/gcd/user_proj_example/user_project_wrapper.v $CUPF/verilog/rtl/user_project_wrapper.v
 # copy file for user_proj_example.v
 cp $CLF/custom_design/gcd/user_proj_example/user_proj_example.v $CUPF/verilog/rtl/user_proj_example.v
+cp $CLF/custom_design/gcd/user_proj_example/seq_gcd.v $CUPF/verilog/rtl/seq_gcd.v
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/rtl
 
 # copy files for testbench
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1.c $CUPF/verilog/dv/la_test1/la_test1.c
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v $CUPF/verilog/dv/la_test1/la_test1_tb.v
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/dv/la_test1
 
 ## copy includes file
 cp $CLF/custom_design/gcd/user_proj_example/includes/includes.rtl.caravel_user_project $CUPF/verilog/includes/includes.rtl.caravel_user_project
 cp $CLF/custom_design/gcd/user_proj_example/includes/includes.gl.caravel_user_project $CUPF/verilog/includes/includes.gl.caravel_user_project
 cp $CLF/custom_design/gcd/user_proj_example/includes/includes.gl+sdf.caravel_user_project $CUPF/verilog/includes/includes.gl+sdf.caravel_user_project
+## for debug - check file name and size by ls -l
+ls -l $CUPF/verilog/includes
 
 ## copy sim.makefile for debugging
 cp $CLF/custom_design/gcd/verify-la_test1-rtl/sim.makefile $CUPF/mgmt_core_wrapper/verilog/dv/make/sim.makefile
+## for debug - check file name and size by ls -l
+ls -l $CUPF/mgmt_core_wrapper/verilog/dv/make
 
 make -d simenv 2>&1 | tee $LF/mpw-8c-simenv.log
 
@@ -81,7 +90,12 @@ make -d verify-la_test1-rtl 2>&1 | tee $LF/mpw-8c-verify-la_test1-rtl.log
 # Run Openlane to generate RTL netlist
 cp $CLF/custom_design/gcd/openlane/user_proj_example/config.json $CUPF/openlane/user_proj_example/config.json
 cp $CLF/custom_design/gcd/openlane/user_proj_example/pin_order.cfg $CUPF/openlane/user_proj_example/pin_order.cfg
+## for debug - check file name and size by ls -l
+ls -l $CUPF/openlane/user_proj_example
+
 cp $CLF/custom_design/gcd/openlane/user_project_wrapper/config.json $CUPF/openlane/user_project_wrapper/config.json
+## for debug - check file name and size by ls -l
+ls -l $CUPF/openlane/user_project_wrapper
 
 make -d user_proj_example 2>&1 | tee $LF/mpw-8c-user_proj_example.log
 make -d user_project_wrapper 2>&1 | tee $LF/mpw-8c-user_project_wrapper.log
