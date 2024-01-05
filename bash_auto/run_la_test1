@@ -11,7 +11,7 @@ trap 'on_error' ERR
 set -x # echo on for debug 
 
 # setup your main folder(MF)
-export MF=/ADATA2T/debug/la_test1_0104_repro
+export MF=/ADATA2T/debug/la_test1_0105_repro
 
 export CARAVEL_LITE=0
 
@@ -51,7 +51,7 @@ git log -1 2>&1 | tee $LF/mpw-8c-CLF-git-log.log
 cd $CUPF
 git log -1 2>&1 | tee $LF/mpw-8c-CUPF-git-log.log
 
-[ ! -d $CUPF/dependencies] && echo "$CLF/dependencies not exist, create it" && mkdir $CLF/dependencies
+[ ! -d $CUPF/dependencies ] && echo "$CLF/dependencies not exist, create it" && mkdir $CLF/dependencies
 export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
 export PDK_ROOT=$(pwd)/dependencies/pdks
 export PDK=sky130A
