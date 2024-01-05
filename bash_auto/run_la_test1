@@ -13,7 +13,7 @@ set -x # echo on for debug
 # setup your main folder(MF)
 export MF=/ADATA2T/debug/la_test1_0105_repro
 
-#export CARAVEL_LITE=0
+export CARAVEL_LITE=0
 
 # setup your fsic_fpga folder(FFF)
 #export FFF=/home/tonyho/workspace/fsic/fsic_fpga
